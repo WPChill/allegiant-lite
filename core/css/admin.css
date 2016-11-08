@@ -1,0 +1,60 @@
+
+/* FONTS */
+.fontawesome { font-family: 'fontawesome'; }
+
+
+/* --------------------------------------------------------------
+2. THEME METABOXES
+-------------------------------------------------------------- */
+
+/* Metaboxes */
+.cpometabox { overflow:hidden; margin:20px 10px;}
+.cpometabox .name { float:left; width:150px; padding:5px 0px; font-family:Century Gothic, Verdana, Arial; font-weight:bold; }
+.cpometabox .field { margin-left:180px; max-width:340px; min-width:200px; }
+.cpometabox .desc { float:left; margin:6px 0px 0px 180px; clear:both; color:#666; font-size:11px; font-weight:normal; }
+.cpometabox-message { overflow:hidden; margin:20px 0 0; padding:10px; border-radius:3px; background:#ffb; }
+/* Wide Fields */
+.cpometabox-wide .name { float:none; width:auto; }
+.cpometabox-wide .field { margin-left:0; max-width:100%; }
+.cpometabox.cpometabox-wide .desc { float:none; margin:6px 0 0 0; }
+
+.cpometabox input[type=text] { width:95%; }
+.cpometabox input[type=upload] { width:70%; }
+.cpometabox input.color { width:70px; }
+.cpometabox textarea { font-family:monospace; width:95%; height:100px; max-height:350px; min-height:100px; resize:vertical; }
+.cpometabox select { width:95%; }
+
+/* Icon Lists */
+.cpotheme-iconlist { overflow:auto; height:200px; width:440px; border:1px solid #ccc; background:#eee; }
+.cpotheme-iconlist-heading { clear:left; background:#eee; font-weight:bold; padding:0 5px; line-height:26px; font-size:0.9em; }
+.cpotheme-iconlist label { display:block; float:left; border:1px solid #eee; border-width:0 1px 1px 0; text-align:center; margin:0; background:#fff; font-family:'fontawesome'; width:34px; height:34px; font-size:18px; line-height:34px; -moz-transition:0.2s all; -webkit-transition:0.2s all; transition:0.2s all; }
+.cpotheme-iconlist .cpotheme-iconlist-selected { background:#1e8cbe; color:#fff; }
+.cpotheme-iconlist input[type=radio] { display:none; }
+
+/* Image Lists */
+.cpotheme-imagelist-item { display:inline-block; text-align:center; margin:0 12px 12px 0; line-height:0; } 
+.cpotheme-imagelist-item img { padding:3px; border-radius:2px; background:#fff; box-shadow:0 1px 2px 1px rgba(0,0,0,0.2); -moz-transition:0.4s all; -webkit-transition:0.4s all; transition:0.4s all; }
+.cpotheme-imagelist-item .cpotheme-imagelist-selected { background:#1e8cbe; }
+.cpotheme-imagelist-item input[type=radio] {display: none;}
+
+
+/* --------------------------------------------------------------
+CUSTOMIZER
+-------------------------------------------------------------- */
+
+/* Sections */
+#accordion-section-colors .accordion-section-title:before,
+#accordion-section-cpotheme_typography .accordion-section-title:before,
+#accordion-section-cpotheme_layout_general .accordion-section-title:before,
+#accordion-section-cpotheme_layout_home .accordion-section-title:before,
+#accordion-section-cpotheme_layout_posts .accordion-section-title:before,
+#accordion-section-cpotheme_layout_slider .accordion-section-title:before,
+#accordion-section-cpotheme_layout_features .accordion-section-title:before,
+#accordion-section-cpotheme_layout_portfolio .accordion-section-title:before,
+#accordion-section-cpotheme_layout_team .accordion-section-title:before,
+#accordion-section-cpotheme_layout_testimonials .accordion-section-title:before,
+#accordion-section-cpotheme_layout_clients .accordion-section-title:before,
+#accordion-section-cpotheme_layout_services .accordion-section-title:before
+{ content:'PRO'; display:inline-block; line-height:1; padding:2px; background:#f70; font-size:0.8em; margin-right:5px; color:#fff; border-radius:2px; }
+
+

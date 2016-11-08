@@ -1,0 +1,55 @@
+
+/* FONTS */
+.fontawesome { font-family: 'fontawesome'; }
+
+
+/* WIZARD */
+.cpotheme-notice { padding:10px 0; }
+.updated .cpotheme-notice a:link { text-decoration:none; }
+.wrap .cpotheme-wizard-title { font-size:21px; line-height:1.2; margin:0; padding:0; }
+.wrap .cpotheme-wizard-description { font-size:16px; margin:0 0 10px; padding:0; color:#888; }
+.cpotheme-wizard-image { display:block; float:left; width:40px; height:auto; margin-right:15px; border:1px solid #ddd; border-radius:5px; }
+.cpotheme-wizard-column { float:left; width:30%; max-width:400px; padding:0 1.5%; }
+.cpotheme-wizard-column-last { margin-right:0; }
+.cpotheme-wizard-task { display:block; margin:10px 0; }
+.cpotheme-wizard-icon { color:#888; }
+.cpotheme-wizard-clear { clear:both; }
+.cpothemes-notice-dismiss { display:block; float:right; color:#999; line-height:1; } 
+
+
+/* WELCOME */
+.cpotheme-welcome { line-height:1.65; color:#666; }
+/* Header */
+.cpotheme-welcome .cpotheme-welcome-header { float:left; width:45%; margin:0 0 30px; }
+.cpotheme-welcome .cpotheme-welcome-title { font-size:42px; font-weight:bold; line-height:1.2; margin:30px 0 10px; padding:0; }
+.cpotheme-welcome .cpotheme-welcome-version { font-size:18px; text-transform:uppercase; color:#889; font-weight:bold; margin:0 0 20px; padding:0; }
+.cpotheme-welcome .cpotheme-welcome-version-number { display:inline-block; background:#6b2; padding:0px 15px; border-radius:3px; color:#fff; }
+.cpotheme-welcome .cpotheme-welcome-description { font-size:1.2em; margin:0 0 10px; padding:0;  }
+.cpotheme-welcome .cpotheme-welcome-image { display:block; float:right; width:45%; height:auto; border:1px solid #ddd; margin:0 0 30px; }
+/* Columns*/
+.cpotheme-welcome .cpotheme-welcome-section { padding:0 0 30px; margin:0 0 30px; border-bottom:1px solid rgba(0,0,0,0.1); }
+.cpotheme-welcome .cpotheme-welcome-column { float:left; width:30%; margin:0 5% 0 0; }
+.cpotheme-welcome .cpotheme-welcome-column-last { margin-right:0; }
+.cpotheme-welcome .cpotheme-welcome-task { display:block; font-size:14px; margin:10px 0; }
+.cpotheme-welcome .cpotheme-welcome-icon { color:#888; }
+.cpotheme-welcome .cpotheme-welcome-clear { clear:both; width:100%; }
+/* Blocks */
+.cpotheme-welcome .cpotheme-welcome-block { float:left; width:48%; background:#f8f8f8; padding:0; border:1px solid #ddd; margin:0 4% 30px 0; -moz-box-sizing:border-box;  -webkit-box-sizing:border-box; box-sizing:border-box; }
+.cpotheme-welcome .cpotheme-welcome-block-last { margin-right:0; }
+.cpotheme-welcome .cpotheme-welcome-block-image { width:100%; height:auto; display:block; margin:0; }
+.cpotheme-welcome .cpotheme-welcome-block-title { background:#fff; font-size:16px; margin:0; padding:30px; }
+.cpotheme-welcome .cpotheme-welcome-block-body { padding:16px 30px 30px; }
+/* Wide format */
+.cpotheme-welcome .cpotheme-welcome-block-wide { float:none; width:100%; margin:0 0 40px; overflow:hidden; }
+.cpotheme-welcome-block-wide .cpotheme-welcome-block-image { width:65%; float:left; }
+.cpotheme-welcome-block-wide .cpotheme-welcome-block-title { margin-left:65%; padding:15px 30px; box-sizing:border-box; }
+.cpotheme-welcome-block-wide .cpotheme-welcome-block-body { margin-left:65%; padding:16px 30px 15px; box-sizing:border-box; }
+
+
+/* SMALL SCREENS */
+@media only screen and (max-width: 780px){
+	.cpotheme-welcome .cpotheme-welcome-header,
+	.cpotheme-welcome .cpotheme-welcome-image,
+	.cpotheme-welcome .cpotheme-welcome-column,
+	.cpotheme-welcome .cpotheme-welcome-block { float:none; width:auto; margin:0 0 30px; }
+}

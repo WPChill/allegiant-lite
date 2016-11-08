@@ -1,0 +1,49 @@
+Version 4.3.8
+Tweaks - Improved sanitization of theme options
+Tweaks - Cleaned up old code
+Tweaks - Removed post columns in the admin area due to being in the CPO Content Types plugin already
+Tweaks - Removed excerpt support for pages due to being plugin territory
+
+Version 4.3.7
+Feature - Added Forge to the Wizard page
+
+Version 4.3.6
+Feature - Added headings to clients section in the homepage
+
+Version 4.3.5
+Tweaks - Added more useful links to the admin page
+
+Version 4.3.4
+Tweaks - Added a message to empty search pages
+Tweaks - Changed admin page to reflect Infuse rebranding
+
+Version 4.3.3
+Tweaks - Removed favicon functionality in favor on the native WordPress controls
+Tweaks - Added better handling of multilingual options
+
+Version 4.3.2
+Tweaks - Sanitized checkboxes
+Tweaks - Removed unused JS files
+
+Version 4.3.1
+Tweaks - Added better escaping
+Tweaks - Renamed functions for a more consistent namespace
+Tweaks - Reorganized the options in the customizer for easier management
+Tweaks - Removed the Custom CSS field in the customizer due to being plugin territory.
+
+Version 4.3.0
+Feature - Added support for featured posts and pages
+Feature - Added WPML support for text-based fields in the Customizer
+Feature - Added cpotheme_grid_* hooks to item grids
+Feature - Added hover effect for buttons
+
+Version 4.2.1
+Tweaks - Improved sanitization of theme options
+
+Version 4.2.0
+Feature - Added minified versions of JS scripts along with development versions
+Feature - Moved portfolio navigations to the core
+Feature - Added styles for the WordPress visual editor
+
+Version 1.0.0
+Release of Core Lite!

@@ -1,0 +1,30 @@
+<wpml-config>
+    <custom-fields>
+        <custom-field action="copy">portfolio_featured</custom-field>
+        <custom-field action="copy">portfolio_layout</custom-field>
+        <custom-field action="copy">layout_sidebar</custom-field>
+        <custom-field action="translate">page_slider</custom-field>
+        <custom-field action="copy">page_header</custom-field>
+        <custom-field action="copy">page_title</custom-field>
+        <custom-field action="copy">page_footer</custom-field>
+        <custom-field action="copy">page_full</custom-field>
+    </custom-fields>
+    <custom-types>
+        <custom-type translate="1">cpo_slide</custom-type>
+        <custom-type translate="1">cpo_feature</custom-type>
+        <custom-type translate="1">cpo_portfolio</custom-type>
+        <custom-type translate="1">cpo_product</custom-type>
+        <custom-type translate="1">cpo_service</custom-type>
+        <custom-type translate="1">cpo_team</custom-type>
+        <custom-type translate="1">cpo_testimonial</custom-type>
+        <custom-type translate="1">cpo_client</custom-type>
+    </custom-types>    
+    <taxonomies>
+        <taxonomy translate="1">cpo_portfolio_category</taxonomy>
+        <taxonomy translate="1">cpo_product_category</taxonomy>
+        <taxonomy translate="1">cpo_service_category</taxonomy>
+        <taxonomy translate="1">cpo_team_category</taxonomy>
+    </taxonomies>    
+</wpml-config>
+
+
