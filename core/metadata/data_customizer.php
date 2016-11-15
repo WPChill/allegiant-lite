@@ -35,7 +35,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 		
 		$data['cpotheme_layout_home'] = array(
 		'title' => __('Homepage', 'allegiant'),
-		'description' => sprintf(__('Upgrade to %s to control the ordering of elements in the homepage as well as its behavior.', 'allegiant'), cpotheme_upgrade_link()),
 		'capability' => 'edit_theme_options',
 		'panel' => 'cpotheme_layout',
 		'priority' => 50);
@@ -52,7 +51,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 		if(defined('CPOTHEME_USE_FEATURES') && CPOTHEME_USE_FEATURES == true){
 			$data['cpotheme_layout_features'] = array(
 			'title' => __('Features', 'allegiant'),
-			'description' => sprintf(__('Upgrade to %s to customize the columns and appearance of the feature blocks.', 'allegiant'), cpotheme_upgrade_link()),
 			'capability' => 'edit_theme_options',
 			'panel' => 'cpotheme_layout',
 			'priority' => 50);
@@ -61,7 +59,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 		if(defined('CPOTHEME_USE_PORTFOLIO') && CPOTHEME_USE_PORTFOLIO == true){
 			$data['cpotheme_layout_portfolio'] = array(
 			'title' => __('Portfolio', 'allegiant'),
-			'description' => sprintf(__('Upgrade to %s to control the number of portfolio columns, related portfolio items, and overall appearance.', 'allegiant'), cpotheme_upgrade_link()),
 			'capability' => 'edit_theme_options',
 			'panel' => 'cpotheme_layout',
 			'priority' => 50);
@@ -70,7 +67,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 		if(defined('CPOTHEME_USE_SERVICES') && CPOTHEME_USE_SERVICES == true){
 			$data['cpotheme_layout_services'] = array(
 			'title' => __('Services', 'allegiant'),
-			'description' => sprintf(__('Upgrade to %s to control the number of columns for services.', 'allegiant'), cpotheme_upgrade_link()),
 			'capability' => 'edit_theme_options',
 			'panel' => 'cpotheme_layout',
 			'priority' => 50);
@@ -79,7 +75,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 		if(defined('CPOTHEME_USE_TEAM') && CPOTHEME_USE_TEAM == true){
 			$data['cpotheme_layout_team'] = array(
 			'title' => __('Team Members', 'allegiant'),
-			'description' => sprintf(__('Upgrade to %s to control the number of columns of the team section.', 'allegiant'), cpotheme_upgrade_link()),
 			'capability' => 'edit_theme_options',
 			'panel' => 'cpotheme_layout',
 			'priority' => 50);
@@ -88,7 +83,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 		if(defined('CPOTHEME_USE_TESTIMONIALS') && CPOTHEME_USE_TESTIMONIALS == true){
 			$data['cpotheme_layout_testimonials'] = array(
 			'title' => __('Testimonials', 'allegiant'),
-			'description' => sprintf(__('Upgrade to %s to customize the appearance of testimonials.', 'allegiant'), cpotheme_upgrade_link()),
 			'capability' => 'edit_theme_options',
 			'panel' => 'cpotheme_layout',
 			'priority' => 50);
@@ -97,7 +91,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 		if(defined('CPOTHEME_USE_CLIENTS') && CPOTHEME_USE_CLIENTS == true){
 			$data['cpotheme_layout_clients'] = array(
 			'title' => __('Clients', 'allegiant'),
-			'description' => sprintf(__('Upgrade to %s to customize the appearance of clients.', 'allegiant'), cpotheme_upgrade_link()),
 			'capability' => 'edit_theme_options',
 			'panel' => 'cpotheme_layout',
 			'priority' => 50);
@@ -111,7 +104,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 
 		$data['cpotheme_layout_posts'] = array(
 		'title' => __('Blog Posts', 'allegiant'),
-		'description' => sprintf(__('Upgrade to %s to control the appearance of specific elements in your blog posts such as dates, authors, or comments.', 'allegiant'), cpotheme_upgrade_link()),
 		'capability' => 'edit_theme_options',
 		'panel' => 'cpotheme_layout',
 		'priority' => 50);
@@ -171,6 +163,20 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'sanitize' => 'cpotheme_sanitize_bool',
 		'default' => '1');*/
 		
+		$data['upsell-homepage'] = array(
+		'button_text' => __('Upgrade to Pro', 'allegiant'),
+		'button_url' => cpotheme_upgrade_only_link(),
+		'requirements' => array(
+				__('In order to control the ordering of elements in the homepage as well as its behavior.', 'allegiant')
+			),
+		'options' => array(
+				__('Control the ordering of elements in the homepage', 'allegiant')
+			),
+		'section' => 'cpotheme_layout_home',
+		'type' => 'mte_upsell',
+		'sanitize' => 'esc_html',
+		'default' =>'' );
+
 		$data['home_tagline'] = array(
 		'label' => __('Tagline Title', 'allegiant'),
 		'section' => 'cpotheme_layout_home',
@@ -181,6 +187,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'type' => 'textarea');
 		
 		//Homepage Slider
+
 		if(defined('CPOTHEME_USE_SLIDES') && CPOTHEME_USE_SLIDES == true){
 			$data['slider_settings'] = array(
 			'label' => __('Slider Options', 'allegiant'),
@@ -191,6 +198,16 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		
 		//Homepage Features
 		if(defined('CPOTHEME_USE_FEATURES') && CPOTHEME_USE_FEATURES == true){
+			$data['upsell-features'] = array(
+			'button_text' => __('Upgrade to Pro', 'allegiant'),
+			'button_url' => cpotheme_upgrade_only_link(),
+			'options' => array(
+					__('Customize the columns and appearance of the feature blocks.', 'allegiant')
+				),
+			'section' => 'cpotheme_layout_features',
+			'type' => 'mte_upsell',
+			'sanitize' => 'esc_html',
+			'default' =>'' );
 			$data['home_features'] = array(
 			'label' => __('Features Description', 'allegiant'),
 			'section' => 'cpotheme_layout_features',
@@ -202,7 +219,17 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		}
 		
 		//Portfolio layout
-		if(defined('CPOTHEME_USE_PORTFOLIO') && CPOTHEME_USE_PORTFOLIO == true){			
+		if(defined('CPOTHEME_USE_PORTFOLIO') && CPOTHEME_USE_PORTFOLIO == true){
+			$data['upsell-portfolio'] = array(
+			'button_text' => __('Upgrade to Pro', 'allegiant'),
+			'button_url' => cpotheme_upgrade_only_link(),
+			'options' => array(
+					__('Control the number of portfolio columns.', 'allegiant')
+				),
+			'section' => 'cpotheme_layout_portfolio',
+			'type' => 'mte_upsell',
+			'sanitize' => 'esc_html',
+			'default' =>'' );		
 			$data['home_portfolio'] = array(
 			'label' => __('Portfolio Description', 'allegiant'),
 			'section' => 'cpotheme_layout_portfolio',
@@ -215,6 +242,16 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		
 		//Services layout
 		if(defined('CPOTHEME_USE_SERVICES') && CPOTHEME_USE_SERVICES == true){
+			$data['upsell-services'] = array(
+			'button_text' => __('Upgrade to Pro', 'allegiant'),
+			'button_url' => cpotheme_upgrade_only_link(),
+			'options' => array(
+					__('Control the number of services columns.', 'allegiant')
+				),
+			'section' => 'cpotheme_layout_services',
+			'type' => 'mte_upsell',
+			'sanitize' => 'esc_html',
+			'default' =>'' );
 			$data['home_services'] = array(
 			'label' => __('Services Description', 'allegiant'),
 			'section' => 'cpotheme_layout_services',
@@ -227,6 +264,16 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		
 		//Services layout
 		if(defined('CPOTHEME_USE_TEAM') && CPOTHEME_USE_TEAM == true){
+			$data['upsell-teammemebers'] = array(
+			'button_text' => __('Upgrade to Pro', 'allegiant'),
+			'button_url' => cpotheme_upgrade_only_link(),
+			'options' => array(
+					__('Control the number of team members columns.', 'allegiant')
+				),
+			'section' => 'cpotheme_layout_team',
+			'type' => 'mte_upsell',
+			'sanitize' => 'esc_html',
+			'default' =>'' );
 			$data['home_team'] = array(
 			'label' => __('Team Members Description', 'allegiant'),
 			'section' => 'cpotheme_layout_team',
@@ -239,6 +286,16 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		
 		//Testimonials
 		if(defined('CPOTHEME_USE_TESTIMONIALS') && CPOTHEME_USE_TESTIMONIALS == true){
+			$data['upsell-testimonials'] = array(
+			'button_text' => __('Upgrade to Pro', 'allegiant'),
+			'button_url' => cpotheme_upgrade_only_link(),
+			'options' => array(
+					__('Customize the appearance of testimonials.', 'allegiant')
+				),
+			'section' => 'cpotheme_layout_testimonials',
+			'type' => 'mte_upsell',
+			'sanitize' => 'esc_html',
+			'default' =>'' );
 			$data['home_testimonials'] = array(
 			'label' => __('Testimonials Description', 'allegiant'),
 			'section' => 'cpotheme_layout_testimonials',
@@ -251,6 +308,16 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		
 		//Clients
 		if(defined('CPOTHEME_USE_CLIENTS') && CPOTHEME_USE_CLIENTS == true){
+			$data['upsell-clients'] = array(
+			'button_text' => __('Upgrade to Pro', 'allegiant'),
+			'button_url' => cpotheme_upgrade_only_link(),
+			'options' => array(
+					__('Customize the appearance of clients.', 'allegiant')
+				),
+			'section' => 'cpotheme_layout_clients',
+			'type' => 'mte_upsell',
+			'sanitize' => 'esc_html',
+			'default' =>'' );
 			$data['home_clients'] = array(
 			'label' => __('Clients Description', 'allegiant'),
 			'section' => 'cpotheme_layout_clients',
@@ -262,6 +329,16 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		}
 		
 		//Blog Posts
+		$data['upsell-blog-posts'] = array(
+		'button_text' => __('Upgrade to Pro', 'allegiant'),
+		'button_url' => cpotheme_upgrade_only_link(),
+		'options' => array(
+				__('Control the appearance of specific elements in your blog posts such as dates, authors, or comments.', 'allegiant')
+			),
+		'section' => 'cpotheme_layout_posts',
+		'type' => 'mte_upsell',
+		'sanitize' => 'esc_html',
+		'default' =>'' );
 		$data['home_posts'] = array(
 		'label' => __('Enable Posts On Homepage', 'allegiant'),
 		'section' => 'cpotheme_layout_posts',
@@ -282,6 +359,8 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'description' => __('Customize the colors of primary and secondary elements, as well as headings, navigation, and text.', 'allegiant'),
 		'section' => 'colors',
 		'type' => 'label');
+
+
 		
 		return apply_filters('cpotheme_customizer_controls', $data);
 	}

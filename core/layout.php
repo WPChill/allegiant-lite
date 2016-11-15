@@ -3,7 +3,7 @@
 //Enqueue Google fonts
 add_action('wp_head', 'cpotheme_styling_fonts', 20);
 function cpotheme_styling_fonts(){ 
-	cpotheme_fonts(apply_filters('cpotheme_font_headings', 'Open+Sans'));
+	cpotheme_fonts(apply_filters('cpotheme_font_headings', 'Open+Sans'), 1);
 	cpotheme_fonts(apply_filters('cpotheme_font_menu', 'Open+Sans')); 
 	cpotheme_fonts(apply_filters('cpotheme_font_body', 'Open+Sans'), 1);
 }

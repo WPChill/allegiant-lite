@@ -38,6 +38,63 @@ if(!function_exists('cpotheme_setup')){
 		$locale = get_locale();
 		$locale_file = get_template_directory()."/languages/$locale.php";
 		if(is_readable($locale_file)) require_once($locale_file);
+
+		// Welcome screen
+		if ( is_admin() ) {
+			global $allegiant_required_actions, $allegiant_recommended_plugins;
+			$allegiant_recommended_plugins = array(
+				'cpo-content-types' => array( 'recommended' => true ),
+				'kiwi-social-share'           => array( 'recommended' => false )
+			);
+			/*
+			 * id - unique id; required
+			 * title
+			 * description
+			 * check - check for plugins (if installed)
+			 * plugin_slug - the plugin's slug (used for installing the plugin)
+			 *
+			 */
+			$allegiant_required_actions = array(
+				array(
+					"id"          => 'allegiant-req-ac-install-cpo-content-types',
+					"title"       => __( 'Activate: CPO Content Types', '' ),
+					"description" => __( 'It is highly recommended that you install the CPO Content Types plugin. It will help you manage all the special content types that this theme supports.', '' ),
+					"check"       => MT_Notify_System::has_import_plugin( 'cpo-content-types' ),
+					"plugin_slug" => 'cpo-content-types'
+				),
+				array(
+					"id"          => 'allegiant-req-ac-install-wp-import-plugin',
+					"title"       => MT_Notify_System::wordpress_importer_title(),
+					"description" => MT_Notify_System::wordpress_importer_description(),
+					"check"       => MT_Notify_System::has_import_plugin( 'wordpress-importer' ),
+					"plugin_slug" => 'wordpress-importer'
+				),
+				array(
+					"id"          => 'allegiant-req-ac-install-wp-import-widget-plugin',
+					"title"       => MT_Notify_System::widget_importer_exporter_title(),
+					'description' => MT_Notify_System::widget_importer_exporter_description(),
+					"check"       => MT_Notify_System::has_import_plugin( 'widget-importer-exporter' ),
+					"plugin_slug" => 'widget-importer-exporter'
+				),
+				array(
+					"id"          => 'allegiant-req-ac-download-data',
+					"title"       => esc_html__( 'Download theme sample data', 'allegiant' ),
+					"description" => esc_html__( 'Head over to our website and download the sample content data.', 'allegiant' ),
+					"help"        => '<a target="_blank"  href="https://www.machothemes.com/sample-data/allegiant-lite-posts.xml">' . __( 'Posts', 'allegiant' ) . '</a>, 
+									   <a target="_blank"  href="https://www.machothemes.com/sample-data/allegiant-lite-widgets.wie">' . __( 'Widgets', 'allegiant' ) . '</a>',
+					"check"       => MT_Notify_System::has_content(),
+				),
+				array(
+					"id"    => 'allegiant-req-ac-install-data',
+					"title" => esc_html__( 'Import Sample Data', 'allegiant' ),
+					"help"  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'allegiant' ) . '</a> 
+									   <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'allegiant' ) . '</a>',
+					"check" => MT_Notify_System::has_import_plugins(),
+				),
+			);
+			require get_template_directory() . '/core/welcome-screen/welcome-screen.php';
+		}
+
 	}
 }
 
@@ -110,23 +167,13 @@ if(!function_exists('cpotheme_add_admin_styles')){
 	}
 }
 
-
-if(!function_exists('cpotheme_add_admin_styles_welcome')){
-	add_action('admin_print_styles-appearance_page_cpotheme-welcome', 'cpotheme_add_admin_styles_welcome');
-	function cpotheme_add_admin_styles_welcome(){
-		$stylesheets_path = get_template_directory_uri().'/core/css/';
-		if(defined('CPOTHEME_CORELITE_URL')) $stylesheets_path = CPOTHEME_CORELITE_URL.'/css/';
-		wp_enqueue_style('cpotheme_admin', $stylesheets_path.'welcome.css');
-	}
-}
-
-
 //Add all Core components
 $core_path = get_template_directory().'/core/';
 if(defined('CPOTHEME_CORELITE')) $core_path = CPOTHEME_CORELITE;
 	
 //Classes
 require_once($core_path.'classes/class_customizer.php');
+require_once($core_path.'classes/epsilon_control_upsell.php');
 require_once($core_path.'classes/class_menu.php');
 //Main Components
 require_once($core_path.'admin.php');

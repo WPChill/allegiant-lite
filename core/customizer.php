@@ -4,6 +4,9 @@
 add_action('customize_register', 'cpotheme_customizer');
 function cpotheme_customizer($customize){
 	
+	wp_enqueue_style( 'epsilon-style', get_template_directory_uri() . '/core/css/customizer.css' );
+	$customize->register_control_type( 'Epsilon_Control_Upsell' );
+
 	//Add panels to the customizer
 	$settings = cpotheme_metadata_panels();
 	foreach($settings as $setting_id => $setting_data){
@@ -16,6 +19,10 @@ function cpotheme_customizer($customize){
 	foreach($settings as $setting_id => $setting_data){
 		$customize->add_section($setting_id, $setting_data);
 	}
+
+	// Change background color section
+	$customize->get_control('background_color')->section = 'background_image';
+	$customize->get_section('background_image')->title = __( 'Background', 'allegiant' );
 	
 	//Add settings & controls
 	$settings = cpotheme_metadata_customizer();
@@ -76,6 +83,8 @@ function cpotheme_customizer($customize){
 				$customize->add_control(new WP_Customize_Image_Control($customize, 'cpotheme_'.$control_id, $args)); break;
 				case 'collection': 
 				$customize->add_control(new CPO_Customize_Collection_Control($customize, 'cpotheme_'.$control_id, $args)); break;
+				case 'mte_upsell': 
+				$customize->add_control(new Epsilon_Control_Upsell($customize, 'cpotheme_'.$control_id, $args)); break;
 			}
 		}		
 	}

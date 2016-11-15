@@ -19,10 +19,10 @@ GENERAL ELEMENTS
 /* BODY */
 ::selection  { color:#fff; background-color:#89ce40; }
 ::-moz-selection { color:#fff; background-color:#89ce40; }		
-body { font-family:'Source Sans Pro', Arial, Helvetica, sans-serif; background:#fff; color:#99a; font-size:1em; line-height:1.6; }
+body { font-family:'Lato', Arial, Helvetica, sans-serif; background:#fff; color:#8c9597; font-size:1em; line-height:1.6;background-size:cover; }
 
 /* HEADINGS */
-h1, h2, h3, h4, h5, h6 { color:#567; line-height:1.2; margin:0 0 20px; }
+h1, h2, h3, h4, h5, h6 { color:#18253c; line-height:1.2; margin:0 0 20px; font-family:'Raleway', Arial, Helvetica, sans-serif; }
 h1 { font-size:2.5em; } 
 h2 { font-size:2em; } 
 h3 { font-size:1.5em; } 
@@ -82,7 +82,8 @@ LAYOUT
 
 
 /* HEADER */
-.header { position:relative; background:#fff; border-bottom:1px solid #f0f0f0; width:100%; padding:10px 0; }
+.header { position:relative; background:#fff; border-bottom:1px solid #e1e1e1; width:100%; padding:10px 0; }
+.header.header-with-slider {position: absolute;width: 100%;top: 0; left: 0; background-color: transparent;z-index: 999;}
 .header .logo { float:left; padding-top:0; }
 .header .header-content { float:right; padding:0 0 0 20px; }
 
@@ -91,15 +92,14 @@ LAYOUT
 .slider { padding:0; margin:0; position:relative; text-align:center; -moz-transition:0.3s all; -webkit-transition:0.3s all; transition:0.3s all; }
 .slider-slides { display:block; overflow:hidden; padding:0; margin:0; height:550px; }
 .slider-slides .slide { overflow:hidden; background-position:center; background-size:cover; position:relative; list-style:none; width:100%; height:100%; margin:0; padding:0; }
-.slider-slides .slide-body { position:absolute; top:15%; left:0; width:100%; }
+.slider-slides .slide-body { position:absolute; top:50%; left:0; width:100%;transform: translateY(-50%); }
 .slider-slides .container { position:relative; height:inherit; }
 .slider-slides .slide-image { float:right; padding:0; width:48%; }
 .slider-slides .slide-image img { display:block; margin:0 auto; }
 .slider-slides .slide-caption { overflow:hidden; text-transform:uppercase; float:left; padding:0 0 30px; width:48%; text-align:left; }
 .slider-slides .slide-caption p:last-child { margin-bottom:0; }
-.slider-slides .slide-title { font-size:2.6em; }
-.slider-slides .slide-content { position:relative; font-size:1.2em; padding:0 0 30px; margin:0 0 30px; }
-.slider-slides .slide-content:after { content:' '; position:absolute; background:#888; bottom:0; left:0; width:100px; height:1px; }
+.slider-slides .slide-title { font-size:2.06em;font-weight: 900; color: #18253c; }
+.slider-slides .slide-content { position:relative; font-size:0.93em; padding:0 0 30px; color: #70b85d;}
 /* Prev/Next */
 .slider-prev, 
 .slider-next { -moz-transition:0.2s all; -webkit-transition:0.2s all; transition:0.2s all; opacity:0.3; }
@@ -118,6 +118,7 @@ LAYOUT
 .slider-next:after { -moz-transform:rotate(60deg); -webkit-transform:rotate(60deg); transform:rotate(60deg); }
 .slider-next:before, 
 .slider-next:after { left:auto; right:25%; -moz-transform-origin:right; -webkit-transform-origin:right; transform-origin:right; }
+
 /* Transitions */
 .slider-slides .slide-body .slide-caption { -moz-transform:translateY(60px); -webkit-transform:translateY(60px); transform:translateY(60px); opacity:0; -moz-transition:1s all; -webkit-transition:1s all; transition:1s all; }
 .slider-slides .slide-body .slide-image { -moz-transform:translateY(20px); -webkit-transform:translateY(20px); transform:translateY(20px); opacity:0; -moz-transition:1s all; -webkit-transition:1s all; transition:1s all; }
@@ -144,12 +145,12 @@ LAYOUT
 
 
 /* HOMEPAGE TAGLINE */
-.tagline { padding:70px 0; background:rgba(0,0,0,0.4); font-size:1.5em; text-align:center; }
-
+.tagline { padding:50px 0; background:#18253c; font-size:1.62em; text-align:center;font-weight: 100; }
+body .dark.tagline a, body .tagline a:hover { color: #70b85d;text-decoration: none; }
 
 /* SECTIONS */
-.section-heading { position:relative; margin:0 0 40px; padding:0 0 30px; text-align:center; line-height:1.2; font-size:2.5em; text-transform:uppercase; }
-.section-heading:before { content:' '; position:absolute; background:#bbb; bottom:0; left:50%; margin-left:-50px; width:100px; height:1px; }
+.section-heading { position:relative; margin:0 0 60px; padding:0 0 30px; text-align:center; line-height:1.2; font-size:1.87em; text-transform:uppercase; color: #18253c;font-weight: 800; }
+.section-heading:before { content:' '; position:absolute; background:#70b85d; bottom:0; left:50%; margin-left:-30px; width:60px; height:2px; }
 
 
 /* HOMEPAGE FEATURES */
@@ -157,8 +158,8 @@ LAYOUT
 .features .feature { margin:0 0 40px; text-align:center; }
 .features .feature .feature-image { display:block; position:relative; min-height:102px; margin:0 0 20px; }
 .features .feature .feature-image img { display:block; margin:0 auto; }
-.features .feature .feature-icon { position:absolute; background:#fff; left:50%; top:50%; font-family:'fontawesome'; text-align:center; width:100px; height:100px; font-size:30px; margin:-51px 0 0 -51px; line-height:100px; border:1px solid #ddd; border-radius:50%; }
-.features .feature .feature-title { margin:30px 0; font-size:1.2em; text-transform:uppercase; }
+.features .feature .feature-icon { position:absolute; background:#fff; left:50%; top:50%; font-family:'fontawesome'; text-align:center; width:100px; height:100px; font-size:30px; margin:-51px 0 0 -51px; line-height:100px; border:1px dotted #70b85d; border-radius:50%; }
+.features .feature .feature-title { margin:30px 0; font-size:1.25em; text-transform:uppercase; font-weight: 700; }
 .features .feature .feature-content { margin:0; padding:0 0 20px; }
 
 
@@ -168,7 +169,7 @@ LAYOUT
 .team .team-member { margin:0 0 40px; }
 .team .team-member-image { display:block; width:100%; margin:0; }
 .team .team-member-body { background:#fff; border:1px solid #eee; padding:20px; margin:0; }
-.team .team-member-title { margin:0; font-size:1.2em; text-transform:uppercase; }
+.team .team-member-title { margin:0; font-size:1.2em; text-transform:uppercase;font-weight: bold; }
 .team .team-member-description { text-transform:uppercase; font-size:0.8em; margin:0 0 5px; }
 .team .team-member-content { margin:15px 0 0; }
 .team .team-member-content p:last-child { margin-bottom:0; }
@@ -187,8 +188,8 @@ LAYOUT
 
 
 /* HOMEPAGE CLIENTS */
-.clients { display:block; border-top:1px solid #eee; background:#fff; position:relative; overflow:hidden; margin:0; padding:40px 0 0; }
-.clients .client { margin:0 0 40px; }
+.clients { display:block; border-top:1px solid #eee; background:#fff; position:relative; overflow:hidden; margin:0; padding:20px 0 0; }
+.clients .client { margin:0 0 20px; }
 .clients .client img { display:block; margin:0; width:100%; }
 
 
@@ -202,13 +203,14 @@ LAYOUT
 .sidebar .widget:first-child { border-top:none; padding:0; }
 .widget .widget-title { font-size:1.2em; text-transform:uppercase; }
 .widget ul li { position:relative; padding:0; margin:0 0 8px; }
-
+.sidebar .widget .widget-title {font-weight: 900;color: #18253c;font-family: "Raleway";}
 
 /* FOOTER */
-.subfooter { overflow:hidden; background:rgba(0,0,0,0.4); padding:40px 0 10px;  }
-.footer { position:relative; overflow:hidden; background:rgba(0,0,0,0.4); padding:50px 0 30px; clear:both; text-align:center; }
-.footer:before { content:' '; position:absolute; background:#bbb; top:0; left:50%; margin-left:-50px; width:100px; height:1px; }
-
+body .subfooter.secondary-color-bg { overflow:hidden; background:#18253c;  }
+body .footer.secondary-color-bg { position:relative; overflow:hidden; background:#18253c; padding:30px 0 30px; clear:both; text-align:center;border-top:1px solid #3a3c54; }
+.subfooter .widget { padding-top: 40px; }
+.subfooter .widget .widget-title { font-family: "Raleway"; font-weight: 500; font-size: 20px;
+}
 
 /* --------------------------------------------------------------
 NAVIGATION
@@ -221,15 +223,15 @@ NAVIGATION
 /* MAIN MENU */
 .menu-main { padding-top:5px; float:right; }
 /* Menu Elements */
-.menu-main li a { padding:10px; font-size:1.1em; color:#99a; }
+.menu-main li a { padding:10px; font-size:1.1em; color: #18253c;font-family: "Raleway";font-weight: 500; }
 .menu-main li a .menu-description { }
 .menu-main li:hover > a, 
-.menu-main li a:hover { }
+.menu-main li a:hover { color: #70b85d; }
 /* Current item highlight both normally and on hover */
 .menu-main .current-menu-ancestor > a, 
-.menu-main .current-menu-item > a { }
+.menu-main .current-menu-item > a { color: #70b85d; }
 .menu-main .current_page_ancestor > a:hover, 
-.menu-main .current-menu-item > a:hover { }
+.menu-main .current-menu-item > a:hover { color: #70b85d; }
 /* Children Elements */
 .menu-main .has-children:before { color:#ccc; content:'\f107'; font-size:10px; }
 .menu-main li ul { margin:5px 0 0; padding:10px; background:#fff; background:rgba(255,255,255,0.9); border:1px solid #eee; -moz-transition-delay:0.2s; -webkit-transition-delay:0.2s; transition-delay:0.2s; }
@@ -293,7 +295,7 @@ POSTS & PAGES
 .post .post-image { margin:0; }
 .post .post-image img { display:block; margin:0; line-height:0em; width:100%; height:auto; border-radius:0; }
 .post .post-body { padding:20px; border:1px solid #ddd; }
-.post .post-title { font-size:1.4em; padding:0; margin:0 0 10px 0; }
+.post .post-title { font-size:1.4em; padding:0; margin:0 0 20px 0;position:relative; }
 .post .post-title a { color:inherit; }
 .post .post-byline { overflow:hidden; text-transform:uppercase; position:relative; padding:0 0 10px; margin:0 0 20px; color:#aaa; font-size:0.9em; }
 .post .post-byline:before { content:' '; position:absolute; background:#bbb; bottom:0; left:0; width:100px; height:1px; }
@@ -308,6 +310,16 @@ POSTS & PAGES
 .post .post-comments a { color:inherit; }
 .post .post-comments a:hover { opacity:0.7; text-decoration:none; }
 .post .post-comments a:after { content:' \f0e5'; font-family:'fontawesome'; }
+html body a.post-readmore.button { max-width: 160px;width: 100%;border: 0 none;background: #70b85d;color: #fff; }
+.post .post-title:after {
+    content: ' ';
+    position: relative;
+    background: #70b85d;
+    display: block;
+    width: 60px;
+    height: 2px;
+    margin-top: 20px;
+}
 
 
 /* AUTHOR BIOS */
@@ -340,22 +352,23 @@ POSTS & PAGES
 .portfolio-item-image { display:block; width:100%; overflow:hidden; background:#eee; position:relative; }
 .portfolio-item img { display:block; max-width:100%; margin:0 auto; width:100%; height:auto; line-height:0; -moz-transition:0.5s all; -webkit-transition:0.5s all; transition:0.5s all; }
 .portfolio-item .portfolio-item-overlay { opacity:0; position:absolute; top:0; bottom:0; left:0; right:0; text-align:center; -moz-transition:0.3s all; -webkit-transition:0.3s all; transition:0.3s all; -moz-transition-delay:0.1s; -webkit-transition-delay:0.1s; transition-delay:0.1s; z-index:9997; }
-.portfolio-item .portfolio-item-title,
 .portfolio-item .portfolio-item-description { position:absolute; left:0; opacity:0; width:80%; -moz-transition:0.4s all; -webkit-transition:0.4s all; transition:0.4s all; z-index:9998; }
-.portfolio-item .portfolio-item-title { font-size:1.3em; opacity:1; text-transform:uppercase; bottom:50%; margin:0 10% -20px; }
-.portfolio-item .portfolio-item-description {  top:50%; margin:20px 10% 0; }
+.portfolio-item .portfolio-item-title { font-size:1.25em; opacity:1; text-transform:uppercase; font-weight: 800; }
+.portfolio-item .portfolio-item-description {  top:50%; margin:0 10% 0;transform: translateY(-50%); }
 .portfolio-item a:hover { text-decoration:none; }
 .portfolio-item:hover .portfolio-item-overlay { opacity:0.9; }
 .portfolio-item-has-excerpt:hover .portfolio-item-title { opacity:1; margin-bottom:10px; }
 .portfolio-item:hover .portfolio-item-description { opacity:1; margin-top:10px; }
 .portfolio-item:hover img { -moz-transform:scale(1.1); -webkit-transform:scale(1.1); transform:scale(1.1); }
+.portfolio-item-description span { width: 50px;height: 50px;line-height: 50px;text-align: center;display: block;border-radius: 100%;margin: 0 auto;background: #46743b; }
 
 
 /* SERVICES */
 .services { margin:0; padding:50px 0 10px; }
-.home .services { background:rgba(0,0,0,0.4); }
+.home .services { background:rgba(255,255,255,0.6); }
 .services .service { margin-bottom:50px; }
 .services .service a:hover { text-decoration:none; }
+.services .service a { color:#18253c; font-family: "Raleway"; font-weight: 700; font-size: 1.25em; }
 .services .service .service-body { margin-left:70px; }
 .services .service .service-icon { font-family:'fontawesome'; float:left; text-align:center; width:50px; height:50px; font-size:40px; margin:0 auto 20px; line-height:50px; }
 .services .service .service-title { margin:0 0 10px; font-size:1.2em; text-transform:uppercase; }

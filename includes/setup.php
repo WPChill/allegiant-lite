@@ -65,9 +65,12 @@ function cpotheme_home_clients(){
 
 add_filter('cpotheme_font_headings', 'cpotheme_theme_fonts');
 add_filter('cpotheme_font_menu', 'cpotheme_theme_fonts');
-add_filter('cpotheme_font_body', 'cpotheme_theme_fonts');
+add_filter('cpotheme_font_body', 'cpotheme_theme_body_fonts');
 function cpotheme_theme_fonts($data){ 
-	return 'Source+Sans+Pro';
+	return 'Raleway';
+}
+function cpotheme_theme_body_fonts($data){ 
+	return 'Lato';
 }
 
 

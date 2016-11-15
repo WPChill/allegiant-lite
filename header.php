@@ -14,7 +14,16 @@
 					<div class="clear"></div>
 				</div>
 			</div>
-			<header id="header" class="header">
+			<?php
+
+				$query = new WP_Query('post_type=cpo_slide&posts_per_page=-1&order=ASC&orderby=menu_order');
+				$class = '';
+				if ( $query->posts ) {
+					$class = ' header-with-slider';
+				}
+
+			?>
+			<header id="header" class="header<?php echo $class ?>">
 				<div class="container">
 					<?php do_action('cpotheme_header'); ?>
 					<div class='clear'></div>

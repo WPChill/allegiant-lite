@@ -58,3 +58,7 @@ CUSTOMIZER
 { content:'PRO'; display:inline-block; line-height:1; padding:2px; background:#f70; font-size:0.8em; margin-right:5px; color:#fff; border-radius:2px; }
 
 
+/* Admin notice */
+.cpotheme-notice-container {
+	position: relative;
+}
