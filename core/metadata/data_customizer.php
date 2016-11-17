@@ -167,10 +167,10 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'button_text' => __('Upgrade to Pro', 'allegiant'),
 		'button_url' => cpotheme_upgrade_only_link(),
 		'requirements' => array(
-				__('In order to control the ordering of elements in the homepage as well as its behavior.', 'allegiant')
+				__('The PRO version of Allegiant allows you to control the ordering of elements in the homepage as well as their behavior.', 'allegiant')
 			),
 		'options' => array(
-				__('Control the ordering of elements in the homepage', 'allegiant')
+				__('Homepage Section Order', 'allegiant')
 			),
 		'section' => 'cpotheme_layout_home',
 		'type' => 'mte_upsell',
@@ -202,8 +202,14 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			'button_text' => __('Upgrade to Pro', 'allegiant'),
 			'button_url' => cpotheme_upgrade_only_link(),
 			'options' => array(
-					__('Customize the columns and appearance of the feature blocks.', 'allegiant')
+					__('Number of columns', 'allegiant'),
+					__('Appearance of columns', 'allegiant'),
+
 				),
+			'requirements' => array(
+				__('The PRO version of Allegiant allows you to control the number of columns for the Features section.', 'allegiant'),
+				__('The PRO version of Allegiant allows you to control the appearance of columns for the Features section.', 'allegiant')
+			),
 			'section' => 'cpotheme_layout_features',
 			'type' => 'mte_upsell',
 			'sanitize' => 'esc_html',
@@ -224,8 +230,12 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			'button_text' => __('Upgrade to Pro', 'allegiant'),
 			'button_url' => cpotheme_upgrade_only_link(),
 			'options' => array(
-					__('Control the number of portfolio columns.', 'allegiant')
-				),
+				__('Number of columns', 'allegiant'),
+
+			),
+			'requirements' => array(
+				__('The PRO version of Allegiant allows you to control the number of columns for the Portfolio section.', 'allegiant'),
+			),
 			'section' => 'cpotheme_layout_portfolio',
 			'type' => 'mte_upsell',
 			'sanitize' => 'esc_html',
@@ -246,8 +256,12 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			'button_text' => __('Upgrade to Pro', 'allegiant'),
 			'button_url' => cpotheme_upgrade_only_link(),
 			'options' => array(
-					__('Control the number of services columns.', 'allegiant')
-				),
+				__('Number of columns', 'allegiant'),
+
+			),
+			'requirements' => array(
+				__('The PRO version of Allegiant allows you to control the number of columns for the Services section.', 'allegiant'),
+			),
 			'section' => 'cpotheme_layout_services',
 			'type' => 'mte_upsell',
 			'sanitize' => 'esc_html',
@@ -268,8 +282,12 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			'button_text' => __('Upgrade to Pro', 'allegiant'),
 			'button_url' => cpotheme_upgrade_only_link(),
 			'options' => array(
-					__('Control the number of team members columns.', 'allegiant')
-				),
+				__('Number of columns', 'allegiant'),
+
+			),
+			'requirements' => array(
+				__('The PRO version of Allegiant allows you to control the number of columns for the Team Members section.', 'allegiant'),
+			),
 			'section' => 'cpotheme_layout_team',
 			'type' => 'mte_upsell',
 			'sanitize' => 'esc_html',
@@ -290,8 +308,12 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			'button_text' => __('Upgrade to Pro', 'allegiant'),
 			'button_url' => cpotheme_upgrade_only_link(),
 			'options' => array(
-					__('Customize the appearance of testimonials.', 'allegiant')
-				),
+				__('Number of columns', 'allegiant'),
+
+			),
+			'requirements' => array(
+				__('The PRO version of Allegiant allows you to control the number of columns for the Testimonials section.', 'allegiant'),
+			),
 			'section' => 'cpotheme_layout_testimonials',
 			'type' => 'mte_upsell',
 			'sanitize' => 'esc_html',
@@ -312,8 +334,12 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			'button_text' => __('Upgrade to Pro', 'allegiant'),
 			'button_url' => cpotheme_upgrade_only_link(),
 			'options' => array(
-					__('Customize the appearance of clients.', 'allegiant')
-				),
+				__('Appearance of Clients', 'allegiant'),
+
+			),
+			'requirements' => array(
+				__('The PRO version of Allegiant allows you to control the appearance for the Clients section.', 'allegiant'),
+			),
 			'section' => 'cpotheme_layout_clients',
 			'type' => 'mte_upsell',
 			'sanitize' => 'esc_html',
@@ -333,8 +359,11 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'button_text' => __('Upgrade to Pro', 'allegiant'),
 		'button_url' => cpotheme_upgrade_only_link(),
 		'options' => array(
-				__('Control the appearance of specific elements in your blog posts such as dates, authors, or comments.', 'allegiant')
+				__('Appearance of specific elements ', 'allegiant')
 			),
+		'requirements' => array(
+			__('The PRO version of Allegiant allows you to control the appearance of certain elements in your blog posts such as: dates, authors, or comments.', 'allegiant'),
+		),
 		'section' => 'cpotheme_layout_posts',
 		'type' => 'mte_upsell',
 		'sanitize' => 'esc_html',
