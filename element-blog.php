@@ -1,4 +1,4 @@
-<article <?php post_class('column col2'); ?> id="post-<?php the_ID(); ?>"> 
+<article <?php is_singular() ? post_class() : post_class('column col2'); ?> id="post-<?php the_ID(); ?>"> 
 	<div class="post-image">
 		<?php cpotheme_postpage_image(); ?>		
 	</div>	

@@ -6,6 +6,7 @@ function cpotheme_customizer($customize){
 	
 	wp_enqueue_style( 'epsilon-style', get_template_directory_uri() . '/core/css/customizer.css' );
 	$customize->register_control_type( 'Epsilon_Control_Upsell' );
+	// $customize->register_control_type( 'Epsilon_Control_Toggle' );
 
 	//Add panels to the customizer
 	$settings = cpotheme_metadata_panels();
@@ -74,9 +75,12 @@ function cpotheme_customizer($customize){
 			switch($args['type']){
 				case 'text': 
 				case 'textarea': 
-				case 'checkbox': 
 				case 'select': 
 				$customize->add_control('cpotheme_'.$control_id, $args); break;
+				case 'checkbox': 
+					$args['type'] = 'mte-toggle';
+					$customize->add_control(new Epsilon_Control_Toggle($customize, 'cpotheme_'.$control_id, $args)); break;
+				break;
 				case 'color': 
 				$customize->add_control(new WP_Customize_Color_Control($customize, 'cpotheme_'.$control_id, $args)); break;
 				case 'image': 

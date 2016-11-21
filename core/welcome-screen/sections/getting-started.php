@@ -4,6 +4,10 @@
  */
 $customizer_url = admin_url() . 'customize.php';
 $count = $this->count_actions();
+
+$content_types_url = add_query_arg(array('tab' => 'plugin-information', 'plugin' => 'cpo-content-types', 'TB_iframe' => 'true', 'width' => '640', 'height' => '500'), admin_url('plugin-install.php'));
+$content_types = '<strong><a class="thickbox" href="'.$content_types_url.'">CPO Content Types</a></strong>';
+
 ?>
 
 

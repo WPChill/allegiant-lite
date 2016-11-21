@@ -21,6 +21,9 @@
 				if ( $query->posts ) {
 					$class = ' header-with-slider';
 				}
+				if(has_nav_menu('top_menu')) {
+					$class .= ' with-top-menu';
+				}
 
 			?>
 			<header id="header" class="header<?php echo $class ?>">

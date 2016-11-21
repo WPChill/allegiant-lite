@@ -174,7 +174,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			),
 		'section' => 'cpotheme_layout_home',
 		'type' => 'mte_upsell',
-		'sanitize' => 'esc_html',
+		'sanitize' => 'esc_url',
 		'default' =>'' );
 
 		$data['home_tagline'] = array(

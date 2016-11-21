@@ -54,10 +54,12 @@ if(!function_exists('cpotheme_setup')){
 			 * plugin_slug - the plugin's slug (used for installing the plugin)
 			 *
 			 */
+
+
 			$allegiant_required_actions = array(
 				array(
 					"id"          => 'allegiant-req-ac-install-cpo-content-types',
-					"title"       => __( 'Activate: CPO Content Types', '' ),
+					"title"       => MT_Notify_System::create_plugin_requirement_title( __( 'Install: CPO Content Types', 'allegiant' ), __( 'Activate: CPO Content Types', 'allegiant' ), 'cpo-content-types' ),
 					"description" => __( 'It is highly recommended that you install the CPO Content Types plugin. It will help you manage all the special content types that this theme supports.', '' ),
 					"check"       => MT_Notify_System::has_import_plugin( 'cpo-content-types' ),
 					"plugin_slug" => 'cpo-content-types'
@@ -174,6 +176,7 @@ if(defined('CPOTHEME_CORELITE')) $core_path = CPOTHEME_CORELITE;
 //Classes
 require_once($core_path.'classes/class_customizer.php');
 require_once($core_path.'classes/epsilon_control_upsell.php');
+require_once($core_path.'classes/control-epsilon-toggle.php');
 require_once($core_path.'classes/class_menu.php');
 //Main Components
 require_once($core_path.'admin.php');

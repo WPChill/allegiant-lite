@@ -210,6 +210,6 @@ function cpotheme_upgrade_link($name = 'Customizer'){
 }
 
 function cpotheme_upgrade_only_link($name = 'Customizer'){
-	$url = esc_url(CPOTHEME_PREMIUM_URL.'?utm_source=upsell&utm_medium=theme&utm_campaign='.$name);
+	$url = esc_url_raw(CPOTHEME_PREMIUM_URL.'?utm_source=upsell&utm_medium=theme&utm_campaign='.$name);
 	return $url;
 }
