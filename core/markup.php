@@ -166,7 +166,7 @@ if(!function_exists('cpotheme_subfooter')){
 if(!function_exists('cpotheme_footer')){
 	function cpotheme_footer(){		
 		echo '<div class="footer-content">';
-		echo '&copy; '.get_bloginfo('name').' '.date("Y").'. '.sprintf(__('Allegiant by <a href="%s" title="Professional WordPress Themes" rel="dofollow">%s</a>.', 'allegiant'), esc_url('https://www.cpothemes.com/'), esc_attr('CPOThemes')); 
+		echo '&copy; '.get_bloginfo('name').' '.date("Y").'. '.sprintf(__('Allegiant by <a href="%s" title="Professional WordPress Themes" rel="dofollow">%s</a>.', 'allegiant'), esc_url('https://cpothemes.com/'), esc_attr('CPOThemes')); 
 		echo '</div>';
 	}
 }

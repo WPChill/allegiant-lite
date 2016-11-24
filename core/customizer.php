@@ -22,7 +22,7 @@ function cpotheme_customizer($customize){
 	}
 
 	// Change background color section
-	$customize->get_control('background_color')->section = 'background_image';
+	// $customize->get_control('background_color')->section = 'background_image';
 	$customize->get_section('background_image')->title = __( 'Background', 'allegiant' );
 	
 	//Add settings & controls
@@ -69,7 +69,10 @@ function cpotheme_customizer($customize){
 			
 			//Define control metadata
 			$args['settings'] = $option_array.'['.$setting_id.']';
-			$args['priority'] = 10;
+			
+			if ( !isset($args['priority']) ) {
+				$args['priority'] = 10;
+			}
 			if(!isset($args['type'])) $args['type'] = 'text';
 			
 			switch($args['type']){

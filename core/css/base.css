@@ -294,7 +294,8 @@ NAVIGATION
 .menu-main li ul li:hover > a,
 .menu-main li ul li a:hover { }
 /* Further Children Elements */
-.menu-main li ul .has-children:before { content:'\f0da'; color:#999; }
+.menu-main li ul .has-children:before { content:'\f105'; color:#70b85d; }
+.menu-main li ul .has-children:hover:before { color:#fff; }
 .menu-main li ul ul { margin:0; top:0; left:100%; }
 /* Children display on hover */
 .menu-main li:hover > ul { visibility:visible; opacity:1; }
@@ -388,7 +389,7 @@ DESIGN ELEMENTS
 
 
 /* BUTTONS */
-.button, .button:visited, input[type=submit] { display:inline-block; width:auto; border:1px solid #888; border:1px solid rgba(0,0,0,0.3); margin:5px 0; padding:12px 15px; color:#fff; text-align:center; text-shadow:0 -1px 0 rgba(0, 0, 0, 0.5); border-radius:2px; cursor:pointer; background:#ccc; background:-moz-linear-gradient(top, #ccc 0%, #aaa 100%); background:-webkit-linear-gradient(top, #ccc 0%,#aaa 100%); background:linear-gradient(to bottom, #ccc 0%,#aaa 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc', endColorstr='#aaa',GradientType=0 ); }
+.button, .button:visited, input[type=submit] { display:inline-block; width:auto; border:0 none; border:1px solid rgba(0,0,0,0.3); margin:5px 0; padding:10px 15px; color:#fff; text-align:center; text-shadow:0 -1px 0 rgba(0, 0, 0, 0.5); border-radius:0; cursor:pointer; background:#ccc; background:-moz-linear-gradient(top, #ccc 0%, #aaa 100%); background:-webkit-linear-gradient(top, #ccc 0%,#aaa 100%); background:linear-gradient(to bottom, #ccc 0%,#aaa 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc', endColorstr='#aaa',GradientType=0 ); }
 .button:link { color:#fff; text-decoration:none; }
 .button:hover, input[type=submit]:hover { background:#ccc; text-decoration:none; }
 .button.button-small { font-size:0.9em; padding:5px 10px; margin:5px 0; }

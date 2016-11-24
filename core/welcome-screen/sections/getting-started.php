@@ -2,6 +2,11 @@
 /**
  * Getting started template
  */
+
+wp_enqueue_style( 'plugin-install' );
+wp_enqueue_script( 'plugin-install' );
+wp_enqueue_script( 'updates' );
+
 $customizer_url = admin_url() . 'customize.php';
 $count = $this->count_actions();
 
@@ -11,16 +16,37 @@ $content_types = '<strong><a class="thickbox" href="'.$content_types_url.'">CPO 
 ?>
 
 
-<div class="feature-section three-col">
+<div class="feature-section three-col" id="plugin-filter">
 	<div class="col">
 		<h3><?php _e('Install CPO Content Types', 'allegiant'); ?></h3>
 		<p>
 			<?php _e('It is highly recommended that you install the CPO Content Types plugin. It will help you manage all the special content types that this theme supports.', 'allegiant'); ?>
 		</p>
 
-		<?php $plugin_url = add_query_arg(array('tab' => 'plugin-information', 'plugin' => 'cpo-content-types', 'TB_iframe' => 'true', 'width' => '640', 'height' => '500'), admin_url('plugin-install.php')); ?>
-		<a class="cpotheme-welcome-task thickbox" href="<?php echo $plugin_url; ?>"><span class="cpotheme-welcome-icon dashicons-before dashicons-admin-plugins"></span> <strong><?php _e('Install CPO Content Types', 'allegiant'); ?></strong></a>
+		<?php 
 
+			$plugin_url = add_query_arg(array('tab' => 'plugin-information', 'plugin' => 'cpo-content-types', 'TB_iframe' => 'true', 'width' => '640', 'height' => '500'), admin_url('plugin-install.php'));
+			$active = $this->check_active( 'cpo-content-types' );
+			$url    = $this->create_action_link( $active['needs'], 'cpo-content-types' );
+
+			switch ( $active['needs'] ) {
+				case 'install':
+					$class = 'install-now button';
+					$label = __( 'Install CPO Content Types', 'allegiant' );
+					break;
+				case 'activate':
+					$class = 'activate-now button button-primary';
+					$label = __( 'Activate CPO Content Types', 'allegiant' );
+					break;
+				case 'deactivate':
+					$class = 'deactivate-now button';
+					$label = __( 'Deactivate CPO Content Types', 'allegiant' );
+					break;
+			}
+
+		if ( $active['needs'] != 'deactivate' ) { ?>
+			<p class="plugin-card-cpo-content-types action_button"><a data-slug="cpo-content-types" class="<?php echo $class; ?>" href="<?php echo esc_url( $url ) ?>"> <?php echo $label; ?> </a><p>
+		<?php } ?>
 		<br />
 		<hr />
 

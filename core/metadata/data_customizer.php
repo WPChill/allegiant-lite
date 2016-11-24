@@ -155,6 +155,22 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'sanitize' => 'cpotheme_sanitize_bool',
 		'std' => '1');
 		
+		// Colors
+		$data['upsell-colors'] = array(
+		'button_text' => __('Upgrade to Pro', 'allegiant'),
+		'button_url' => cpotheme_upgrade_only_link(),
+		'requirements' => array(
+				__('The PRO version of Allegiant allows you to control colors.', 'allegiant')
+			),
+		'options' => array(
+				__('Add more color options', 'allegiant')
+			),
+		'section' => 'colors',
+		'type' => 'mte_upsell',
+		'sanitize' => 'esc_url',
+		'default' =>'',
+		'priority' => 1 );
+
 		//Layout		
 		/*$data['general_credit'] = array(
 		'label' => __('Show Credit Link', 'allegiant'),

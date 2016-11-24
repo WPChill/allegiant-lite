@@ -43,8 +43,7 @@ if(!function_exists('cpotheme_setup')){
 		if ( is_admin() ) {
 			global $allegiant_required_actions, $allegiant_recommended_plugins;
 			$allegiant_recommended_plugins = array(
-				'cpo-content-types' => array( 'recommended' => true ),
-				'kiwi-social-share'           => array( 'recommended' => false )
+				'kiwi-social-share' => array( 'recommended' => false )
 			);
 			/*
 			 * id - unique id; required
@@ -60,9 +59,16 @@ if(!function_exists('cpotheme_setup')){
 				array(
 					"id"          => 'allegiant-req-ac-install-cpo-content-types',
 					"title"       => MT_Notify_System::create_plugin_requirement_title( __( 'Install: CPO Content Types', 'allegiant' ), __( 'Activate: CPO Content Types', 'allegiant' ), 'cpo-content-types' ),
-					"description" => __( 'It is highly recommended that you install the CPO Content Types plugin. It will help you manage all the special content types that this theme supports.', '' ),
+					"description" => __( 'It is highly recommended that you install the CPO Content Types plugin. It will help you manage all the special content types that this theme supports.', 'allegiant' ),
 					"check"       => MT_Notify_System::has_import_plugin( 'cpo-content-types' ),
 					"plugin_slug" => 'cpo-content-types'
+				),
+				array(
+					"id"          => 'allegiant-req-ac-install-kiwi-social-share',
+					"title"       => MT_Notify_System::create_plugin_requirement_title( __( 'Install: Kiwi Social Share plugin', 'allegiant' ), __( 'Activate: Kiwi Social Share plugin', 'allegiant' ), 'kiwi-social-share' ),
+					"description" => __( 'It is recommended that you install the Kiwi Social Share plugin.', 'allegiant' ),
+					"check"       => MT_Notify_System::has_import_plugin( 'kiwi-social-share' ),
+					"plugin_slug" => 'kiwi-social-share'
 				),
 				array(
 					"id"          => 'allegiant-req-ac-install-wp-import-plugin',
