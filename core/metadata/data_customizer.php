@@ -147,6 +147,14 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'sanitize' => 'cpotheme_sanitize_bool',
 		'std' => false);
 		
+		$data['transparent_header'] = array(
+		'label' => __('Transparent Header', 'allegiant'),
+		'description' => __('Your header will be transparent.', 'allegiant'),
+		'section' => 'cpotheme_management',
+		'type' => 'checkbox',
+		'sanitize' => 'cpotheme_sanitize_bool',
+		'default' => '1');
+
 		$data['general_editlinks'] = array(
 		'label' => __('Show Edit Links', 'allegiant'),
 		'description' => __('Display edit links on the site layout for logged in users.', 'allegiant'),

@@ -43,7 +43,8 @@ if(!function_exists('cpotheme_setup')){
 		if ( is_admin() ) {
 			global $allegiant_required_actions, $allegiant_recommended_plugins;
 			$allegiant_recommended_plugins = array(
-				'kiwi-social-share' => array( 'recommended' => false )
+				'kiwi-social-share' => array( 'recommended' => false ),
+				'cpo-widgets' => array( 'recommended' => false )
 			);
 			/*
 			 * id - unique id; required
@@ -62,13 +63,6 @@ if(!function_exists('cpotheme_setup')){
 					"description" => __( 'It is highly recommended that you install the CPO Content Types plugin. It will help you manage all the special content types that this theme supports.', 'allegiant' ),
 					"check"       => MT_Notify_System::has_import_plugin( 'cpo-content-types' ),
 					"plugin_slug" => 'cpo-content-types'
-				),
-				array(
-					"id"          => 'allegiant-req-ac-install-kiwi-social-share',
-					"title"       => MT_Notify_System::create_plugin_requirement_title( __( 'Install: Kiwi Social Share plugin', 'allegiant' ), __( 'Activate: Kiwi Social Share plugin', 'allegiant' ), 'kiwi-social-share' ),
-					"description" => __( 'It is recommended that you install the Kiwi Social Share plugin.', 'allegiant' ),
-					"check"       => MT_Notify_System::has_import_plugin( 'kiwi-social-share' ),
-					"plugin_slug" => 'kiwi-social-share'
 				),
 				array(
 					"id"          => 'allegiant-req-ac-install-wp-import-plugin',
@@ -121,6 +115,7 @@ if(!function_exists('cpotheme_scripts_front')){
 		
 		wp_enqueue_script('cpotheme_html5', $scripts_path.'html5-min.js');
 		//Register custom scripts for later enqueuing
+		wp_enqueue_script('cpotheme_offscreen', $scripts_path.'offscreen.min.js', array('jquery'), false, true);
 		wp_enqueue_script('cpotheme_core', $scripts_path.'core.js', array(), false, true);
 		wp_register_script('cpotheme_cycle', $scripts_path.'jquery-cycle2-min.js', array('jquery'), false, true);
 		wp_register_script('cpotheme-magnific', $scripts_path.'jquery-magnific-min.js', array('jquery'), false, true);

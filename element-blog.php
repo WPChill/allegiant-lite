@@ -1,4 +1,14 @@
-<article <?php is_singular() ? post_class() : post_class('column col2'); ?> id="post-<?php the_ID(); ?>"> 
+<?php
+
+$class = 'column col2';
+$single_class = '';
+if ( !has_post_thumbnail() ) {
+	$class .= ' without-post-thumbnail';
+	$single_class = 'without-post-thumbnail';
+}
+
+?>
+<article <?php is_singular() ? post_class($single_class) : post_class($class); ?> id="post-<?php the_ID(); ?>"> 
 	<div class="post-image">
 		<?php cpotheme_postpage_image(); ?>		
 	</div>	

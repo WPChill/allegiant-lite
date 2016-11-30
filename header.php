@@ -16,14 +16,13 @@
 			</div>
 			<?php
 
-				$query = new WP_Query('post_type=cpo_slide&posts_per_page=-1&order=ASC&orderby=menu_order');
-				$class = '';
-				if ( $query->posts ) {
-					$class = ' header-with-slider';
-				}
+			$class = '';
+			if ( cpotheme_get_option('transparent_header') ) {
+				$class = ' header-with-slider';
 				if(has_nav_menu('top_menu')) {
 					$class .= ' with-top-menu';
 				}
+			}
 
 			?>
 			<header id="header" class="header<?php echo $class ?>">
