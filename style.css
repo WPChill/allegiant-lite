@@ -172,9 +172,9 @@ body .dark.tagline a, body .tagline a:hover { color: #70b85d;text-decoration: no
 .team .team-member { margin:0 0 40px; }
 .team .team-member-image { display:block; width:100%; margin:0; }
 .team .team-member-body { background:#fff; border:1px solid #eee; padding:20px; margin:0; }
-.team .team-member-title { margin:0; font-size:1.2em; text-transform:uppercase;font-weight: bold; }
+.team .team-member-title { margin:0; font-size:1.063em; text-transform:uppercase;font-weight: bold; }
 .team .team-member-description { text-transform:uppercase; font-size:0.8em; margin:0 0 5px; }
-.team .team-member-content { margin:15px 0 0; }
+.team .team-member-content { margin:15px 0 0; font-size: 0.938em; line-height: 24px; }
 .team .team-member-content p:last-child { margin-bottom:0; }
 .team .team-member-links { margin:10px 0 0; }
 .team .team-member-link { display:block; float:left; width:30px; height:30px; line-height:30px; text-align:center; margin:0 10px 0 0; color:#999; border:1px solid #eee; font-family:'fontawesome'; }
