@@ -50,16 +50,16 @@ $content_types = '<strong><a class="thickbox" href="'.$content_types_url.'">CPO 
 		<br />
 		<hr />
 
-		<h3><?php esc_html_e( 'Fix recommended actions.', 'allegiant' ); ?></h3>
+		<h3><?php esc_html_e( 'Implement recommended actions', 'allegiant' ); ?></h3>
 		<p><?php esc_html_e( 'We\'ve compiled a list of steps for you, to take make sure the experience you\'ll have using one of our products is very easy to follow.', 'allegiant' ); ?></p>
 		<?php if ( $count == 0 ) { ?>
 			<p><span class="dashicons dashicons-yes"></span>
 				<a target="_blank"
-				   href="<?php echo admin_url( 'themes.php?page=cpotheme-welcome&tab=recommended_actions' ); ?>"><?php esc_html_e( 'No recommended actions left to perform.', 'allegiant' ); ?></a>
+				   href="<?php echo admin_url( 'themes.php?page=cpotheme-welcome&tab=recommended_actions' ); ?>"><?php esc_html_e( 'No recommended actions left to perform', 'allegiant' ); ?></a>
 			</p>
 		<?php } else { ?>
 			<p><span class="dashicons dashicons-no-alt"></span> <a target="_blank"
-			                                                       href="<?php echo admin_url( 'themes.php?page=cpotheme-welcome&tab=recommended_actions' ); ?>"><?php esc_html_e( 'Check recommended actions.', 'allegiant' ); ?></a>
+			                                                       href="<?php echo admin_url( 'themes.php?page=cpotheme-welcome&tab=recommended_actions' ); ?>"><?php esc_html_e( 'Check recommended actions', 'allegiant' ); ?></a>
 			</p> <?php
 		}; ?>
 
@@ -67,7 +67,6 @@ $content_types = '<strong><a class="thickbox" href="'.$content_types_url.'">CPO 
 	<div class="col">
 		<h3><?php _e('Add Custom Content Types', 'allegiant'); ?></h3>
 		<p>
-			<?php $plugin_url = add_query_arg(array('tab' => 'plugin-information', 'plugin' => 'cpo-content-types', 'TB_iframe' => 'true', 'width' => '640', 'height' => '500'), admin_url('plugin-install.php')); ?>
 			<?php _e('This theme supports special content types. Populate the following and your site will take shape.', 'allegiant'); ?>
 		</p>
 
