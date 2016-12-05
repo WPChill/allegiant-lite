@@ -183,7 +183,7 @@ LAYOUT
 .header .title { display:inline; font-size:2em; margin:0; }
 .header .title a { display:inline; line-height:40px; }
 .header .title a:hover { text-decoration:none; }
-
+.header .site-tagline {margin-bottom: 0;}
 
 /* MAIN/CONTENT */
 .main { overflow:hidden; padding:30px 0 10px; }
