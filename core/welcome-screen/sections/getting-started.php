@@ -69,7 +69,6 @@ $content_types = '<strong><a class="thickbox" href="'.$content_types_url.'">CPO 
 		<p>
 			<?php $plugin_url = add_query_arg(array('tab' => 'plugin-information', 'plugin' => 'cpo-content-types', 'TB_iframe' => 'true', 'width' => '640', 'height' => '500'), admin_url('plugin-install.php')); ?>
 			<?php _e('This theme supports special content types. Populate the following and your site will take shape.', 'allegiant'); ?>
-			<?php printf(__('You will need the %s plugin.', 'allegiant'), $content_types); ?>
 		</p>
 
 		<?php if(!defined('CPOTHEME_USE_SLIDES') && !defined('CPOTHEME_USE_FEATURES') && !defined('CPOTHEME_USE_PORTFOLIO') && !defined('CPOTHEME_USE_PRODUCTS') && !defined('CPOTHEME_USE_SERVICES') && !defined('CPOTHEME_USE_TESTIMONIALS') && !defined('CPOTHEME_USE_TEAM')): ?>
