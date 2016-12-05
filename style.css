@@ -380,7 +380,7 @@ body .portfolio-item-overlay.primary-color-bg{background-color: #70b85d;}
 .home .services { background:rgba(255,255,255,0.6); }
 .services .service { margin-bottom:50px; }
 .services .service a:hover { text-decoration:none; }
-.services .service a { color:#18253c; font-family: "Raleway"; font-weight: 400; font-size: 1.25em; }
+.services .service a:not(.post-edit-link) { color:#18253c; font-family: "Raleway"; font-weight: 400; font-size: 1.25em; }
 .services .service .service-body { margin-left:70px; }
 .services .service .service-icon { font-family:'fontawesome'; float:left; text-align:center; width:50px; height:50px; font-size:2.500em; margin:0 auto 20px; line-height:50px; }
 .services .service .service-icon span {font-weight: normal;}
