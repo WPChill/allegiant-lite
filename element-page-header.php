@@ -5,15 +5,7 @@
 <?php $header_image = cpotheme_header_image(); ?>
 <?php if($header_image != '') $header_image = 'style="background-image:url('.esc_url($header_image).');"'; ?>
 <?php do_action('cpotheme_before_title'); ?>
-<?php
-
-$new_class = '';
-if ( cpotheme_get_option('transparent_header') ) {
-	$new_class = ' with-transparent-header';
-}
-
-?>
-<section id="pagetitle" class="pagetitle dark<?php echo $new_class ?>" <?php echo $header_image; ?>>
+<section id="pagetitle" class="pagetitle dark" <?php echo $header_image; ?>>
 	<div class="container">
 		<?php do_action('cpotheme_title'); ?>
 	</div>

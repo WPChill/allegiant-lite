@@ -208,8 +208,3 @@ function cpotheme_upgrade_link($name = 'Customizer'){
 	$link = '<a target="_blank" href="'.$url.'">'.esc_attr(CPOTHEME_PREMIUM_NAME).'</a>';
 	return $link;
 }
-
-function cpotheme_upgrade_only_link($name = 'Customizer'){
-	$url = esc_url_raw(CPOTHEME_PREMIUM_URL.'?utm_source=upsell&utm_medium=theme&utm_campaign='.$name);
-	return $url;
-}

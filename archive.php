@@ -12,13 +12,12 @@
 				<?php echo $description; ?>
 			</div>
 			<?php endif; ?>
-			<div class="row">
+			
 			<?php if(have_posts()): ?>
 			<?php if(is_author()) cpotheme_author(); ?>
 			<?php while(have_posts()): the_post(); ?>
 			<?php get_template_part('element', 'blog'); ?>
 			<?php endwhile; ?>
-			</div>
 			<?php cpotheme_numbered_pagination(); ?>
 			<?php endif; ?>
 			

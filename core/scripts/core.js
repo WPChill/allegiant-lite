@@ -13,14 +13,3 @@ if(menu_exists){
 		document.body.classList.remove('menu-mobile-active');
 	});
 }
-
-jQuery( document ).ready(function() {
-  jQuery('ul.sub-menu').offscreen({
-    rightClass: 'right-edge',
-    leftClass: 'left-edge',
-    topClass: 'top-edge',
-    bottomClass: 'bottom-edge',
-    widthOffset: 40, //px value
-    smartResize: true
-  });
-});

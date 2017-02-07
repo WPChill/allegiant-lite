@@ -5,7 +5,7 @@
 /* New Logo */
 .wp-badge.epsilon-welcome-logo {
     color: #fff;
-    background-image: url(../img/macho-themes-logo.svg);
+    background-image: url(../img/logo.png);
     background-position: center center;
     background-size: 70%;
     background-repeat: no-repeat;
@@ -179,4 +179,7 @@
 }
 .cpotheme-welcome-task .cpotheme-welcome-icon {
     color: #888;
+}
+.about-wrap.epsilon-wrap img {
+    border: 0 none;
 }

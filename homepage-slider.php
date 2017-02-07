@@ -24,8 +24,8 @@
 		<?php endforeach; ?>
 	</div>
 	<?php if(sizeof($query->posts) > 1): ?>
-		<div class="slider-prev" data-cycle-cmd="pause"></div>
-		<div class="slider-next" data-cycle-cmd="pause"></div>
+	<div class="slider-prev" data-cycle-cmd="pause"></div>
+	<div class="slider-next" data-cycle-cmd="pause"></div>
 	<?php endif; ?>
 </div> 			
 <?php endif; ?>			

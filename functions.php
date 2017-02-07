@@ -14,9 +14,6 @@ define('CPOTHEME_USE_CLIENTS', true);
 define('CPOTHEME_PREMIUM_NAME', 'Allegiant Pro');
 define('CPOTHEME_PREMIUM_URL', '//www.cpothemes.com/theme/allegiant');
 
-// Load the system checks ( used for notifications )
-require get_template_directory() . '/core/notify-system-checks.php';
-
 //Load Core; check existing core or load development core
 $core_path = get_template_directory().'/core/';
 if(defined('CPOTHEME_CORELITE')) $core_path = CPOTHEME_CORELITE;

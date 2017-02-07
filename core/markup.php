@@ -166,7 +166,7 @@ if(!function_exists('cpotheme_subfooter')){
 if(!function_exists('cpotheme_footer')){
 	function cpotheme_footer(){		
 		echo '<div class="footer-content">';
-		echo '&copy; '.get_bloginfo('name').' '.date("Y").'. '.sprintf(__('Allegiant by <a href="%s" title="Professional WordPress Themes" rel="dofollow">%s</a>.', 'allegiant'), esc_url('https://cpothemes.com/'), esc_attr('CPOThemes')); 
+		echo '&copy; '.get_bloginfo('name').' '.date("Y").'. '.sprintf(__('<a href="%s">%s</a> theme by CPOThemes.', 'allegiant'), esc_url(CPOTHEME_PREMIUM_URL), esc_attr(CPOTHEME_NAME)); 
 		echo '</div>';
 	}
 }
@@ -209,7 +209,7 @@ if(!function_exists('cpotheme_sitemap')){
 //Enqueue custom font stylesheets from Google Fonts
 if(!function_exists('cpotheme_fonts')){
 	function cpotheme_fonts($font_name, $load_variants = false){
-		$font_variants = $load_variants != false ? ':100,300,400,700,800,900' : '';
+		$font_variants = $load_variants != false ? ':100,300,400,700' : '';
 		if(is_array($font_name)){
 			foreach($font_name as $current_font)
 				if(!in_array($current_font, array('Arial', 'Georgia', 'Times+New+Roman', 'Verdana'))){
