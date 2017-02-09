@@ -1,4 +1,7 @@
 <?php
+
+
+
 //Theme options setup
 if(!function_exists('cpotheme_setup')){
 	add_action('after_setup_theme', 'cpotheme_setup');
@@ -38,10 +41,6 @@ if(!function_exists('cpotheme_setup')){
 		$locale = get_locale();
 		$locale_file = get_template_directory()."/languages/$locale.php";
 		if(is_readable($locale_file)) require_once($locale_file);
-
-		//Include Welcome Screen
-		require get_template_directory() . '/core/welcome-screen/welcome-page-setup.php';
-		
 
 	}
 }
