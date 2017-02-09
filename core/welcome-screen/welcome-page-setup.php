@@ -13,10 +13,10 @@ function a_customize_register($wp_customize){
 				$wp_customize,
 				'allegiant_recomended-section',
 				array(
-					'title'    => esc_html__( 'Recomended Actions', 'allegiant' ),
-					'succes_text'	=> esc_html__( 'Follow us on :', 'allegiant' ),
-					'facebook' => 'https://www.facebook.com/colorlib',
-					'twitter' => 'https://twitter.com/colorlib',
+					'title'    => esc_html__( 'Recomended Actions', 'affluent' ),
+					'succes_text'	=> __( "We're social :", 'affluent' ),
+					'facebook' => 'https://www.facebook.com/cpothemes/',
+					'twitter' => 'https://twitter.com/cpothemes',
 					'wp_review' => true,
 					'priority' => 0
 				)
@@ -29,6 +29,10 @@ add_action( 'customize_controls_enqueue_scripts', 'allegiant_welcome_scripts_for
 
 function allegiant_welcome_scripts_for_customizer(){
 	wp_enqueue_style( 'cpotheme-welcome-screen-customizer-css', get_template_directory_uri() . '/core/welcome-screen/css/welcome_customizer.css' );
+	wp_enqueue_style( 'plugin-install' );
+	wp_enqueue_script( 'plugin-install' );
+	wp_enqueue_script( 'updates' );
+	wp_add_inline_script( 'plugin-install', 'var pagenow = "customizer";' );
 	wp_enqueue_script( 'cpotheme-welcome-screen-customizer-js', get_template_directory_uri() . '/core/welcome-screen/js/welcome_customizer.js', array( 'customize-controls' ), '1.0', true );
 }
 
@@ -40,7 +44,8 @@ if ( is_admin() ) {
 	global $allegiant_required_actions, $allegiant_recommended_plugins;
 	$allegiant_recommended_plugins = array(
 		'kiwi-social-share' => array( 'recommended' => false ),
-		'cpo-widgets' => array( 'recommended' => false )
+		'cpo-widgets' => array( 'recommended' => false ),
+		'cpo-shortcodes' => array( 'recommended' => false )
 	);
 	/*
 	 * id - unique id; required
