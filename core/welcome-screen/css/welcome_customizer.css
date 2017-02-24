@@ -21,6 +21,9 @@ div.recomended-actions_container {
     padding: 0 10px;
     margin-bottom: 2em;
 }
+.recomended-actions_container p.succes {
+	margin: 1em 0;
+}
 .epsilon-recommeded-actions p.title {
     margin-bottom: 0;
     font-size: 14px;

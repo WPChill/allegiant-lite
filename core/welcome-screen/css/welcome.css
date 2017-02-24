@@ -45,7 +45,17 @@
     margin-bottom: 15px;
     position: relative;
 }
-
+.allegiant-required-action-button,
+.allegiant-recommended-plugin-button,
+.allegiant-dismiss-required-action {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #d54e21;
+    border-radius: 50%;
+    cursor: pointer;
+}
 .about-wrap .allegiant-action-required-box h4 {
     display: block;
     margin-top: 0;
@@ -58,16 +68,27 @@
     width: 100%;
     max-width: 100%;
 }
+.epsilon-recommeded-actions {
+    position: relative;
+}
 
-.about-wrap .allegiant-dismiss-required-action {
+.epsilon-recommeded-actions .allegiant-dismiss-required-action,
+.epsilon-recommeded-actions .allegiant-recommended-plugin-button {
+    top: 0;
+    right: 0;
+}
+.epsilon-recommeded-actions #temp_load {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    text-decoration: none;
-    background: #d54e21;
-    color: #FFF;
-    border-radius: 50%;
-    cursor: pointer;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba( 0,0,0,.2 );
+    display: flex;
+    align-items: center;
+}
+.epsilon-recommeded-actions #temp_load img {
+    margin: 0 auto;
 }
 
 .badge-action-count {

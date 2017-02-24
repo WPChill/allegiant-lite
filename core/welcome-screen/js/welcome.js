@@ -7,28 +7,53 @@ jQuery(document).ready(function () {
         jQuery('li.allegiant-w-red-tab a').append('<span class="allegiant-actions-count">' + allegiant_nr_actions_required + '</span>');
     }
 
-    /* Dismiss required actions */
-    jQuery(".allegiant-dismiss-required-action").click(function () {
 
-        var id = jQuery(this).attr('id');
+    /* Dismiss required actions */
+    jQuery(".allegiant-required-action-button").click(function () {
+
+        var id = jQuery(this).attr('id'),
+            action = jQuery(this).attr('data-action');
         jQuery.ajax({
-            type: "GET",
-            data: {action: 'allegiant_dismiss_required_action', dismiss_id: id},
-            dataType: "html",
-            url: allegiantWelcomeScreenObject.ajaxurl,
+            type      : "GET",
+            data      : { action: 'allegiant_dismiss_required_action', id: id, todo: action },
+            dataType  : "html",
+            url       : allegiantWelcomeScreenObject.ajaxurl,
             beforeSend: function (data, settings) {
                 jQuery('.allegiant-tab-pane#actions_required h1').append('<div id="temp_load" style="text-align:center"><img src="' + allegiantWelcomeScreenObject.template_directory + '/inc/admin/welcome-screen/img/ajax-loader.gif" /></div>');
             },
-            success: function (data) {
+            success   : function (data) {
                 location.reload();
                 jQuery("#temp_load").remove();
                 /* Remove loading gif */
-                jQuery('#' + data).parent().slideToggle().remove();
-                /* Remove required action box */
             },
-            error: function (jqXHR, textStatus, errorThrown) {
+            error     : function (jqXHR, textStatus, errorThrown) {
                 console.log(jqXHR + " :: " + textStatus + " :: " + errorThrown);
             }
         });
     });
+    
+    /* Dismiss recommended plugins */
+    jQuery(".allegiant-recommended-plugin-button").click(function () {
+
+        var id = jQuery(this).attr('id'),
+            action = jQuery(this).attr('data-action');
+        jQuery.ajax({
+            type      : "GET",
+            data      : { action: 'allegiant_dismiss_recommended_plugins', id: id, todo: action },
+            dataType  : "html",
+            url       : allegiantWelcomeScreenObject.ajaxurl,
+            beforeSend: function (data, settings) {
+                jQuery('.allegiant-tab-pane#actions_required h1').append('<div id="temp_load" style="text-align:center"><img src="' + allegiantWelcomeScreenObject.template_directory + '/inc/admin/welcome-screen/img/ajax-loader.gif" /></div>');
+            },
+            success   : function (data) {
+                location.reload();
+                jQuery("#temp_load").remove();
+                /* Remove loading gif */
+            },
+            error     : function (jqXHR, textStatus, errorThrown) {
+                console.log(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+            }
+        });
+    });
+
 });

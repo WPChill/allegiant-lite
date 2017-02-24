@@ -27,7 +27,7 @@ if ( ! class_exists( 'MT_Notify_System' ) ) {
 		 * @return bool
 		 */
 		public static function has_widgets() {
-			if ( ! is_active_sidebar( 'homepage-slider' ) && ! is_active_sidebar( 'content-area' ) ) {
+			if ( ! is_active_sidebar( 'primary-widgets' ) && ! is_active_sidebar( 'secondary-widgets' ) ) {
 				return false;
 			}
 
@@ -37,8 +37,8 @@ if ( ! class_exists( 'MT_Notify_System' ) ) {
 		/**
 		 * @return bool
 		 */
-		public static function newmsag_has_posts() {
-			$args  = array( "s" => 'Gary Johns: \'What is Aleppo\'' );
+		public static function has_posts() {
+			$args  = array( "s" => 'Donec Vehicula Cursus Ante' );
 			$query = get_posts( $args );
 
 			if ( ! empty( $query ) ) {
@@ -54,7 +54,7 @@ if ( ! class_exists( 'MT_Notify_System' ) ) {
 		public static function has_content() {
 			$check = array(
 				'widgets' => self::has_widgets(),
-				'posts'   => self::newmsag_has_posts(),
+				'posts'   => self::has_posts(),
 			);
 
 			if ( $check['widgets'] && $check['posts'] ) {
@@ -115,6 +115,18 @@ if ( ! class_exists( 'MT_Notify_System' ) ) {
 			}
 
 			return true;
+		}
+
+		public static function has_import_content(){
+
+			$plugin = self::has_import_plugin( 'wordpress-importer' );
+			$content = self::has_posts();
+			if ( !$plugin || !$content ) {
+				return false;
+			}
+
+			return true;
+
 		}
 
 		public static function has_import_plugins() {
