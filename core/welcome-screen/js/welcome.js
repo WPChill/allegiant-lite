@@ -56,4 +56,29 @@ jQuery(document).ready(function () {
         });
     });
 
+
+    // Add automatic frontpage
+    jQuery('#set_page_automatic').click(function(evt){
+        evt.preventDefault();
+        var parent = jQuery(this).parent().parent();
+        var container = jQuery(this).parent().parent().parent();
+
+        jQuery.ajax({
+            type: "GET",
+            data: {action: 'allegiant_set_frontpage' },
+            dataType: "html",
+            url: allegiantWelcomeScreenObject.ajaxurl,
+            beforeSend: function (data, settings) {
+                parent.append('<div id="temp_load" style="text-align:center"><img src="' + allegiantWelcomeScreenObject.template_directory + '/core/welcome-screen/img/ajax-loader.gif" /></div>');
+            },
+            success: function (data) {
+                location.reload();
+                jQuery("#temp_load").remove();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+            }
+        });
+    });
+
 });

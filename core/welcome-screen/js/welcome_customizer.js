@@ -109,8 +109,6 @@ jQuery(document).ready(function(){
                 console.log(jqXHR + " :: " + textStatus + " :: " + errorThrown);
             }
         });
-
-
     });
 
 });
