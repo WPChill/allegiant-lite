@@ -100,7 +100,7 @@ if ( is_admin() ) {
 			"id"          => 'allegiant-req-ac-download-data',
 			"title"       => esc_html__( 'Download theme sample data', 'allegiant' ),
 			"description" => esc_html__( 'Head over to our website and download the sample content data.', 'allegiant' ),
-			"help"        => '<a target="_blank"  href="https://www.cpothemes.com/sample-data/allegiant-posts.xml">' . __( 'Posts', 'allegiant' ) . '</a>, 
+			"help"        => '<a target="_blank"  href="https://www.cpothemes.com/sample-data/allegiant-lite-posts.xml">' . __( 'Posts', 'allegiant' ) . '</a>, 
 							   <a target="_blank"  href="https://www.cpothemes.com/sample-data/allegiant-widgets.wie">' . __( 'Widgets', 'allegiant' ) . '</a>',
 			"check"       => MT_Notify_System::has_content(),
 		),
@@ -110,13 +110,6 @@ if ( is_admin() ) {
 			"help"  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'allegiant' ) . '</a> 
 									   <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'allegiant' ) . '</a>',
 			"check" => MT_Notify_System::has_import_content(),
-		),
-		array(
-			"id"          => 'allegiant-req-ac-static-latest-news',
-			"title"       => esc_html__( 'Set front page to static', 'allegiant' ),
-			"description" => esc_html__( 'If you just installed Affleunt, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'allegiant' ),
-			"help"        => 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>. <br/> <br/><a class="button button-secondary" target="_blank"  href="' . self_admin_url( 'options-reading.php' ) . '">' . __( 'Set manually', 'allegiant' ) . '</a> <a class="button button-primary" id="set_page_automatic"  href="#">' . __( 'Set automatically', 'allegiant' ) . '</a>',
-			"check"       => MT_Notify_System::is_not_static_page()
 		),
 	);
 	require get_template_directory() . '/core/welcome-screen/welcome-screen.php';
