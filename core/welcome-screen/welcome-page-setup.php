@@ -77,7 +77,7 @@ if ( is_admin() ) {
 		),
 		array(
 			"id"          => 'allegiant-req-ac-install-cpo-widgets',
-			"title"       => MT_Notify_System::create_plugin_requirement_title( __( 'Install: CPO Widgets', 'allegiant' ), __( 'Activate: CPO Widgets', 'allegiant' ), 'cpo-content-types' ),
+			"title"       => MT_Notify_System::create_plugin_requirement_title( __( 'Install: CPO Widgets', 'allegiant' ), __( 'Activate: CPO Widgets', 'allegiant' ), 'cpo-widgets' ),
 			"description" => __( 'It is highly recommended that you install the CPO Widgets plugin. It will help you manage all the special widgets that this theme supports.', 'allegiant' ),
 			"check"       => MT_Notify_System::has_import_plugin( 'cpo-widgets' ),
 			"plugin_slug" => 'cpo-widgets'
