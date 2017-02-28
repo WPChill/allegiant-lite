@@ -165,7 +165,7 @@ class Allegiant_Customize_Section_Recommend extends WP_Customize_Section {
 				continue;
 			}
 
-			if ( MT_Notify_System::has_import_plugin( $slug ) ) {
+			if ( MT_Notify_System::has_plugin( $slug ) ) {
 				continue;
 			}
 

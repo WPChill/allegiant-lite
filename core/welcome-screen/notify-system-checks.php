@@ -99,6 +99,21 @@ if ( ! class_exists( 'MT_Notify_System' ) ) {
 			}
 		}
 
+		public static function has_plugin( $slug = NULL ){
+
+			$check = array(
+				'installed' => self::check_plugin_is_installed( $slug ),
+				'active'    => self::check_plugin_is_active( $slug )
+			);
+
+			if ( ! $check['installed'] || ! $check['active'] ) {
+				return false;
+			}
+
+			return true;
+			
+		}
+
 		public static function has_import_plugin( $slug = NULL ) {
 			$return = self::has_content();
 
