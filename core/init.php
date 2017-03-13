@@ -29,6 +29,7 @@ if(!function_exists('cpotheme_setup')){
 		add_theme_support('automatic-feed-links');
 		add_theme_support('woocommerce');
 		add_theme_support('bbpress');
+		add_theme_support( 'customize-selective-refresh-widgets' );
 		
 		//Set content width for embeds
 		global $content_width;

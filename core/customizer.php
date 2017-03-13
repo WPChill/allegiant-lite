@@ -62,7 +62,12 @@ function cpotheme_customizer($customize){
 			//Define control metadata
 			$args['settings'] = $option_array.'['.$setting_id.']';
 			$args['priority'] = 10;
+			$partial_selector = '';
 			if(!isset($args['type'])) $args['type'] = 'text';
+			if ( isset($args['partials']) ) {
+				$partial_selector = $args['partials'];
+				unset($args['partials']);
+			}
 			
 			switch($args['type']){
 				case 'text': 
@@ -77,6 +82,22 @@ function cpotheme_customizer($customize){
 				case 'collection': 
 				$customize->add_control(new CPO_Customize_Collection_Control($customize, 'cpotheme_'.$control_id, $args)); break;
 			}
-		}		
+
+			if ( $partial_selector != '' ) {
+				$customize->selective_refresh->add_partial( 'cpotheme_'.$control_id, array(
+			        'selector' => $partial_selector,
+			        'settings' => array( $option_array.'['.$setting_id.']' ),
+			    ) );
+			}
+
+		}	
+
 	}
+
+
+	$customize->selective_refresh->add_partial( 'blogname', array(
+        'selector' => '#logo .site-title a',
+        'settings' => array( 'blogname' ),
+    ) );
+
 }

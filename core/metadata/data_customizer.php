@@ -136,7 +136,9 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'description' => __('Insert the URL of an image to be used as a custom logo.', 'allegiant'),
 		'section' => 'title_tagline',
 		'sanitize' => 'esc_url',
-		'type' => 'image');
+		'type' => 'image',
+		'partials' => '#logo .site-logo'
+		);
 		
 		$data['general_logo_width'] = array(
 		'label' => __('Logo Width (px)', 'allegiant'),
@@ -164,13 +166,6 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'std' => '1');
 		
 		//Layout		
-		/*$data['general_credit'] = array(
-		'label' => __('Show Credit Link', 'allegiant'),
-		'section' => 'cpotheme_layout_general',
-		'type' => 'checkbox',
-		'sanitize' => 'cpotheme_sanitize_bool',
-		'default' => '1');*/
-		
 		$data['home_tagline'] = array(
 		'label' => __('Tagline Title', 'allegiant'),
 		'section' => 'cpotheme_layout_home',
@@ -178,7 +173,9 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'multilingual' => true,
 		'default' => __('Add your custom tagline here.', 'allegiant'),
 		'sanitize' => 'wp_kses_post',
-		'type' => 'textarea');
+		'type' => 'textarea',
+		'partials' => '#tagline .container'
+		);
 		
 		//Homepage Slider
 		if(defined('CPOTHEME_USE_SLIDES') && CPOTHEME_USE_SLIDES == true){
@@ -198,7 +195,9 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			'multilingual' => true,
 			'default' => __('Our core features', 'allegiant'),
 			'sanitize' => 'wp_kses_post',
-			'type' => 'textarea');
+			'type' => 'textarea',
+			'partials' => '#features #features-heading'
+			);
 		}
 		
 		//Portfolio layout
@@ -210,7 +209,9 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			'multilingual' => true,
 			'default' => __('Take a look at our work', 'allegiant'),
 			'sanitize' => 'wp_kses_post',
-			'type' => 'textarea');
+			'type' => 'textarea',
+			'partials' => '#portfolio #portfolio-heading'
+			);
 		}
 		
 		//Services layout
@@ -222,7 +223,9 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			'multilingual' => true,
 			'default' => __('What we can offer you', 'allegiant'),
 			'sanitize' => 'wp_kses_post',
-			'type' => 'textarea');
+			'type' => 'textarea',
+			'partials' => '#services #services-heading'
+			);
 		}
 		
 		//Services layout
@@ -234,7 +237,9 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			'multilingual' => true,
 			'default' => __('Meet our team', 'allegiant'),
 			'sanitize' => 'wp_kses_post',
-			'type' => 'textarea');
+			'type' => 'textarea',
+			'partials' => '#team #team-heading'
+			);
 		}
 		
 		//Testimonials
@@ -246,7 +251,9 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			'multilingual' => true,
 			'default' => __('What they say about us', 'allegiant'),
 			'sanitize' => 'wp_kses_post',
-			'type' => 'textarea');
+			'type' => 'textarea',
+			'partials' => '#testimonials #testimonials-heading'
+			);
 		}
 		
 		//Clients
@@ -258,7 +265,9 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			'multilingual' => true,
 			'default' => __('Featured clients', 'allegiant'),
 			'sanitize' => 'wp_kses_post',
-			'type' => 'textarea');
+			'type' => 'textarea',
+			'partials' => '#clients #clients-heading'
+			);
 		}
 		
 		//Blog Posts

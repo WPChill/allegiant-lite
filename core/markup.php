@@ -127,7 +127,13 @@ if(!function_exists('cpotheme_block')){
 	function cpotheme_block($option, $wrapper = '', $subwrapper = ''){
 		$content = cpotheme_get_option($option);
 		if(trim($content) != ''){
-			if($wrapper != '') echo '<div id="'.esc_attr($wrapper).'" class="'.esc_attr($wrapper).'">';
+			if($wrapper != '') {
+				$ids = explode(' ', $wrapper);
+				if ( is_array($ids) ) {
+					$ids = $ids[0];
+				}
+				echo '<div id="'.esc_attr($ids).'" class="'.esc_attr($wrapper).'">';
+			}
 			if($subwrapper != '') echo '<div class="'.esc_attr($subwrapper).'">';
 			echo do_shortcode(stripslashes(html_entity_decode(cpotheme_get_option($option))));
 			if($subwrapper != '') echo '</div>';
@@ -662,7 +668,7 @@ if(!function_exists('cpotheme_menu')){
 	function cpotheme_menu($options = null){
 		if(has_nav_menu('main_menu')){
 			if(isset($options['toggle']) && $options['toggle'] == true) cpotheme_menu_toggle();
-			wp_nav_menu(array('menu_id' => 'menu-main', 'menu_class' => 'menu-main', 'theme_location' => 'main_menu', 'depth' => '4', 'container' => false, 'fallback_cb' => 'cpotheme_default_menu', 'walker' => new Cpotheme_Menu_Walker()));
+			wp_nav_menu(array('menu_id' => 'menu-main', 'menu_class' => 'menu-main', 'theme_location' => 'main_menu', 'depth' => '4', 'fallback_cb' => 'cpotheme_default_menu', 'container' => false ));
 		}
 	}
 }
