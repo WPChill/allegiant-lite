@@ -148,7 +148,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
             esc_html__( 'Custom Colors', 'allegiant' ),
             esc_html__( 'Custom Typography', 'allegiant' ),
 	    esc_html__( 'Dedicated Support Team', 'allegiant'),
-	    esc_html__( 'Updates & Feature releases for 1 year', 'allegiant'),
+	    esc_html__( 'Updates + Feature releases for 1 year', 'allegiant'),
         ),
         'requirements' => array(
             esc_html__( 'You can set the slider height. Also you can control the speed and the duration of a slide.', 'allegiant' ),
