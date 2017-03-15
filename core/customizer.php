@@ -3,6 +3,8 @@
 //Generate settings
 add_action('customize_register', 'cpotheme_customizer');
 function cpotheme_customizer($customize){
+
+	require get_template_directory().'/core/customizer/control-epsilon-upsell.php';
 	
 	//Add panels to the customizer
 	$settings = cpotheme_metadata_panels();
@@ -61,7 +63,9 @@ function cpotheme_customizer($customize){
 			
 			//Define control metadata
 			$args['settings'] = $option_array.'['.$setting_id.']';
-			$args['priority'] = 10;
+			if ( !isset($args['priority']) ) {
+				$args['priority'] = 10;
+			}
 			$partial_selector = '';
 			if(!isset($args['type'])) $args['type'] = 'text';
 			if ( isset($args['partials']) ) {
@@ -81,6 +85,9 @@ function cpotheme_customizer($customize){
 				$customize->add_control(new WP_Customize_Image_Control($customize, 'cpotheme_'.$control_id, $args)); break;
 				case 'collection': 
 				$customize->add_control(new CPO_Customize_Collection_Control($customize, 'cpotheme_'.$control_id, $args)); break;
+				case 'mte-upsell' :
+				$customize->add_control(new Epsilon_Control_Upsell($customize, 'cpotheme_'.$control_id, $args)); break;
+
 			}
 
 			if ( $partial_selector != '' ) {

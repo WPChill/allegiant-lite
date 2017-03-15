@@ -84,3 +84,43 @@ div.recomended-actions_container {
     line-height: 20px;
     padding-top: 4px;
 }
+
+/* Upsell */
+.macho-upsell {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+.macho-upsell span.wp-ui-notification {
+    padding: 2px 8px;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-right: 5px;
+    display: inline-block;
+}
+.macho-upsell-options li {
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.macho-upsell .button {
+    display: block;
+    text-align: center;
+}
+ul.macho-upsell-requirements {
+    font-size: 12px;
+}
+.macho-upsell-requirements li {
+    line-height: 1.75;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+#accordion-section-cpotheme_upsell h3.accordion-section-title {
+    color: #0073aa;
+    background: #f3f3f5;
+    border-left-color: #0073aa;
+}
+#accordion-section-cpotheme_upsell h3.accordion-section-title:after {
+    color: #0073aa;
+}
