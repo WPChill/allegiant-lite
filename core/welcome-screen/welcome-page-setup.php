@@ -56,7 +56,6 @@ if ( is_admin() ) {
 		'cpo-shortcodes' 			=> array( 'recommended' => false ),
 		'wp-product-review'       	=> array( 'recommended' => false ),
 		'pirate-forms'           	=> array( 'recommended' => true ),
-		'visualizer'             	=> array( 'recommended' => false )
 	);
 	/*
 	 * id - unique id; required

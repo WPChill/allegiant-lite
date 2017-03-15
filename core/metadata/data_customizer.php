@@ -136,8 +136,8 @@ if(!function_exists('cpotheme_metadata_customizer')){
             esc_html__( 'Section Description', 'allegiant' ),
             esc_html__( 'Custom Colors', 'allegiant' ),
             esc_html__( 'Custom Typography', 'allegiant' ),
-	    esc_html__( 'Dedicated Support Team', 'allegiant'),
-	    esc_html__( 'Updates + Feature releases for 1 year', 'allegiant'),
+		    esc_html__( 'Dedicated Support Team', 'allegiant'),
+		    esc_html__( 'Updates + Feature releases for 1 year', 'allegiant'),
         ),
         'requirements' => array(
             esc_html__( 'You can set the slider height. Also you can control the speed and the duration of a slide.', 'allegiant' ),
@@ -188,8 +188,8 @@ if(!function_exists('cpotheme_metadata_customizer')){
             esc_html__( 'Reorder Sections', 'allegiant' ),
         ),
         'requirements' => array(
-            esc_html__( 'In Allegian Pro tagline is transform in a CTA section with button and description.', 'allegiant' ),
-            esc_html__( 'You can order Homepage sections how you want', 'allegiant' ),
+            esc_html__( 'In the PRO version of Allegiant, the tagline transforms in a CTA section with buttons and descriptions.', 'allegiant' ),
+            esc_html__( 'You can order Homepage sections anyway you want', 'allegiant' ),
         ),
         'button_url'   => cpotheme_upgrade_link(),
         'button_text'  => esc_html__( 'Get the PRO version!', 'allegiant' ),
@@ -221,11 +221,11 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			'section'      => 'cpotheme_layout_features',
 			'type'		   => 'mte-upsell',
 	        'options'      => array(
-	            esc_html__( 'Add Description', 'allegiant' ),
+	            esc_html__( 'Section Description', 'allegiant' ),
 	            esc_html__( 'Features Columns', 'allegiant' ),
 	        ),
 	        'requirements' => array(
-	            esc_html__( 'Apart from title you can also add a description for users to better understand your section content', 'allegiant' ),
+	            esc_html__( 'For each section, apart from title one you can also add a description for users to better understand your sections content', 'allegiant' ),
 	            esc_html__( 'You can select on how many Columns you want to show your features.', 'allegiant' ),
 	        ),
 	        'button_url'   => cpotheme_upgrade_link(),
@@ -249,12 +249,12 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			'section'      => 'cpotheme_layout_portfolio',
 			'type'		   => 'mte-upsell',
 	        'options'      => array(
-	            esc_html__( 'Add Description', 'allegiant' ),
+	            esc_html__( 'Section Description', 'allegiant' ),
 	            esc_html__( 'Portfolio Columns', 'allegiant' ),
 	            esc_html__( 'Related Portfolios', 'allegiant' ),
 	        ),
 	        'requirements' => array(
-	            esc_html__( 'Apart from title you can also add a description for users to better understand your section content', 'allegiant' ),
+	            esc_html__( 'For each section, apart from title one you can also add a description for users to better understand your sections content', 'allegiant' ),
 	            esc_html__( 'You can select on how many Columns you want to show your portfolio.', 'allegiant' ),
 	            esc_html__( 'You can enable related portfolio.', 'allegiant' ),
 	        ),
@@ -279,11 +279,11 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			'section'      => 'cpotheme_layout_services',
 			'type'		   => 'mte-upsell',
 	        'options'      => array(
-	            esc_html__( 'Add Description', 'allegiant' ),
+	            esc_html__( 'Section Description', 'allegiant' ),
 	            esc_html__( 'Services Columns', 'allegiant' ),
 	        ),
 	        'requirements' => array(
-	            esc_html__( 'Apart from title you can also add a description for users to better understand your section content', 'allegiant' ),
+	            esc_html__( 'For each section, apart from title one you can also add a description for users to better understand your sections content', 'allegiant' ),
 	            esc_html__( 'You can select on how many Columns you want to show your services.', 'allegiant' ),
 	        ),
 	        'button_url'   => cpotheme_upgrade_link(),
@@ -307,11 +307,11 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			'section'      => 'cpotheme_layout_team',
 			'type'		   => 'mte-upsell',
 	        'options'      => array(
-	            esc_html__( 'Add Description', 'allegiant' ),
+	            esc_html__( 'Section Description', 'allegiant' ),
 	            esc_html__( 'Team Columns', 'allegiant' ),
 	        ),
 	        'requirements' => array(
-	            esc_html__( 'Apart from title you can also add a description for users to better understand your section content', 'allegiant' ),
+	            esc_html__( 'For each section, apart from title one you can also add a description for users to better understand your sections content', 'allegiant' ),
 	            esc_html__( 'You can select on how many Columns you want to show your team members.', 'allegiant' ),
 	        ),
 	        'button_url'   => cpotheme_upgrade_link(),
@@ -335,11 +335,11 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			'section'      => 'cpotheme_layout_testimonials',
 			'type'		   => 'mte-upsell',
 	        'options'      => array(
-	            esc_html__( 'Add Description', 'allegiant' ),
+	            esc_html__( 'Section Description', 'allegiant' ),
 	            esc_html__( 'Testimonials Columns', 'allegiant' ),
 	        ),
 	        'requirements' => array(
-	            esc_html__( 'Apart from title you can also add a description for users to better understand your section content', 'allegiant' ),
+	            esc_html__( 'For each section, apart from title one you can also add a description for users to better understand your sections content', 'allegiant' ),
 	            esc_html__( 'You can select on how many Columns you want to show your testimonials.', 'allegiant' ),
 	        ),
 	        'button_url'   => cpotheme_upgrade_link(),
@@ -363,11 +363,11 @@ if(!function_exists('cpotheme_metadata_customizer')){
 			'section'      => 'cpotheme_layout_clients',
 			'type'		   => 'mte-upsell',
 	        'options'      => array(
-	            esc_html__( 'Add Description', 'allegiant' ),
+	            esc_html__( 'Section Description', 'allegiant' ),
 	            esc_html__( 'Clients Columns', 'allegiant' ),
 	        ),
 	        'requirements' => array(
-	            esc_html__( 'Apart from title you can also add a description for users to better understand your section content', 'allegiant' ),
+	            esc_html__( 'For each section, apart from title one you can also add a description for users to better understand your sections content', 'allegiant' ),
 	            esc_html__( 'You can select on how many Columns you want to show your clients.', 'allegiant' ),
 	        ),
 	        'button_url'   => cpotheme_upgrade_link(),
@@ -409,7 +409,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
             esc_html__( 'Custom Colors', 'allegiant' ),
         ),
         'requirements' => array(
-            esc_html__( 'You can change your site colors directly from Customizer.', 'allegiant' ),
+            esc_html__( 'You can change your site\'s colors directly from Customizer. Changes happen in real time.', 'allegiant' ),
         ),
         'button_url'   => cpotheme_upgrade_link(),
         'button_text'  => esc_html__( 'Get the PRO version!', 'allegiant' ),
