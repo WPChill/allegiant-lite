@@ -5,6 +5,11 @@ if(!function_exists('cpotheme_metadata_panels')){
 	function cpotheme_metadata_panels(){
 		$data = array();
 		
+		$data['cpotheme_management'] = array(
+		'title' => __('General Theme Options', 'allegiant'),
+		'description' => __('Options that help you manage your theme better.', 'allegiant'),
+		'priority' => 15);
+		
 		$data['cpotheme_layout'] = array(
 		'title' => __('Layout', 'allegiant'),
 		'description' => __('Here you can find settings that control the structure and positioning of specific elements within your website.', 'allegiant'),
@@ -25,22 +30,15 @@ if(!function_exists('cpotheme_metadata_sections')){
 		'capability' => 'edit_theme_options',
 		'priority' => 10);
 
-		$data['cpotheme_management'] = array(
-		'title' => __('General Theme Options', 'allegiant'),
-		'description' => __('Options that help you manage your theme better.', 'allegiant'),
-		'capability' => 'edit_theme_options',
-		'priority' => 15);
 		
 		$data['cpotheme_layout_general'] = array(
 		'title' => __('Site Wide Structure', 'allegiant'),
-		'description' => sprintf(__('Upgrade to %s to control the layout of your sidebars and other global elements.', 'allegiant'), cpotheme_upgrade_link()),
 		'capability' => 'edit_theme_options',
 		'panel' => 'cpotheme_layout',
 		'priority' => 25);
 		
 		$data['cpotheme_layout_home'] = array(
 		'title' => __('Homepage', 'allegiant'),
-		'description' => sprintf(__('Upgrade to %s to control the ordering of elements in the homepage as well as its behavior.', 'allegiant'), cpotheme_upgrade_link()),
 		'capability' => 'edit_theme_options',
 		'panel' => 'cpotheme_layout',
 		'priority' => 50);
@@ -48,7 +46,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 		if(defined('CPOTHEME_USE_SLIDES') && CPOTHEME_USE_SLIDES == true){
 			$data['cpotheme_layout_slider'] = array(
 			'title' => __('Slider', 'allegiant'),
-			'description' => sprintf(__('Upgrade to %s to customize the behavior of the slider.', 'allegiant'), cpotheme_upgrade_link()),
 			'capability' => 'edit_theme_options',
 			'panel' => 'cpotheme_layout',
 			'priority' => 50);
@@ -57,7 +54,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 		if(defined('CPOTHEME_USE_FEATURES') && CPOTHEME_USE_FEATURES == true){
 			$data['cpotheme_layout_features'] = array(
 			'title' => __('Features', 'allegiant'),
-			'description' => sprintf(__('Upgrade to %s to customize the columns and appearance of the feature blocks.', 'allegiant'), cpotheme_upgrade_link()),
 			'capability' => 'edit_theme_options',
 			'panel' => 'cpotheme_layout',
 			'priority' => 50);
@@ -66,7 +62,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 		if(defined('CPOTHEME_USE_PORTFOLIO') && CPOTHEME_USE_PORTFOLIO == true){
 			$data['cpotheme_layout_portfolio'] = array(
 			'title' => __('Portfolio', 'allegiant'),
-			'description' => sprintf(__('Upgrade to %s to control the number of portfolio columns, related portfolio items, and overall appearance.', 'allegiant'), cpotheme_upgrade_link()),
 			'capability' => 'edit_theme_options',
 			'panel' => 'cpotheme_layout',
 			'priority' => 50);
@@ -75,7 +70,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 		if(defined('CPOTHEME_USE_SERVICES') && CPOTHEME_USE_SERVICES == true){
 			$data['cpotheme_layout_services'] = array(
 			'title' => __('Services', 'allegiant'),
-			'description' => sprintf(__('Upgrade to %s to control the number of columns for services.', 'allegiant'), cpotheme_upgrade_link()),
 			'capability' => 'edit_theme_options',
 			'panel' => 'cpotheme_layout',
 			'priority' => 50);
@@ -84,7 +78,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 		if(defined('CPOTHEME_USE_TEAM') && CPOTHEME_USE_TEAM == true){
 			$data['cpotheme_layout_team'] = array(
 			'title' => __('Team Members', 'allegiant'),
-			'description' => sprintf(__('Upgrade to %s to control the number of columns of the team section.', 'allegiant'), cpotheme_upgrade_link()),
 			'capability' => 'edit_theme_options',
 			'panel' => 'cpotheme_layout',
 			'priority' => 50);
@@ -93,7 +86,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 		if(defined('CPOTHEME_USE_TESTIMONIALS') && CPOTHEME_USE_TESTIMONIALS == true){
 			$data['cpotheme_layout_testimonials'] = array(
 			'title' => __('Testimonials', 'allegiant'),
-			'description' => sprintf(__('Upgrade to %s to customize the appearance of testimonials.', 'allegiant'), cpotheme_upgrade_link()),
 			'capability' => 'edit_theme_options',
 			'panel' => 'cpotheme_layout',
 			'priority' => 50);
@@ -102,7 +94,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 		if(defined('CPOTHEME_USE_CLIENTS') && CPOTHEME_USE_CLIENTS == true){
 			$data['cpotheme_layout_clients'] = array(
 			'title' => __('Clients', 'allegiant'),
-			'description' => sprintf(__('Upgrade to %s to customize the appearance of clients.', 'allegiant'), cpotheme_upgrade_link()),
 			'capability' => 'edit_theme_options',
 			'panel' => 'cpotheme_layout',
 			'priority' => 50);
@@ -116,14 +107,12 @@ if(!function_exists('cpotheme_metadata_sections')){
 
 		$data['cpotheme_layout_posts'] = array(
 		'title' => __('Blog Posts', 'allegiant'),
-		'description' => sprintf(__('Upgrade to %s to control the appearance of specific elements in your blog posts such as dates, authors, or comments.', 'allegiant'), cpotheme_upgrade_link()),
 		'capability' => 'edit_theme_options',
 		'panel' => 'cpotheme_layout',
 		'priority' => 50);
 		
 		$data['cpotheme_typography'] = array(
 		'title' => __('Typography', 'allegiant'),
-		'description' => sprintf(__('Upgrade to %s to control the gain full control over the typography of your site.', 'allegiant'), cpotheme_upgrade_link()),
 		'capability' => 'edit_theme_options',
 		'priority' => 45);
 		
@@ -160,7 +149,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
             esc_html__( 'You can change your site\'s typography directly from Customizer. Changes happen in real time.', 'allegiant' ),
 	   esc_html__( 'Theme updates and support for 1 year - included with purchase', 'allegiant'),
         ),
-        'button_url'   => esc_url( 'https://cpothemes.com/theme/allegiant' ),
+        'button_url'   => cpotheme_upgrade_link(),
         'button_text'  => esc_html__( 'Get the PRO version!', 'allegiant' ),
 		);
 		
@@ -190,14 +179,6 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'sanitize' => 'cpotheme_sanitize_bool',
 		'std' => false);
 		
-		$data['general_editlinks'] = array(
-		'label' => __('Show Edit Links', 'allegiant'),
-		'description' => __('Display edit links on the site layout for logged in users.', 'allegiant'),
-		'section' => 'cpotheme_management',
-		'type' => 'checkbox',
-		'sanitize' => 'cpotheme_sanitize_bool',
-		'std' => '1');
-		
 		//Layout
 		$data['home_upsell'] = array(
 		'section'      => 'cpotheme_layout_home',
@@ -210,7 +191,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
             esc_html__( 'In Allegian Pro tagline is transform in a CTA section with button and description.', 'allegiant' ),
             esc_html__( 'You can order Homepage sections how you want', 'allegiant' ),
         ),
-        'button_url'   => esc_url( 'https://cpothemes.com/theme/allegiant' ),
+        'button_url'   => cpotheme_upgrade_link(),
         'button_text'  => esc_html__( 'Get the PRO version!', 'allegiant' ),
 		);		
 		$data['home_tagline'] = array(
@@ -247,7 +228,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 	            esc_html__( 'Apart from title you can also add a description for users to better understand your section content', 'allegiant' ),
 	            esc_html__( 'You can select on how many Columns you want to show your features.', 'allegiant' ),
 	        ),
-	        'button_url'   => esc_url( 'https://cpothemes.com/theme/allegiant' ),
+	        'button_url'   => cpotheme_upgrade_link(),
 	        'button_text'  => esc_html__( 'Get the PRO version!', 'allegiant' ),
 			);
 			$data['home_features'] = array(
@@ -277,7 +258,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 	            esc_html__( 'You can select on how many Columns you want to show your portfolio.', 'allegiant' ),
 	            esc_html__( 'You can enable related portfolio.', 'allegiant' ),
 	        ),
-	        'button_url'   => esc_url( 'https://cpothemes.com/theme/allegiant' ),
+	        'button_url'   => cpotheme_upgrade_link(),
 	        'button_text'  => esc_html__( 'Get the PRO version!', 'allegiant' ),
 			);
 			$data['home_portfolio'] = array(
@@ -305,7 +286,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 	            esc_html__( 'Apart from title you can also add a description for users to better understand your section content', 'allegiant' ),
 	            esc_html__( 'You can select on how many Columns you want to show your services.', 'allegiant' ),
 	        ),
-	        'button_url'   => esc_url( 'https://cpothemes.com/theme/allegiant' ),
+	        'button_url'   => cpotheme_upgrade_link(),
 	        'button_text'  => esc_html__( 'Get the PRO version!', 'allegiant' ),
 			);
 			$data['home_services'] = array(
@@ -333,7 +314,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 	            esc_html__( 'Apart from title you can also add a description for users to better understand your section content', 'allegiant' ),
 	            esc_html__( 'You can select on how many Columns you want to show your team members.', 'allegiant' ),
 	        ),
-	        'button_url'   => esc_url( 'https://cpothemes.com/theme/allegiant' ),
+	        'button_url'   => cpotheme_upgrade_link(),
 	        'button_text'  => esc_html__( 'Get the PRO version!', 'allegiant' ),
 			);
 			$data['home_team'] = array(
@@ -361,7 +342,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 	            esc_html__( 'Apart from title you can also add a description for users to better understand your section content', 'allegiant' ),
 	            esc_html__( 'You can select on how many Columns you want to show your testimonials.', 'allegiant' ),
 	        ),
-	        'button_url'   => esc_url( 'https://cpothemes.com/theme/allegiant' ),
+	        'button_url'   => cpotheme_upgrade_link(),
 	        'button_text'  => esc_html__( 'Get the PRO version!', 'allegiant' ),
 			);
 			$data['home_testimonials'] = array(
@@ -389,7 +370,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 	            esc_html__( 'Apart from title you can also add a description for users to better understand your section content', 'allegiant' ),
 	            esc_html__( 'You can select on how many Columns you want to show your clients.', 'allegiant' ),
 	        ),
-	        'button_url'   => esc_url( 'https://cpothemes.com/theme/allegiant' ),
+	        'button_url'   => cpotheme_upgrade_link(),
 	        'button_text'  => esc_html__( 'Get the PRO version!', 'allegiant' ),
 			);
 			$data['home_clients'] = array(
@@ -430,7 +411,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
         'requirements' => array(
             esc_html__( 'You can change your site colors directly from Customizer.', 'allegiant' ),
         ),
-        'button_url'   => esc_url( 'https://cpothemes.com/theme/allegiant' ),
+        'button_url'   => cpotheme_upgrade_link(),
         'button_text'  => esc_html__( 'Get the PRO version!', 'allegiant' ),
 		);
 		$data['color_settings'] = array(

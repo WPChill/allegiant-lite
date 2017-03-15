@@ -86,8 +86,7 @@ if(!function_exists('cpotheme_charset')){
 //Display shortcut edit links for logged in users
 if(!function_exists('cpotheme_edit')){
 	function cpotheme_edit(){
-		if(cpotheme_get_option('general_editlinks'))
-			edit_post_link(__('Edit', 'allegiant'));
+		edit_post_link(__('Edit', 'allegiant'));
 	}
 }
 

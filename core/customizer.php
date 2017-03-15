@@ -18,7 +18,12 @@ function cpotheme_customizer($customize){
 	foreach($settings as $setting_id => $setting_data){
 		$customize->add_section($setting_id, $setting_data);
 	}
-	
+
+	$customize->get_section('title_tagline')->panel = 'cpotheme_management';
+	$customize->get_section('header_image')->panel = 'cpotheme_management';
+	$customize->get_section('background_image')->panel = 'cpotheme_management';
+	$customize->get_section('static_front_page')->panel = 'cpotheme_management';
+
 	//Add settings & controls
 	$settings = cpotheme_metadata_customizer();
 	foreach($settings as $setting_id => $setting_data){
