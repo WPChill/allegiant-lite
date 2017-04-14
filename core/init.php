@@ -43,6 +43,20 @@ if(!function_exists('cpotheme_setup')){
 		$locale_file = get_template_directory()."/languages/$locale.php";
 		if(is_readable($locale_file)) require_once($locale_file);
 
+		// Backward compatibility for epsilon framework
+		$epsilon = get_option( 'epsilon_framework_update' );
+		if ( !$epsilon ) {
+			$req_plugins = get_option( 'affluent_show_recommended_plugins' );
+			$updated_req_plugins = [];
+			if ( !empty( $req_plugins ) ) {
+				foreach ($req_plugins as $key => $value) {
+					$updated_req_plugins[$key] = $value ? false : true;
+				}
+				update_option( 'affluent_show_recommended_plugins', $updated_req_plugins );
+			}
+			add_option( 'epsilon_framework_update', true );
+		}
+
 	}
 }
 

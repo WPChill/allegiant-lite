@@ -95,11 +95,11 @@ wp_enqueue_script( 'updates' );
 			$nr_recommended_plugins ++;
 			echo '<div class="allegiant-action-required-box">';
 
-			if ( isset($allegiant_show_recommended_plugins[$slug]) && $allegiant_show_recommended_plugins[$slug] ): ?>
-				<span data-action="add" class="dashicons dashicons-hidden allegiant-recommended-plugin-button"
+			if ( !isset($allegiant_show_recommended_plugins[$slug]) || ( isset($allegiant_show_recommended_plugins[$slug]) && $allegiant_show_recommended_plugins[$slug] ) ): ?>
+				<span data-action="dismiss" class="dashicons dashicons-visibility allegiant-recommended-plugin-button"
 				      id="<?php echo esc_attr( $slug ); ?>"></span>
 			<?php else: ?>
-				<span data-action="dismiss" class="dashicons dashicons-visibility allegiant-recommended-plugin-button"
+				<span data-action="add" class="dashicons dashicons-hidden allegiant-recommended-plugin-button"
 				      id="<?php echo esc_attr( $slug ); ?>"></span>
 			<?php endif;
 
@@ -122,6 +122,7 @@ wp_enqueue_script( 'updates' );
 					$label = __( 'Deactivate', 'allegiant' );
 					break;
 			}
+
 			?>
 			<h3><?php echo $label .': '.$info->name ?></h3>
 			<p>

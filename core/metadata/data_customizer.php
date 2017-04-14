@@ -127,7 +127,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 
 		$data['general_upsell'] = array(
 		'section'      => 'cpotheme_upsell',
-		'type'		   => 'mte-upsell',
+		'type'		   => 'epsilon-upsell',
         'options'      => array(
             esc_html__( 'Slider options', 'allegiant' ),
             esc_html__( 'Improved Tagline', 'allegiant' ),
@@ -147,7 +147,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
             esc_html__( 'For each section, apart from title one you can also add a description for users to better understand your sections content', 'allegiant' ),
             esc_html__( 'You can change your site\'s colors directly from Customizer. Changes happen in real time.', 'allegiant' ),
             esc_html__( 'You can change your site\'s typography directly from Customizer. Changes happen in real time.', 'allegiant' ),
-	   esc_html__( 'Theme updates and support for 1 year - included with purchase', 'allegiant'),
+	   		esc_html__( 'Theme updates and support for 1 year - included with purchase', 'allegiant'),
         ),
         'button_url'   => cpotheme_upgrade_link(),
         'button_text'  => esc_html__( 'Get the PRO version!', 'allegiant' ),
@@ -182,7 +182,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		//Layout
 		$data['home_upsell'] = array(
 		'section'      => 'cpotheme_layout_home',
-		'type'		   => 'mte-upsell',
+		'type'		   => 'epsilon-upsell',
         'options'      => array(
             esc_html__( 'Improved Tagline', 'allegiant' ),
             esc_html__( 'Reorder Sections', 'allegiant' ),
@@ -219,7 +219,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		if(defined('CPOTHEME_USE_FEATURES') && CPOTHEME_USE_FEATURES == true){
 			$data['features_upsell'] = array(
 			'section'      => 'cpotheme_layout_features',
-			'type'		   => 'mte-upsell',
+			'type'		   => 'epsilon-upsell',
 	        'options'      => array(
 	            esc_html__( 'Section Description', 'allegiant' ),
 	            esc_html__( 'Features Columns', 'allegiant' ),
@@ -247,7 +247,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		if(defined('CPOTHEME_USE_PORTFOLIO') && CPOTHEME_USE_PORTFOLIO == true){
 			$data['portfolio_upsell'] = array(
 			'section'      => 'cpotheme_layout_portfolio',
-			'type'		   => 'mte-upsell',
+			'type'		   => 'epsilon-upsell',
 	        'options'      => array(
 	            esc_html__( 'Section Description', 'allegiant' ),
 	            esc_html__( 'Portfolio Columns', 'allegiant' ),
@@ -277,7 +277,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		if(defined('CPOTHEME_USE_SERVICES') && CPOTHEME_USE_SERVICES == true){
 			$data['services_upsell'] = array(
 			'section'      => 'cpotheme_layout_services',
-			'type'		   => 'mte-upsell',
+			'type'		   => 'epsilon-upsell',
 	        'options'      => array(
 	            esc_html__( 'Section Description', 'allegiant' ),
 	            esc_html__( 'Services Columns', 'allegiant' ),
@@ -305,7 +305,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		if(defined('CPOTHEME_USE_TEAM') && CPOTHEME_USE_TEAM == true){
 			$data['team_upsell'] = array(
 			'section'      => 'cpotheme_layout_team',
-			'type'		   => 'mte-upsell',
+			'type'		   => 'epsilon-upsell',
 	        'options'      => array(
 	            esc_html__( 'Section Description', 'allegiant' ),
 	            esc_html__( 'Team Columns', 'allegiant' ),
@@ -333,7 +333,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		if(defined('CPOTHEME_USE_TESTIMONIALS') && CPOTHEME_USE_TESTIMONIALS == true){
 			$data['testimonials_upsell'] = array(
 			'section'      => 'cpotheme_layout_testimonials',
-			'type'		   => 'mte-upsell',
+			'type'		   => 'epsilon-upsell',
 	        'options'      => array(
 	            esc_html__( 'Section Description', 'allegiant' ),
 	            esc_html__( 'Testimonials Columns', 'allegiant' ),
@@ -361,7 +361,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		if(defined('CPOTHEME_USE_CLIENTS') && CPOTHEME_USE_CLIENTS == true){
 			$data['clients_upsell'] = array(
 			'section'      => 'cpotheme_layout_clients',
-			'type'		   => 'mte-upsell',
+			'type'		   => 'epsilon-upsell',
 	        'options'      => array(
 	            esc_html__( 'Section Description', 'allegiant' ),
 	            esc_html__( 'Clients Columns', 'allegiant' ),
@@ -403,7 +403,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		//Colors
 		$data['colors_upsell'] = array(
 		'section'      => 'colors',
-		'type'		   => 'mte-upsell',
+		'type'		   => 'epsilon-upsell',
 		'priority'	   => 0,
         'options'      => array(
             esc_html__( 'Custom Colors', 'allegiant' ),

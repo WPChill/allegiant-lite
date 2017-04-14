@@ -4,8 +4,6 @@
 add_action('customize_register', 'cpotheme_customizer');
 function cpotheme_customizer($customize){
 
-	require get_template_directory().'/core/customizer/control-epsilon-upsell.php';
-	
 	//Add panels to the customizer
 	$settings = cpotheme_metadata_panels();
 	foreach($settings as $setting_id => $setting_data){
@@ -90,7 +88,7 @@ function cpotheme_customizer($customize){
 				$customize->add_control(new WP_Customize_Image_Control($customize, 'cpotheme_'.$control_id, $args)); break;
 				case 'collection': 
 				$customize->add_control(new CPO_Customize_Collection_Control($customize, 'cpotheme_'.$control_id, $args)); break;
-				case 'mte-upsell' :
+				case 'epsilon-upsell' :
 				$customize->add_control(new Epsilon_Control_Upsell($customize, 'cpotheme_'.$control_id, $args)); break;
 
 			}
