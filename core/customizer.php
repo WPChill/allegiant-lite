@@ -29,15 +29,29 @@ function cpotheme_customizer($customize){
 		$default = isset($setting_data['default']) ? $setting_data['default'] : '';
 		
 		$optionsets = array('default' => 'default');
-		if($multilingual && function_exists('icl_get_languages')){
-			$languages = icl_get_languages();
-			global $sitepress;
-			$default_language = $sitepress->get_default_language();
-			foreach($languages as $current_language){
-				if($current_language['language_code'] != $default_language){
-					$optionsets[$current_language['language_code']] = $current_language['translated_name'];
+		if($multilingual ){
+			if ( function_exists('icl_object_id') && class_exists('SitePress') ) {
+				$languages = icl_get_languages();
+				global $sitepress;
+				$default_language = $sitepress->get_default_language();
+				foreach($languages as $current_language){
+					if($current_language['language_code'] != $default_language){
+						$optionsets[$current_language['language_code']] = $current_language['translated_name'];
+					}
+				}
+			}elseif ( function_exists('pll_languages_list') ) {
+				$languages = pll_languages_list(array('hide_if_empty' => 0));
+				$default_language = pll_default_language();
+				if ( !empty( $languages ) ) {
+					foreach($languages as $current_language){
+						if($current_language != $default_language){
+							$optionsets[$current_language] = strtoupper( $current_language );
+						}
+					}
+
 				}
 			}
+			
 		}
 		
 		$setting_args = array(
@@ -60,9 +74,10 @@ function cpotheme_customizer($customize){
 				$control_id .= '_'.$current_language;
 				$args['label'] = $setting_data['label'].' ('.$current_language_name.')';
 			}
-			
+
 			//Add setting to the customizer
-			$customize->add_setting($option_array.'['.$setting_id.']', $setting_args); 
+			$customize->add_setting($option_array.'['.$setting_id.']', $setting_args);
+			
 			
 			//Define control metadata
 			$args['settings'] = $option_array.'['.$setting_id.']';
@@ -79,7 +94,6 @@ function cpotheme_customizer($customize){
 			switch($args['type']){
 				case 'text': 
 				case 'textarea': 
-				case 'checkbox': 
 				case 'select': 
 				$customize->add_control('cpotheme_'.$control_id, $args); break;
 				case 'color': 
@@ -90,6 +104,9 @@ function cpotheme_customizer($customize){
 				$customize->add_control(new CPO_Customize_Collection_Control($customize, 'cpotheme_'.$control_id, $args)); break;
 				case 'epsilon-upsell' :
 				$customize->add_control(new Epsilon_Control_Upsell($customize, 'cpotheme_'.$control_id, $args)); break;
+				case 'checkbox' :
+				$args['type'] = 'epsilon-toggle';
+				$customize->add_control(new Epsilon_Control_Toggle($customize, 'cpotheme_'.$control_id, $args)); break;
 
 			}
 

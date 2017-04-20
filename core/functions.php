@@ -86,6 +86,11 @@ if(!function_exists('cpotheme_wpml_current_language')){
 			$active_language = ICL_LANGUAGE_CODE;
 			if($active_language != $default_language)
 				$language_code = '_'.$active_language;
+		}elseif ( function_exists( 'pll_current_language' ) && function_exists( 'pll_default_language' ) ) {
+			$default_language = pll_default_language();
+			$active_language = pll_current_language();
+			if($active_language != $default_language)
+				$language_code = '_'.$active_language;
 		}
 		return $language_code;
 	}

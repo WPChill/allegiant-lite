@@ -16,13 +16,10 @@ define('CPOTHEME_PREMIUM_URL', '//www.cpothemes.com/theme/allegiant');
 
 // Add epsilon framework
 require get_template_directory() . '/inc/libraries/epsilon-framework/class-epsilon-autoloader.php';
+
 $epsilon_framework_settings = array(
-		'sections' => array(
-			'Epsilon_Section_Recommended_Actions'
-			),
-		'controls' => array(
-			'Epsilon_Control_Upsell'
-			),
+		'controls' => array( 'toggle', 'upsell' ), // array of controls to load
+		'sections' => array( 'recommended-actions' ), // array of sections to load
 	);
 new Epsilon_Framework( $epsilon_framework_settings );
 
@@ -38,4 +35,3 @@ require_once($include_path.'setup.php');
 
 //Include Welcome Screen
 require get_template_directory() . '/core/welcome-screen/welcome-page-setup.php';
-
