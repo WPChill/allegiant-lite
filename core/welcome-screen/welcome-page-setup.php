@@ -91,19 +91,6 @@ function allegiant_customize_register( $wp_customize ){
 	}
 	
 	$wp_customize->add_section(
-		new Epsilon_Section_Pro(
-			$wp_customize,
-			'epsilon-section-pro',
-			array(
-				'title'       => esc_html__( 'LITE vs PRO comparison', 'allegiant' ),
-				'button_text' => esc_html__( 'Learn more', 'allegiant' ),
-				'button_url'  => esc_url_raw( admin_url() . 'themes.php?page=cpotheme-welcome&tab=features' ),
-				'priority'    => 0
-			)
-		)
-	);
-	
-	$wp_customize->add_section(
 	  new Epsilon_Section_Recommended_Actions(
 	    $wp_customize,
 	    'epsilon_recomended_section',
