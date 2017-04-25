@@ -104,7 +104,7 @@ function allegiant_customize_register( $wp_customize ){
 	      'theme_specific_plugin_option' => $theme_slug . '_show_recommended_plugins',
 	      'facebook'                     => 'https://www.facebook.com/cpothemes',
 	      'twitter'                      => 'https://twitter.com/cpothemes',
-	      'wp_review'                    => false,
+	      'wp_review'                    => true,
 	      'priority'                     => 0
 	    )
 	  )
