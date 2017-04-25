@@ -15,7 +15,7 @@ define('CPOTHEME_PREMIUM_NAME', 'Allegiant Pro');
 define('CPOTHEME_PREMIUM_URL', '//www.cpothemes.com/theme/allegiant');
 
 // Add epsilon framework
-require get_template_directory() . '/inc/libraries/epsilon-framework/class-epsilon-autoloader.php';
+require get_template_directory() . '/includes/libraries/epsilon-framework/class-epsilon-autoloader.php';
 
 $epsilon_framework_settings = array(
 		'controls' => array( 'toggle', 'upsell' ), // array of controls to load
