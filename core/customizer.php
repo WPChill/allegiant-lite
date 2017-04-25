@@ -14,22 +14,6 @@ function cpotheme_customizer($customize){
 	//Add sections to the customizer
 	$settings = cpotheme_metadata_sections();
 	foreach($settings as $setting_id => $setting_data){
-
-		if ( isset($setting_data['type']) ) {
-			switch ( $setting_data['type'] ) {
-				case 'epsilon-section-pro':
-					$customize->add_section(new Epsilon_Section_Pro(
-						$customize,
-						$setting_id,
-						$setting_data
-					));
-					break;
-				
-				default:
-					$customize->add_section($setting_id, $setting_data);
-					break;
-			}
-		}
 		$customize->add_section($setting_id, $setting_data);
 	}
 

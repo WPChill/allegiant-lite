@@ -25,15 +25,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 	function cpotheme_metadata_sections(){
 		$data = array();
 		
-		$data['cpotheme_upsell'] = array(
-		'type' => 'epsilon-section-pro',
-		'title'       => esc_html__( 'LITE vs PRO comparison', 'allegiant' ),
-		'button_text' => esc_html__( 'Learn more', 'allegiant' ),
-		'button_url'  => esc_url_raw( admin_url() . 'themes.php?page=cpotheme-welcome&tab=features' ),
-		'priority'    => 0
-		);
-
-		
 		$data['cpotheme_layout_general'] = array(
 		'title' => __('Site Wide Structure', 'allegiant'),
 		'capability' => 'edit_theme_options',
