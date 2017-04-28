@@ -16,8 +16,6 @@ if ( is_admin() ) {
 		'modula-best-grid-gallery' 	=> array( 'recommended' => true ),
 		'uber-nocaptcha-recaptcha'	=> array( 'recommended' => false ),
 		'cpo-shortcodes' 			=> array( 'recommended' => false ),
-		'wp-product-review'       	=> array( 'recommended' => false ),
-		'pirate-forms'           	=> array( 'recommended' => true ),
 	);
 	/*
 	 * id - unique id; required

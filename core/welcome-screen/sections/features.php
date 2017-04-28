@@ -37,6 +37,36 @@ $features = array(
 		'cpo'    	=> __( 'Minimal', 'allegiant' ),
 		'cpo-pro' 	=> __( 'Improved', 'allegiant' )
 	),
+	'features' => array(
+		'label'   	=> __( 'Extend the Features functionality with : Section Description and Features Columns', 'allegiant' ),
+		'cpo'     => '<span class="dashicons dashicons-no-alt"></span>',
+		'cpo-pro' => '<span class="dashicons dashicons-yes"></span></i>'
+	),
+	'portfolio' => array(
+		'label'   	=> __( 'Extend the Portfolio functionality with : Section Description, Portfolio Columns & Related Portfolio Images', 'allegiant' ),
+		'cpo'     => '<span class="dashicons dashicons-no-alt"></span>',
+		'cpo-pro' => '<span class="dashicons dashicons-yes"></span></i>'
+	),
+	'services' => array(
+		'label'   	=> __( 'Extend the Services functionality with : Section Description and Services Columns', 'allegiant' ),
+		'cpo'     => '<span class="dashicons dashicons-no-alt"></span>',
+		'cpo-pro' => '<span class="dashicons dashicons-yes"></span></i>'
+	),
+	'team' => array(
+		'label'   	=> __( 'Extend the Team members functionality with : Section Description and Team Columns', 'allegiant' ),
+		'cpo'     => '<span class="dashicons dashicons-no-alt"></span>',
+		'cpo-pro' => '<span class="dashicons dashicons-yes"></span></i>'
+	),
+	'testimonials' => array(
+		'label'   	=> __( 'Extend the Testimonials functionality with : Section Description and Testimonials Columns', 'allegiant' ),
+		'cpo'     => '<span class="dashicons dashicons-no-alt"></span>',
+		'cpo-pro' => '<span class="dashicons dashicons-yes"></span></i>'
+	),
+	'clients' => array(
+		'label'   	=> __( 'Extend the Clients functionality with : Section Description and Clients Columns', 'allegiant' ),
+		'cpo'     => '<span class="dashicons dashicons-no-alt"></span>',
+		'cpo-pro' => '<span class="dashicons dashicons-yes"></span></i>'
+	),
 	'dedicated-support' => array(
 		'label'       => __( 'Dedicated Support Team', 'allegiant' ),
 		'cpo'     => '<span class="dashicons dashicons-no-alt"></span>',
