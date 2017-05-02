@@ -8,7 +8,7 @@ remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
 remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 add_action('woocommerce_before_main_content', 'cpotheme_woocommerce_before_main_content', 10);
 function cpotheme_woocommerce_before_main_content(){
-	echo get_template_part('element', 'page-header');
+	echo get_template_part('template-parts/element', 'page-header');
 	
 	//Begin main area
 	echo '<div id="main" class="main">';

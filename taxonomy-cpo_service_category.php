@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php get_template_part('element', 'page-header'); ?>
+<?php get_template_part('template-parts/element', 'page-header'); ?>
 	
 <div id="main" class="main">
 	<div class="container">

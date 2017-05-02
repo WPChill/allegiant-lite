@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php get_template_part('element', 'page-header'); ?>
+<?php get_template_part('template-parts/element', 'page-header'); ?>
 	
 <div id="main" class="main">
 	<div class="container">		
@@ -16,7 +16,7 @@
 			<?php if(have_posts()): ?>
 			<?php if(is_author()) cpotheme_author(); ?>
 			<?php while(have_posts()): the_post(); ?>
-			<?php get_template_part('element', 'blog'); ?>
+			<?php get_template_part('template-parts/element', 'blog'); ?>
 			<?php endwhile; ?>
 			<?php cpotheme_numbered_pagination(); ?>
 			<?php endif; ?>
