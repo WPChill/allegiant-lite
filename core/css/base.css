@@ -625,6 +625,10 @@ span.wpcf7-form-control-wrap { width:100%; }
 /* PROFILE BUILDER */
 .wppb-form-field { list-style:none; margin:0 0 20px; }
 
+/* Woocommerce */
+.woocommerce div.product div.images .flex-control-thumbs li:nth-child(4n+1) { clear: left; }
+.woocommerce div.product div.images .woocommerce-product-gallery__wrapper { margin: 0; }
+
 
 
 /* --------------------------------------------------------------

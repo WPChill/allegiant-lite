@@ -27,7 +27,12 @@ if(!function_exists('cpotheme_setup')){
 		add_theme_support('custom-header', array('header-text' => false,'width' => 1600, 'height' => 500, 'flex-width' => true, 'flex-height' => true));
 		add_theme_support('custom-background', apply_filters('cpotheme_background_args', array('default-color' => 'ffffff')));
 		add_theme_support('automatic-feed-links');
+
 		add_theme_support('woocommerce');
+		add_theme_support( 'wc-product-gallery-zoom' );
+	    add_theme_support( 'wc-product-gallery-lightbox' );
+	    add_theme_support( 'wc-product-gallery-slider' );
+		
 		add_theme_support('bbpress');
 		add_theme_support( 'customize-selective-refresh-widgets' );
 		
@@ -119,7 +124,7 @@ if(!function_exists('cpotheme_add_admin_styles')){
 		if(defined('CPOTHEME_CORELITE_URL')) $stylesheets_path = CPOTHEME_CORELITE_URL.'/css/';
 		
 		$screen = get_current_screen();
-		if($screen->base == 'post'){
+		if( isset($screen->base) && $screen->base == 'post' ){
 			add_editor_style($stylesheets_path.'editor.css');
 			
 			wp_enqueue_style('cpotheme_admin', $stylesheets_path.'admin.css');

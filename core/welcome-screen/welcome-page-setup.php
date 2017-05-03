@@ -30,30 +30,30 @@ if ( is_admin() ) {
 	$allegiant_required_actions = array(
 		array(
 			"id"          => 'allegiant-req-ac-install-cpo-content-types',
-			"title"       => MT_Notify_System::create_plugin_requirement_title( __( 'Install: CPO Content Types', 'allegiant' ), __( 'Activate: CPO Content Types', 'allegiant' ), 'cpo-content-types' ),
+			"title"       => Allegiant_Notify_System::create_plugin_requirement_title( __( 'Install: CPO Content Types', 'allegiant' ), __( 'Activate: CPO Content Types', 'allegiant' ), 'cpo-content-types' ),
 			"description" => __( 'It is highly recommended that you install the CPO Content Types plugin. It will help you manage all the special content types that this theme supports.', 'allegiant' ),
-			"check"       => MT_Notify_System::has_plugin( 'cpo-content-types' ),
+			"check"       => Allegiant_Notify_System::has_plugin( 'cpo-content-types' ),
 			"plugin_slug" => 'cpo-content-types'
 		),
 		array(
 			"id"          => 'allegiant-req-ac-install-cpo-widgets',
-			"title"       => MT_Notify_System::create_plugin_requirement_title( __( 'Install: CPO Widgets', 'allegiant' ), __( 'Activate: CPO Widgets', 'allegiant' ), 'cpo-widgets' ),
+			"title"       => Allegiant_Notify_System::create_plugin_requirement_title( __( 'Install: CPO Widgets', 'allegiant' ), __( 'Activate: CPO Widgets', 'allegiant' ), 'cpo-widgets' ),
 			"description" => __( 'It is highly recommended that you install the CPO Widgets plugin. It will help you manage all the special widgets that this theme supports.', 'allegiant' ),
-			"check"       => MT_Notify_System::has_plugin( 'cpo-widgets' ),
+			"check"       => Allegiant_Notify_System::has_plugin( 'cpo-widgets' ),
 			"plugin_slug" => 'cpo-widgets'
 		),
 		array(
 			"id"          => 'allegiant-req-ac-install-wp-import-plugin',
-			"title"       => MT_Notify_System::wordpress_importer_title(),
-			"description" => MT_Notify_System::wordpress_importer_description(),
-			"check"       => MT_Notify_System::has_import_plugin( 'wordpress-importer' ),
+			"title"       => Allegiant_Notify_System::wordpress_importer_title(),
+			"description" => Allegiant_Notify_System::wordpress_importer_description(),
+			"check"       => Allegiant_Notify_System::has_import_plugin( 'wordpress-importer' ),
 			"plugin_slug" => 'wordpress-importer'
 		),
 		array(
 			"id"          => 'allegiant-req-ac-install-wp-import-widget-plugin',
-			"title"       => MT_Notify_System::widget_importer_exporter_title(),
-			'description' => MT_Notify_System::widget_importer_exporter_description(),
-			"check"       => MT_Notify_System::has_import_plugin( 'widget-importer-exporter' ),
+			"title"       => Allegiant_Notify_System::widget_importer_exporter_title(),
+			'description' => Allegiant_Notify_System::widget_importer_exporter_description(),
+			"check"       => Allegiant_Notify_System::has_import_plugin( 'widget-importer-exporter' ),
 			"plugin_slug" => 'widget-importer-exporter'
 		),
 		array(
@@ -62,14 +62,14 @@ if ( is_admin() ) {
 			"description" => esc_html__( 'Head over to our website and download the sample content data.', 'allegiant' ),
 			"help"        => '<a target="_blank"  href="https://www.cpothemes.com/sample-data/allegiant-lite-posts.xml">' . __( 'Posts', 'allegiant' ) . '</a>, 
 							   <a target="_blank"  href="https://www.cpothemes.com/sample-data/allegiant-widgets.wie">' . __( 'Widgets', 'allegiant' ) . '</a>',
-			"check"       => MT_Notify_System::has_content(),
+			"check"       => Allegiant_Notify_System::has_content(),
 		),
 		array(
 			"id"    => 'allegiant-req-ac-install-data',
 			"title" => esc_html__( 'Import Sample Data', 'allegiant' ),
 			"help"  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'allegiant' ) . '</a> 
 									   <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'allegiant' ) . '</a>',
-			"check" => MT_Notify_System::has_import_content(),
+			"check" => Allegiant_Notify_System::has_import_content(),
 		),
 	);
 	require get_template_directory() . '/core/welcome-screen/welcome-screen.php';
