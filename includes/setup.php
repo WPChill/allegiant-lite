@@ -24,12 +24,12 @@ function cpotheme_theme_layout($data){
 
 //Add homepage slider
 function cpotheme_home_slider(){ 
-	if(is_front_page()) get_template_part('homepage', 'slider'); 
+	if(is_front_page()) get_template_part('template-parts/homepage', 'slider'); 
 }
 
 //Add homepage features
 function cpotheme_home_features(){ 
-	if(is_front_page()) get_template_part('homepage', 'features'); 
+	if(is_front_page()) get_template_part('template-parts/homepage', 'features'); 
 }
 
 //Add homepage tagline
@@ -39,27 +39,27 @@ function cpotheme_home_tagline(){
 
 //Add homepage portfolio
 function cpotheme_home_portfolio(){ 
-	if(is_front_page()) get_template_part('homepage', 'portfolio'); 
+	if(is_front_page()) get_template_part('template-parts/homepage', 'portfolio'); 
 }
 
 //Add homepage services
 function cpotheme_home_services(){ 
-	if(is_front_page()) get_template_part('homepage', 'services'); 
+	if(is_front_page()) get_template_part('template-parts/homepage', 'services'); 
 }
 
 //Add homepage team
 function cpotheme_home_team(){ 
-	if(is_front_page()) get_template_part('homepage', 'team'); 
+	if(is_front_page()) get_template_part('template-parts/homepage', 'team'); 
 }
 
 //Add homepage testimonials
 function cpotheme_home_testimonials(){ 
-	if(is_front_page()) get_template_part('homepage', 'testimonials'); 
+	if(is_front_page()) get_template_part('template-parts/homepage', 'testimonials'); 
 }
 
 //Add homepage clients
 function cpotheme_home_clients(){ 
-	if(is_front_page()) get_template_part('homepage', 'clients'); 
+	if(is_front_page()) get_template_part('template-parts/homepage', 'clients'); 
 }
 
 
