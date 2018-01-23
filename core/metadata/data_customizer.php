@@ -147,7 +147,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'width' => '100px');
 		
 		$data['general_texttitle'] = array(
-		'label' => __('Enable Text Title?', 'allegiant'),
+		'label' => __('Enable Text Title', 'allegiant'),
 		'description' => __('Activate this to display the site title as text.', 'allegiant'),
 		'section' => 'title_tagline',
 		'type' => 'checkbox',
