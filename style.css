@@ -413,6 +413,23 @@ COMMENTS
 .comment-respond .form-allowed-tags code { display:block; font-size:0.9em; }
 .comment-respond .form-submit { }
 
+.cpo-navigation:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.cpo-navigation .cpo-previous-link {
+	float: left;
+}
+.cpo-navigation .cpo-next-link {
+	float: right;
+}
+
+.cpo-navigation > div > a {
+	margin-bottom: 40px;
+	display: block;
+}
 
 /* --------------------------------------------------------------
 RESPONSIVE STYLES
