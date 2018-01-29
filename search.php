@@ -1,12 +1,16 @@
 <?php get_header(); ?>
 
-<?php get_template_part('template-parts/element', 'page-header'); ?>
+<?php get_template_part( 'template-parts/element', 'page-header' ); ?>
 
 <div id="main" class="main">
 	<div class="container">
 		<section id="content" class="content">
-			<?php do_action('cpotheme_before_content'); ?>
-			<?php if(have_posts()): while(have_posts()): the_post(); ?>
+			<?php do_action( 'cpotheme_before_content' ); ?>
+			<?php
+			if ( have_posts() ) :
+				while ( have_posts() ) :
+					the_post();
+?>
 			<article class="search-result" id="post-<?php the_ID(); ?>"> 			
 				<h4 class="search-title heading">
 					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a>
@@ -18,7 +22,7 @@
 			<?php endwhile; ?>
 			<?php cpotheme_numbered_pagination(); ?>
 			<?php endif; ?>
-			<?php do_action('cpotheme_after_content'); ?>
+			<?php do_action( 'cpotheme_after_content' ); ?>
 		</section>
 		<?php get_sidebar(); ?>
 	</div>
