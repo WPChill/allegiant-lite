@@ -36,25 +36,3 @@
 .cpotheme-imagelist-item img { padding:3px; border-radius:2px; background:#fff; box-shadow:0 1px 2px 1px rgba(0,0,0,0.2); -moz-transition:0.4s all; -webkit-transition:0.4s all; transition:0.4s all; }
 .cpotheme-imagelist-item .cpotheme-imagelist-selected { background:#1e8cbe; }
 .cpotheme-imagelist-item input[type=radio] {display: none;}
-
-
-/* --------------------------------------------------------------
-CUSTOMIZER
--------------------------------------------------------------- */
-
-/* Sections */
-#accordion-section-colors .accordion-section-title:before,
-#accordion-section-cpotheme_typography .accordion-section-title:before,
-#accordion-section-cpotheme_layout_general .accordion-section-title:before,
-#accordion-section-cpotheme_layout_home .accordion-section-title:before,
-#accordion-section-cpotheme_layout_posts .accordion-section-title:before,
-#accordion-section-cpotheme_layout_slider .accordion-section-title:before,
-#accordion-section-cpotheme_layout_features .accordion-section-title:before,
-#accordion-section-cpotheme_layout_portfolio .accordion-section-title:before,
-#accordion-section-cpotheme_layout_team .accordion-section-title:before,
-#accordion-section-cpotheme_layout_testimonials .accordion-section-title:before,
-#accordion-section-cpotheme_layout_clients .accordion-section-title:before,
-#accordion-section-cpotheme_layout_services .accordion-section-title:before
-{ content:'PRO'; display:inline-block; line-height:1; padding:2px; background:#f70; font-size:0.8em; margin-right:5px; color:#fff; border-radius:2px; }
-
-

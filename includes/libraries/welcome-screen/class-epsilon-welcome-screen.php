@@ -357,6 +357,10 @@ class Epsilon_Welcome_Screen {
 			return;
 		}
 
+		if ( CPOTheme_Notify_System::check_content_import() ) {
+			return;
+		}
+
 		if ( empty( $this->notice ) ) {
 			if ( ! empty( $this->author_logo ) ) {
 				$this->notice .= '<img src="' . esc_url( $this->author_logo ) . '" class="epsilon-author-logo" />';
