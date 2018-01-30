@@ -25,7 +25,7 @@ $count = $this->count_actions();
 		<p><?php esc_html_e( 'Even if you\'re a long-time WordPress user, we still believe you should give our documentation a very quick Read.', 'allegiant' ) ?></p>
 		<p>
 			<a target="_blank"
-			   href="<?php echo esc_url( 'https://cpothemes.com/documentation' ); ?>"><?php esc_html_e( 'Full documentation', 'allegiant' ); ?></a>
+			   href="<?php echo esc_url( 'https://cpothemes.com/documentation?utm_source=allegiant&utm_medium=about-page&utm_campaign=docs-button' ); ?>"><?php esc_html_e( 'Full documentation', 'allegiant' ); ?></a>
 		</p>
 	</div><!--/.col-->
 
