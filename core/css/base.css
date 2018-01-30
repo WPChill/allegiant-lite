@@ -628,6 +628,15 @@ span.wpcf7-form-control-wrap { width:100%; }
 /* Woocommerce */
 .woocommerce div.product div.images .flex-control-thumbs li:nth-child(4n+1) { clear: left; }
 .woocommerce div.product div.images .woocommerce-product-gallery__wrapper { margin: 0; }
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+	    background: none;
+    color: #89ce40;
+    border: 2px solid #89ce40;
+}
+.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce a.button:hover {
+	background-color: #89ce40;
+	color: #fff;
+}
 
 
 

@@ -24,7 +24,7 @@ class CPO_Theme {
 			$actions[] = array(
 				'id'          => 'illdy-req-ac-import-demo-content',
 				'title'       => esc_html__( 'Import Demo Content', 'allegiant' ),
-				'description' => esc_html__( 'Clicking the button below will add content, widgets and set static front page to your WordPress installation. Click advanced to customize the import process.', 'allegiant' ),
+				'description' => esc_html__( 'Clicking the button below will add content, widgets and set static front page to your WordPress installation. Click advanced to customize the import process. This procces might take up to 10 min. Please don\'t close the window.', 'allegiant' ),
 				'help'        => $this->generate_action_html(),
 				'check'       => CPOTheme_Notify_System::check_content_import(),
 			),

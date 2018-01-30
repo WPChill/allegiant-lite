@@ -1,3 +1,10 @@
+Version 1.1.6
+Added new Welcome Screen
+Styled WooCommerce in accordance with theme
+Fixed #54 ( https://github.com/MachoThemes/allegiant-lite/issues/54 )
+Fixed #46 ( https://github.com/MachoThemes/allegiant-lite/issues/46 )
+
+
 Version 1.1.1
 Added selective refresh
 

@@ -155,3 +155,18 @@ function cpotheme_customizer( $customize ) {
 	);
 
 }
+
+
+add_action( 'customize_preview_init', 'allegiant_customizer_live_preview' );
+
+function allegiant_customizer_live_preview() {
+	wp_enqueue_script( 'allegiant-scrollto', get_template_directory_uri() . '/core/scripts/jquery.scrollTo.js', array(), '1.0', true );
+	wp_enqueue_script( 'allegiant-customizer-live-preview', get_template_directory_uri() . '/core/scripts/customizer-preview.js', array( 'customize-preview' ), '1.0', true );
+}
+
+
+add_action( 'customize_controls_enqueue_scripts', 'allegiant_customizer_scripts' );
+
+function allegiant_customizer_scripts() {
+	wp_enqueue_script( 'allegiant-customizer', get_template_directory_uri() . '/core/scripts/customizer.js', array( 'customize-controls' ), '1.0', true );
+}
