@@ -11,7 +11,6 @@ class CPO_Theme {
 		$this->path = get_template_directory() . '/includes/';
 		$this->load_dependencies();
 
-
 		// Recomended Plugins
 		$this->plugins = array(
 			'kiwi-social-share' 		=> array( 'recommended' => true ),
@@ -176,7 +175,7 @@ class CPO_Theme {
 	}
 
 	public function widgets_path() {
-		return 'https://cpothemes.com/sample-data/allegiant-widgets.wie';
+		return get_template_directory() . '/demo/widgets.wie';
 	}
 
 	public function import_option() {
