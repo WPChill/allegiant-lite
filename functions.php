@@ -3,7 +3,7 @@
 }
 define( 'CPOTHEME_ID', 'allegiant' );
 define( 'CPOTHEME_NAME', 'Allegiant' );
-define( 'CPOTHEME_VERSION', '1.0.8' );
+define( 'CPOTHEME_VERSION', '1.1.7' );
 //Other constants
 define( 'CPOTHEME_LOGO_WIDTH', '215' );
 define( 'CPOTHEME_USE_SLIDES', true );
@@ -15,6 +15,7 @@ define( 'CPOTHEME_USE_TEAM', true );
 define( 'CPOTHEME_USE_CLIENTS', true );
 define( 'CPOTHEME_PREMIUM_NAME', 'Allegiant Pro' );
 define( 'CPOTHEME_PREMIUM_URL', '//www.cpothemes.com/theme/allegiant' );
+
 // Add epsilon framework
 if ( ! class_exists( 'CPO_Theme' ) ) {
 	require get_template_directory() . '/includes/class-cpo-theme.php';

@@ -1,3 +1,7 @@
+Version 1.1.7
+Removed unused css from welcome screen
+Fixed broken links
+
 Version 1.1.6
 Added new Welcome Screen
 Styled WooCommerce in accordance with theme

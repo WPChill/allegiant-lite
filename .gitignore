@@ -1,1 +1,11 @@
-.idea
+node_modules/*
+.idea/*
+allegiant.zip
+.gitignore
+.jscsrc
+.jshintignore
+.jshintrc
+.travis.yml
+Gruntfile.js
+package.json
+phpcs.ruleset.xml

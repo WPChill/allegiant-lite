@@ -169,19 +169,6 @@ if ( ! function_exists( 'cpotheme_add_admin_styles' ) ) {
 	}
 }
 
-
-if ( ! function_exists( 'cpotheme_add_admin_styles_welcome' ) ) {
-	add_action( 'admin_print_styles-appearance_page_cpotheme-welcome', 'cpotheme_add_admin_styles_welcome' );
-	function cpotheme_add_admin_styles_welcome() {
-		$stylesheets_path = get_template_directory_uri() . '/core/css/';
-		if ( defined( 'CPOTHEME_CORELITE_URL' ) ) {
-			$stylesheets_path = CPOTHEME_CORELITE_URL . '/css/';
-		}
-		wp_enqueue_style( 'cpotheme_admin', $stylesheets_path . 'welcome.css' );
-	}
-}
-
-
 //Add all Core components
 $core_path = get_template_directory() . '/core/';
 if ( defined( 'CPOTHEME_CORELITE' ) ) {
