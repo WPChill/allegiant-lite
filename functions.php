@@ -30,3 +30,7 @@ require_once $core_path . 'init.php';
 $include_path = get_template_directory() . '/includes/';
 //Main components
 require_once( $include_path . 'setup.php' );
+
+if ( ! defined( 'SHORTPIXEL_AFFILIATE_CODE' ) ) {
+    define( 'SHORTPIXEL_AFFILIATE_CODE', '3AXNUKA28044' );
+}
