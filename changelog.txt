@@ -1,3 +1,7 @@
+Version 1.1.8
+Added ShortPixel as a recommended plugin.
+Fixed Modula recommendation bug.
+
 Version 1.1.7
 Removed unused css from welcome screen
 Fixed broken links
