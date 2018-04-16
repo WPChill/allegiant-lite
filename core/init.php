@@ -21,7 +21,7 @@ if ( ! function_exists( 'cpotheme_setup' ) ) {
 			define( 'CPOTHEME_PREMIUM_NAME', __( 'Premium Version', 'allegiant' ) );
 		}
 		if ( ! defined( 'CPOTHEME_PREMIUM_URL' ) ) {
-			define( 'CPOTHEME_PREMIUM_URL', 'http://www.cpothemes.com' );
+			define( 'CPOTHEME_PREMIUM_URL', 'https://www.cpothemes.com' );
 		}
 		if ( ! defined( 'CPOTHEME_THUMBNAIL_WIDTH' ) ) {
 			define( 'CPOTHEME_THUMBNAIL_WIDTH', '600' );
@@ -63,7 +63,7 @@ if ( ! function_exists( 'cpotheme_setup' ) ) {
 		}
 
 		//Load translation text domain and make translation available
-		$languages_path = get_template_directory() . '/core/languages';
+		$languages_path = get_template_directory() . '/languages';
 		if ( defined( 'CPOTHEME_CORELITE' ) ) {
 			$languages_path = CPOTHEME_CORELITE . '/languages';
 		}
