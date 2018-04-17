@@ -148,7 +148,7 @@ if ( ! function_exists( 'cpotheme_block' ) ) {
 			if ( '' != $subwrapper ) {
 				echo '<div class="' . esc_attr( $subwrapper ) . '">';
 			}
-			echo do_shortcode( stripslashes( html_entity_decode( cpotheme_get_option( $option ) ) ) );
+			echo do_shortcode(  cpotheme_get_option( wp_kses_post( $option ) )  );
 			if ( '' != $subwrapper ) {
 				echo '</div>';
 			}
@@ -364,7 +364,7 @@ if ( ! function_exists( 'cpotheme_breadcrumb' ) ) {
 						$author  = get_userdata( get_query_var( 'author' ) );
 						$result .= $author->display_name;
 
-						//Prefix with a taxonomy if possible
+					//Prefix with a taxonomy if possible
 					elseif ( is_category() ) :
 						$post_data = get_the_category( $pid );
 						if ( isset( $post_data[0] ) ) :
@@ -905,54 +905,54 @@ if ( ! function_exists( 'cpotheme_comment' ) ) {
 		switch ( $comment->comment_type ) :
 			case '':
 				?>
-					<li <?php comment_class( 'comment' ); ?> id="comment-<?php comment_ID(); ?>">
-			<div class="comment-avatar">
-				<?php echo get_avatar( $comment, 100 ); ?>
-			</div>
-			<div class="comment-body">
-				<div class="comment-title">
-					<div class="comment-options">
-						<?php edit_comment_link( __( 'Edit', 'allegiant' ) ); ?>
-						<?php
-						comment_reply_link(
-							array_merge(
-								$args, array(
-									'depth'     => $depth,
-									'max_depth' => $args['max_depth'],
+				<li <?php comment_class( 'comment' ); ?> id="comment-<?php comment_ID(); ?>">
+				<div class="comment-avatar">
+					<?php echo get_avatar( $comment, 100 ); ?>
+				</div>
+				<div class="comment-body">
+					<div class="comment-title">
+						<div class="comment-options">
+							<?php edit_comment_link( __( 'Edit', 'allegiant' ) ); ?>
+							<?php
+							comment_reply_link(
+								array_merge(
+									$args, array(
+										'depth'     => $depth,
+										'max_depth' => $args['max_depth'],
+									)
 								)
-							)
-						);
-?>
-								</div>
-								<div class="comment-author">
-									<?php echo get_comment_author_link(); ?>
-								</div>
-								<div class="comment-date">
-									<a rel="nofollow" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-										<?php printf( __( '%1$s at %2$s', 'allegiant' ), get_comment_date(), get_comment_time() ); ?>
-									</a>
-								</div>
-							</div>
-
-							<div class="comment-content">    
-								<?php if ( '0' == $comment->comment_approved ) : ?>
-						<span class="comment-approval"><?php _e( 'Your comment is awaiting approval.', 'allegiant' ); ?></span>
-					<?php endif; ?>
-
-								<?php comment_text(); ?>
-							</div>
+							);
+							?>
 						</div>
-					<?php
+						<div class="comment-author">
+							<?php echo get_comment_author_link(); ?>
+						</div>
+						<div class="comment-date">
+							<a rel="nofollow" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+								<?php printf( __( '%1$s at %2$s', 'allegiant' ), get_comment_date(), get_comment_time() ); ?>
+							</a>
+						</div>
+					</div>
+
+					<div class="comment-content">
+						<?php if ( '0' == $comment->comment_approved ) : ?>
+							<span class="comment-approval"><?php _e( 'Your comment is awaiting approval.', 'allegiant' ); ?></span>
+						<?php endif; ?>
+
+						<?php comment_text(); ?>
+					</div>
+				</div>
+				<?php
 				break;
 
 			//Pingbacks & Trackbacks
 			case 'pingback':
 			case 'trackback':
 				?>
-		<li class="pingback">
-			<?php comment_author_link(); ?>
-			<?php edit_comment_link( __( 'Edit', 'allegiant' ), ' (', ')' ); ?>
-		<?php
+				<li class="pingback">
+				<?php comment_author_link(); ?>
+				<?php edit_comment_link( __( 'Edit', 'allegiant' ), ' (', ')' ); ?>
+				<?php
 				break;
 		endswitch;
 	}
