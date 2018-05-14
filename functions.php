@@ -32,5 +32,5 @@ $include_path = get_template_directory() . '/includes/';
 require_once( $include_path . 'setup.php' );
 
 if ( ! defined( 'SHORTPIXEL_AFFILIATE_CODE' ) ) {
-    define( 'SHORTPIXEL_AFFILIATE_CODE', '3AXNUKA28044' );
+	define( 'SHORTPIXEL_AFFILIATE_CODE', '3AXNUKA28044' );
 }

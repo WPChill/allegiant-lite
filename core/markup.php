@@ -109,7 +109,18 @@ if ( ! function_exists( 'cpotheme_logo' ) ) {
 				$output .= '<a class="site-logo" href="' . home_url() . '"><img src="' . get_template_directory_uri() . '/images/logo.png" alt="' . get_bloginfo( 'name' ) . '" width="' . esc_attr( $width ) . '" height="' . esc_attr( $height ) . '"/></a>';
 			} else {
 				$logo_width = cpotheme_get_option( 'general_logo_width' );
-				$logo_url   = esc_url( cpotheme_get_option( 'general_logo' ) );
+
+				/**
+				 * @since 1.1.9
+				 *
+				 * This fixes an issue where users would install the theme while being on HTTP and then wanting to migrate to HTTPs
+				 */
+				if ( is_ssl() ) {
+					$logo_url = preg_replace( '/^http:/i', 'https:', esc_url( cpotheme_get_option( 'general_logo' ) ) );
+				} else {
+					$logo_url = esc_url( cpotheme_get_option( 'general_logo' ) );
+				}
+
 				if ( '' != $logo_width ) {
 					$logo_width = ' style="width:' . esc_attr( $logo_width ) . 'px;"';
 				}
@@ -148,7 +159,7 @@ if ( ! function_exists( 'cpotheme_block' ) ) {
 			if ( '' != $subwrapper ) {
 				echo '<div class="' . esc_attr( $subwrapper ) . '">';
 			}
-			echo do_shortcode(  cpotheme_get_option( wp_kses_post( $option ) )  );
+			echo do_shortcode( cpotheme_get_option( wp_kses_post( $option ) ) );
 			if ( '' != $subwrapper ) {
 				echo '</div>';
 			}
@@ -172,7 +183,7 @@ if ( ! function_exists( 'cpotheme_404' ) ) {
 if ( ! function_exists( 'cpotheme_subfooter' ) ) {
 	function cpotheme_subfooter() {
 		$footer_columns = 3;
-		for ( $count = 1; $count <= $footer_columns; $count++ ) {
+		for ( $count = 1; $count <= $footer_columns; $count ++ ) {
 			if ( is_active_sidebar( 'footer-widgets-' . $count ) ) {
 				$footer_last = $count == $footer_columns ? ' col-last' : '';
 				echo '<div class="column col' . esc_attr( $footer_columns . $footer_last ) . '">';
@@ -252,7 +263,6 @@ if ( ! function_exists( 'cpotheme_fonts' ) ) {
 }
 
 
-
 //Creates a grid of columns for display templated content, running the WordPress loop
 if ( ! function_exists( 'cpotheme_grid' ) ) {
 	function cpotheme_grid( $posts, $element, $template, $columns = 3, $args = null ) {
@@ -283,7 +293,7 @@ if ( ! function_exists( 'cpotheme_grid_default' ) ) {
 				do_action( 'cpotheme_grid_' . esc_attr( $template ) );
 				echo '<div class="row">';
 			}
-			$count++;
+			$count ++;
 			echo '<div class="column ' . esc_attr( $class ) . ' col' . esc_attr( $columns ) . '">';
 			get_template_part( 'template-parts/' . esc_attr( $element ), esc_attr( $template ) );
 			echo '</div>';
@@ -311,7 +321,7 @@ if ( ! function_exists( 'cpotheme_grid_custom' ) ) {
 				do_action( 'cpotheme_grid_' . esc_attr( $template ) );
 				echo '<div class="row">';
 			}
-			$count++;
+			$count ++;
 			echo '<div class="column ' . esc_attr( $class ) . ' col' . esc_attr( $columns ) . '">';
 			get_template_part( 'template-parts/' . esc_attr( $element ), esc_attr( $template ) );
 			echo '</div>';
@@ -328,6 +338,7 @@ if ( ! function_exists( 'cpotheme_breadcrumb' ) ) {
 			//Use WooCommerce navigation if it's a shop page
 			if ( function_exists( 'is_woocommerce' ) && function_exists( 'woocommerce_breadcrumb' ) && is_woocommerce() ) {
 				woocommerce_breadcrumb();
+
 				return;
 			}
 
@@ -364,13 +375,13 @@ if ( ! function_exists( 'cpotheme_breadcrumb' ) ) {
 						$author  = get_userdata( get_query_var( 'author' ) );
 						$result .= $author->display_name;
 
-					//Prefix with a taxonomy if possible
+						//Prefix with a taxonomy if possible
 					elseif ( is_category() ) :
 						$post_data = get_the_category( $pid );
 						if ( isset( $post_data[0] ) ) :
 							$data = get_category_parents( $post_data[0]->cat_ID, true, ' &raquo; ' );
 							if ( ! is_object( $data ) ) :
-								$result .= substr( $data, 0, -8 );
+								$result .= substr( $data, 0, - 8 );
 							endif;
 						endif;
 
@@ -598,6 +609,7 @@ if ( ! function_exists( 'cpotheme_author' ) ) {
 			}
 		}
 	}
+
 	remove_filter( 'the_content', 'ts_fab_add_author_box', 15 );
 }
 
@@ -850,7 +862,7 @@ if ( ! function_exists( 'cpotheme_default_menu' ) ) {
 			$output  = '';
 			$output .= '<ul class="menu-main">';
 			foreach ( $pages as $current_page ) {
-				$count++;
+				$count ++;
 				if ( 0 == $current_page->post_parent && $count < 17 ) {
 					$output .= '<li class="menu-item">';
 					$output .= '<a href="' . get_permalink( $current_page->ID ) . '">';
@@ -875,8 +887,10 @@ if ( ! function_exists( 'cpotheme_comments_protected' ) ) {
 			echo '<p class="comments-protected">';
 			_e( 'This page is protected. Please type the password to be able to read its contents.', 'allegiant' );
 			echo '</p>';
+
 			return true;
 		}
+
 		return false;
 	}
 }

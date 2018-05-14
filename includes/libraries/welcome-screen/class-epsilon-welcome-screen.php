@@ -526,7 +526,7 @@ class Epsilon_Welcome_Screen {
 				'label' => __( 'Support', 'epsilon-framework' ),
 				'path'  => get_template_directory() . '/includes/libraries/welcome-screen/sections/support.php',
 			),
-			'features'             => array(
+			'features'            => array(
 				'id'    => 'features',
 				'url'   => $this->generate_admin_url( 'features' ),
 				'label' => __( 'Lite VS PRO', 'epsilon-framework' ),

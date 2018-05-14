@@ -13,9 +13,12 @@
 		<div class="post-content">
 			<?php cpotheme_postpage_content(); ?>
 		</div>
-		<?php cpotheme_postpage_comments(false, '%s'); ?>
-		<?php if(is_singular('post')) cpotheme_postpage_tags(false, '', '', ''); ?>
-		<?php cpotheme_postpage_readmore('button'); ?>
+		<?php cpotheme_postpage_comments( false, '%s' ); ?>
+		<?php
+		if ( is_singular( 'post' ) ) {
+			cpotheme_postpage_tags( false, '', '', '' );}
+?>
+		<?php cpotheme_postpage_readmore( 'button' ); ?>
 		<div class="clear"></div>
 	</div>
 </article>

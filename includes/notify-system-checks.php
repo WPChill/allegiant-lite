@@ -89,11 +89,11 @@ if ( ! class_exists( 'Allegiant_Notify_System' ) ) {
 			}
 		}
 
-		public static function has_plugin( $slug = NULL ){
+		public static function has_plugin( $slug = null ) {
 
 			$check = array(
 				'installed' => self::check_plugin_is_installed( $slug ),
-				'active'    => self::check_plugin_is_active( $slug )
+				'active'    => self::check_plugin_is_active( $slug ),
 			);
 
 			if ( ! $check['installed'] || ! $check['active'] ) {
@@ -101,10 +101,10 @@ if ( ! class_exists( 'Allegiant_Notify_System' ) ) {
 			}
 
 			return true;
-			
+
 		}
 
-		public static function create_plugin_requirement_title( $install_text, $activate_text, $plugin_slug ){
+		public static function create_plugin_requirement_title( $install_text, $activate_text, $plugin_slug ) {
 
 			if ( $plugin_slug == '' ) {
 				return;
@@ -112,18 +112,18 @@ if ( ! class_exists( 'Allegiant_Notify_System' ) ) {
 			if ( $install_text == '' && $activate_text = '' ) {
 				return;
 			}
-			if ( $install_text == '' &&  $activate_text != '' ) {
+			if ( $install_text == '' && $activate_text != '' ) {
 				$install_text = $activate_text;
-			}elseif ( $activate_text == '' &&  $install_text != '' ) {
+			} elseif ( $activate_text == '' && $install_text != '' ) {
 				$activate_text = $install_text;
 			}
 
 			$installed = self::check_plugin_is_installed( $plugin_slug );
 			if ( ! $installed ) {
 				return $install_text;
-			}elseif ( ! self::check_plugin_is_active( $plugin_slug ) && $installed ) {
+			} elseif ( ! self::check_plugin_is_active( $plugin_slug ) && $installed ) {
 				return $activate_text;
-			}else{
+			} else {
 				return '';
 			}
 

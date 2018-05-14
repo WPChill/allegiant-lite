@@ -5,7 +5,7 @@ class CPO_Theme {
 	private $path;
 	private $plugins;
 	private $actions;
-	
+
 	function __construct() {
 
 		$this->path = get_template_directory() . '/includes/';
@@ -13,8 +13,8 @@ class CPO_Theme {
 
 		// Recomended Plugins
 		$this->plugins = array(
-			'kiwi-social-share' 		=> array( 'recommended' => true ),
-			'uber-nocaptcha-recaptcha'	=> array( 'recommended' => false ),
+			'kiwi-social-share'        => array( 'recommended' => true ),
+			'uber-nocaptcha-recaptcha' => array( 'recommended' => false ),
 		);
 
 		// Recomendeed Actions
@@ -27,31 +27,30 @@ class CPO_Theme {
 				'check'       => CPOTheme_Notify_System::check_content_import(),
 			),
 			array(
-				"id"          => 'allegiant-req-ac-install-cpo-companion',
-				"title"       => CPOTheme_Notify_System::create_plugin_requirement_title( __( 'Install: CPO Companion', 'allegiant' ), __( 'Activate: CPO Companion', 'allegiant' ), 'cpo-companion' ),
-				"description" => __( 'It is highly recommended that you install the CPO Content Types plugin. It will help you manage all the special content types that this theme supports.', 'allegiant' ),
-				"check"       => CPOTheme_Notify_System::has_plugin( 'cpo-companion' ),
-				"plugin_slug" => 'cpo-companion',
+				'id'          => 'allegiant-req-ac-install-cpo-companion',
+				'title'       => CPOTheme_Notify_System::create_plugin_requirement_title( __( 'Install: CPO Companion', 'allegiant' ), __( 'Activate: CPO Companion', 'allegiant' ), 'cpo-companion' ),
+				'description' => __( 'It is highly recommended that you install the CPO Content Types plugin. It will help you manage all the special content types that this theme supports.', 'allegiant' ),
+				'check'       => CPOTheme_Notify_System::has_plugin( 'cpo-companion' ),
+				'plugin_slug' => 'cpo-companion',
 			),
 			array(
-				"id"          => 'allegiant-req-ac-install-modula',
-				"title"       => CPOTheme_Notify_System::create_plugin_requirement_title( __( 'Install: Modula', 'allegiant' ), __( 'Activate: Modula', 'allegiant' ), 'modula-best-grid-gallery' ),
-				"description" => __( 'It is highly recommended that you install the Modula plugin.', 'allegiant' ),
-				"check"       => CPOTheme_Notify_System::has_plugin( 'modula-best-grid-gallery' ),
-				"plugin_slug" => 'modula-best-grid-gallery',
+				'id'          => 'allegiant-req-ac-install-modula',
+				'title'       => CPOTheme_Notify_System::create_plugin_requirement_title( __( 'Install: Modula', 'allegiant' ), __( 'Activate: Modula', 'allegiant' ), 'modula-best-grid-gallery' ),
+				'description' => __( 'It is highly recommended that you install the Modula plugin.', 'allegiant' ),
+				'check'       => CPOTheme_Notify_System::has_plugin( 'modula-best-grid-gallery' ),
+				'plugin_slug' => 'modula-best-grid-gallery',
 			),
 			array(
-				"id"          => 'allegiant-req-ac-install-shortpixel',
-				"title"       => CPOTheme_Notify_System::create_plugin_requirement_title( __( 'Install: ShortPixel Image Optimizer', 'allegiant' ), __( 'Activate: ShortPixel Image Optimizer', 'allegiant' ), 'shortpixel-image-optimiser' ),
-				"description" => __( 'It is highly recommended that you install the ShortPixel Image Optimizer plugin.', 'allegiant' ),
-				"check"       => CPOTheme_Notify_System::has_plugin( 'shortpixel-image-optimiser' ),
-				"plugin_slug" => 'shortpixel-image-optimiser',
+				'id'          => 'allegiant-req-ac-install-shortpixel',
+				'title'       => CPOTheme_Notify_System::create_plugin_requirement_title( __( 'Install: ShortPixel Image Optimizer', 'allegiant' ), __( 'Activate: ShortPixel Image Optimizer', 'allegiant' ), 'shortpixel-image-optimiser' ),
+				'description' => __( 'It is highly recommended that you install the ShortPixel Image Optimizer plugin.', 'allegiant' ),
+				'check'       => CPOTheme_Notify_System::has_plugin( 'shortpixel-image-optimiser' ),
+				'plugin_slug' => 'shortpixel-image-optimiser',
 			),
 		);
-		
+
 		$this->init_epsilon();
 		$this->init_welcome_screen();
-
 
 		add_filter( 'cpo_companion_content', array( $this, 'content_path' ), 99 );
 		add_filter( 'cpo_companion_widgets', array( $this, 'widgets_path' ), 99 );
@@ -74,7 +73,7 @@ class CPO_Theme {
 		$args = array(
 			'controls' => array( 'toggle', 'upsell' ), // array of controls to load
 			'sections' => array( 'recommended-actions', 'pro' ), // array of sections to load
-			'path'     => '/includes/libraries'
+			'path'     => '/includes/libraries',
 		);
 
 		new Epsilon_Framework( $args );
@@ -97,37 +96,37 @@ class CPO_Theme {
 	public function customizer( $wp_customize ) {
 
 		$wp_customize->add_section(
-		  new Epsilon_Section_Recommended_Actions(
-		    $wp_customize,
-		    'cpo_recomended_section',
-		    array(
-		      'title'                        => esc_html__( 'Recomended Actions', 'allegiant' ),
-		      'social_text'                  => esc_html__( 'We are social', 'allegiant' ),
-		      'plugin_text'                  => esc_html__( 'Recomended Plugins', 'allegiant' ),
-		      'actions'                      => $this->actions,
-		      'plugins'                      => $this->plugins,
-		      'theme_specific_option'        => 'allegiant_show_required_actions',
-		      'theme_specific_plugin_option' => 'allegiant_show_recommended_plugins',
-		      'facebook'                     => 'https://www.facebook.com/cpothemes',
-		      'twitter'                      => 'https://twitter.com/cpothemes',
-		      'wp_review'                    => true,
-		      'priority'                     => 0
-		    )
-		  )
+			new Epsilon_Section_Recommended_Actions(
+				$wp_customize,
+				'cpo_recomended_section',
+				array(
+					'title'                        => esc_html__( 'Recomended Actions', 'allegiant' ),
+					'social_text'                  => esc_html__( 'We are social', 'allegiant' ),
+					'plugin_text'                  => esc_html__( 'Recomended Plugins', 'allegiant' ),
+					'actions'                      => $this->actions,
+					'plugins'                      => $this->plugins,
+					'theme_specific_option'        => 'allegiant_show_required_actions',
+					'theme_specific_plugin_option' => 'allegiant_show_recommended_plugins',
+					'facebook'                     => 'https://www.facebook.com/cpothemes',
+					'twitter'                      => 'https://twitter.com/cpothemes',
+					'wp_review'                    => true,
+					'priority'                     => 0,
+				)
+			)
 		);
 
 	}
 
-	private function generate_action_html(){
+	private function generate_action_html() {
 
 		$import_actions = array(
-		    'import_content'       => esc_html__( 'Import Content', 'allegiant' ),
-			'import_widgets'       => esc_html__( 'Import Widgets', 'allegiant' ),
+			'import_content' => esc_html__( 'Import Content', 'allegiant' ),
+			'import_widgets' => esc_html__( 'Import Widgets', 'allegiant' ),
 		);
 
 		$import_plugins = array(
-			'cpo-companion' => esc_html__( 'CPO Companion', 'allegiant' ),
-			'modula-best-grid-gallery' => esc_html__( 'Modula Gallery', 'allegiant' ),
+			'cpo-companion'              => esc_html__( 'CPO Companion', 'allegiant' ),
+			'modula-best-grid-gallery'   => esc_html__( 'Modula Gallery', 'allegiant' ),
 			'shortpixel-image-optimiser' => esc_html__( 'ShortPixel Image Optimizer', 'allegiant' ),
 		);
 
@@ -140,7 +139,7 @@ class CPO_Theme {
 			$html  = '<p><a class="button button-primary cpo-import-button epsilon-ajax-button" data-action="import_demo" id="add_default_sections" href="#">' . __( 'Import Demo Content', 'allegiant' ) . '</a>';
 			$html .= '<a class="button epsilon-hidden-content-toggler" href="#welcome-hidden-content">' . __( 'Advanced', 'allegiant' ) . '</a></p>';
 			$html .= '<div class="import-content-container" id="welcome-hidden-content">';
-			
+
 			foreach ( $import_plugins as $id => $label ) {
 				if ( ! CPOTheme_Notify_System::has_plugin( $id ) ) {
 					$plugins_html .= $this->generate_checkbox( $id, $label, 'plugins', true );
@@ -155,7 +154,7 @@ class CPO_Theme {
 				$html .= '</div>';
 				$html .= '</div>';
 			}
-			
+
 			$html .= '<div class="demo-content-container">';
 			$html .= '<h4>' . __( 'Demo Content', 'allegiant' ) . '</h4>';
 			$html .= '<div class="checkbox-group">';
