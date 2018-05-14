@@ -61,6 +61,5 @@ deploy:
     secure: GUl81AzkJqOjvziQTLFyou+FMFDvbMBD4uG7/H+z8Ba0aZdMdxG7/a48m5U6X+ybB0vMzsnIIk4nHZd33bai6DERurYBSyF2SIpd7ozCVvOUfFb3sY0Pcbc+rTCs7b9rsolqwUfzcfetHL2L2zp5/yf9LXsO/lvUjY4z2XdWNS2nKPgGpcUaMFEY4+7BYgMmVSxoIHRUjV+Kur8F1O2xAXpTERkcIXAFwwa0uTrR3yrIBhyjT8EKOd5BbWP6+GG9QueWCIK8dtPUtARowAlL1sqrl+T+HOq4Ul+0mQPbgfBqwfJT8EB0AsUPMOV0jDUOCg7lAaP/6LZBgiowDT7w/ft9xKo4CzOE4bDVqa0ipiAUWrpxBaoiSe3SAS4eVx5KHtI3zdRTZ/hwaNOdHrHUXyex080spBtcYZ9/+ah4D6seGef8Sbv0qjL4LKIBmhdVm5EPaRzNZ1moGP94WnBWEVwx57pJIZ2vxGluH5MQJbW/aE/g/rmYxgtsnnpTbrZr9optPUBssj9AjyWTLFPatdDtQ2AGoPbcIvoLGIshPAjZDvaxd4PnXf4g+TM4FB+yA97YVAvXZNb66W2PDCNop+e3HlqRKeT7rNJotRSarYsupvFe8bttSZ8MEDAi9BlFblRHMo60hPV67glnqh02l6RwcPjjYW90boqD1J9fDr8=
   file: allegiant-lite.zip
   on:
-    branch: master
     repo: MachoThemes/allegiant-lite
     condition: "$DEPLOY = 1"
