@@ -1,5 +1,6 @@
 node_modules/*
 .idea/*
+allegiant-lite.zip
 allegiant.zip
 .gitignore
 .jscsrc
