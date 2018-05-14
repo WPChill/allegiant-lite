@@ -189,7 +189,7 @@ LAYOUT
 /* HOMEPAGE CLIENTS */
 .clients { display:block; border-top:1px solid #eee; background:#fff; position:relative; overflow:hidden; margin:0; padding:40px 0 0; }
 .clients .client { margin:0 0 40px; }
-.clients .client img { display:block; margin:0; width:100%; }
+.clients .client img { display:block; margin:0; }
 
 
 /* PAGE CONTENT */
