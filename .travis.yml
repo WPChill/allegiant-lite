@@ -9,45 +9,55 @@ matrix:
   - php: '7.0'
   - php: '7.1'
   - php: '7.2'
-    env: SNIFF=1
     env: DEPLOY=1
 before_script:
 - export PHPCS_DIR=/tmp/phpcs
 - export SNIFFS_DIR=/tmp/sniffs
-- if [[ "$SNIFF" == "1" ]]; then git clone -b 2.9 --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
-- if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $SNIFFS_DIR; fi
-- if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/wimg/PHPCompatibility.git $SNIFFS_DIR/PHPCompatibility; fi
-- if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs --config-set installed_paths $SNIFFS_DIR; fi
+- if [[ "$SNIFF" == "1" ]]; then git clone -b 2.9 --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git
+  $PHPCS_DIR; fi
+- if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git
+  $SNIFFS_DIR; fi
+- if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/wimg/PHPCompatibility.git
+  $SNIFFS_DIR/PHPCompatibility; fi
+- if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs --config-set installed_paths
+  $SNIFFS_DIR; fi
 - if [[ "$SNIFF" == "1" ]]; then phpenv rehash; fi
 - if [[ "$SNIFF" == "1" ]]; then npm install -g jscs; fi
 - if [[ "$SNIFF" == "1" ]]; then npm install -g jshint; fi
-- if [[ "$SNIFF" == "1" ]]; then wget https://develop.svn.wordpress.org/trunk/.jshintrc; fi
-- if [[ "$SNIFF" == "1" ]] || [[ "$DEPLOY" == "1" ]]; then npm install -g grunt-cli; fi
+- if [[ "$SNIFF" == "1" ]]; then wget https://develop.svn.wordpress.org/trunk/.jshintrc;
+  fi
+- if [[ "$SNIFF" == "1" ]] || [[ "$DEPLOY" == "1" ]]; then npm install -g grunt-cli;
+  fi
 - if [[ "$SNIFF" == "1" ]] || [[ "$DEPLOY" == "1" ]]; then npm install; fi
-- if [[ "$SNIFF" == "1" ]] || [[ "$DEPLOY" == "1" ]]; then npm install -g grunt-checktextdomain; fi
+- if [[ "$SNIFF" == "1" ]] || [[ "$DEPLOY" == "1" ]]; then npm install -g grunt-checktextdomain;
+  fi
 script:
 - mkdir -p build/logs
 - find -L . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
 - if [[ "$SNIFF" == "1" ]]; then jshint ./assets/js/*.js; fi
 - if [[ "$SNIFF" == "1" ]]; then jscs ./assets/js/*.js; fi
 - if [[ "$SNIFF" == "1" ]]; then grunt textdomain; fi
-- if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs -p -s -v -n ./*.php --standard=./phpcs.ruleset.xml --extensions=php; fi
-- if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs -p -s -v -n ./**/*.php --standard=./phpcs.ruleset.xml --extensions=php; fi
-- if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs -p -s -v -n ./**/**/*.php --standard=./phpcs.ruleset.xml --extensions=php; fi
-- if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs -p -s -v -n ./**/**/**/*.php --standard=./phpcs.ruleset.xml --extensions=php; fi
+- if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs -p -s -v -n ./*.php --standard=./phpcs.ruleset.xml
+  --extensions=php; fi
+- if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs -p -s -v -n ./**/*.php --standard=./phpcs.ruleset.xml
+  --extensions=php; fi
+- if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs -p -s -v -n ./**/**/*.php
+  --standard=./phpcs.ruleset.xml --extensions=php; fi
+- if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs -p -s -v -n ./**/**/**/*.php
+  --standard=./phpcs.ruleset.xml --extensions=php; fi
 notifications:
   email: false
 cache:
   directories:
   - node_modules
 after_success:
-  - if [[ "$DEPLOY" == "1" ]]; then grunt build-archive; fi
-  - if [[ "$DEPLOY" == "1" ]]; then sh set_tags.sh; fi
+- if [[ "$DEPLOY" == "1" ]]; then grunt build-archive; fi
+- if [[ "$DEPLOY" == "1" ]]; then sh set_tags.sh; fi
 deploy:
   provider: releases
   skip_cleanup: true
   api_key:
-    secure: "vUgMyT40RL4v2fOAK69fW0JzZKKSQOnmNv2jx73wmmJ9F1H3DWhHirAFLUak24csh9HN8gCW4yynU9zIKEZwmbSINfWDT6xZRF+OVWyUWXZJsWEQutszSKosap+9Ie4nUxOyksY6h2fOrytsczm+NpvvrlcSpT8364dHIlrkZl4XnR00CACKraQ5HoXCZ5HmpkNhhgFDFeS0mUVFKVJqc75gSTsVoAavyTcfeI7w2UYPV7bl9OKpPf3A7enT9RJE0rUQhdCHzRtymSq0wzJPmn/qvgVAqNoSPcUcHRCKXX6YMvDxe7p8SWfWVbWBa3wNOIDwr/IrfAL/nqV8ynwKvr/CPzUjm0gVF4VD6QtuCNmdm1nxO85jDDU4w3Oi5BjH7LkHyRf2KEmvpmSbWOTTMRdE9HY8dJxgtpuYWjAUmJzUK3FgV0l6UEvMhD0TJY8vlDXu1IEt5C6e3IlYpK77QbUNf8XgiIowkjubIqaPAXxJq6ra9ORBxtUX/jIvtG3D86Xw93QsAsf2aT2+woBxXU9ZcbzhVu4wGIwCedDmvyIv3EUhg44caOGcmmB0omWrEw9x7S9MfCSvHyq6UF/LfL0JOveB4XFYf3ikrXEOlsONLS17uD+Rpi3IZY0aicg3DFNt8toa4huQi5vtPzlCeJiwzQLQvye49jYq1JzpM8M="
+    secure: L5UtzC0DusF53+i1GSoY2bYMTjBzynWxFdkMGnMZU35MELiQ8qkrZSgvB8Tzf14PIFMn0OfKJM7Eg3aFZqQR4CWpDYIJRgX5QJATilmv2WAzwdGYGz3qBW0w/bbQoNgoR/wEwIbr/D2EX9lU/w2bY3nk91JcfO/YVO9mfe4+LxZ/w5oYzH8HYESxP5QGgQFAmpNuf1W7Vm0mB9t4z/fR5dc5BzPOr1zB5hcTNtBUB8ClcgTD+VxIgfBIOVBHbAlCumGGg/x/X0QYZZ9DFnOomcO48ageSvjWcBAoZOJ/fOmclhM5TWt43k07n3KIYABL1TdqhVKYEc3cn93OvyfiKCU9dGrkTDCfZIWVAcXrO9TXxAXPcgp9X0ey1xQ6+aFcnAMnbrqatSybnf8Y+XEfsk7T0+VUQQBH2ncC518Yxl0VygLW6z94Ctz76xrCNV2mBzbLQTePfqS6rGwpiSt75dbKERlHssuMAPTubqMM8W4g0E96n4LlpNQXXnEmFo8SUMgB2g49perUeaBYk+vR7vYEL5DetQwEfskP6+K0SQjJDptpnwr6njdrnX2eiebJspOxHZtBGjDzTZBYvRfbp4mIZvO7Ov/qTbRb3rCVjjXsxUDc4Y5WqLbSFelh6IZ2BHO0v/x2vFIJOMJEVb2cvfvbAmC452pN07yMAS3gglw=
   file: allegiant-lite.zip
   on:
     branch: master
