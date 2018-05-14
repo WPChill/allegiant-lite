@@ -8,8 +8,10 @@ matrix:
   - php: '5.6'
   - php: '7.0'
   - php: '7.1'
+    env:
+    - SNIFF=1
+    - DEPLOY=1
   - php: '7.2'
-    env: DEPLOY=1
 before_script:
 - export PHPCS_DIR=/tmp/phpcs
 - export SNIFFS_DIR=/tmp/sniffs
@@ -55,9 +57,8 @@ after_success:
 - if [[ "$DEPLOY" == "1" ]]; then sh set_tags.sh; fi
 deploy:
   provider: releases
-  skip_cleanup: true
   api_key:
-    secure: L5UtzC0DusF53+i1GSoY2bYMTjBzynWxFdkMGnMZU35MELiQ8qkrZSgvB8Tzf14PIFMn0OfKJM7Eg3aFZqQR4CWpDYIJRgX5QJATilmv2WAzwdGYGz3qBW0w/bbQoNgoR/wEwIbr/D2EX9lU/w2bY3nk91JcfO/YVO9mfe4+LxZ/w5oYzH8HYESxP5QGgQFAmpNuf1W7Vm0mB9t4z/fR5dc5BzPOr1zB5hcTNtBUB8ClcgTD+VxIgfBIOVBHbAlCumGGg/x/X0QYZZ9DFnOomcO48ageSvjWcBAoZOJ/fOmclhM5TWt43k07n3KIYABL1TdqhVKYEc3cn93OvyfiKCU9dGrkTDCfZIWVAcXrO9TXxAXPcgp9X0ey1xQ6+aFcnAMnbrqatSybnf8Y+XEfsk7T0+VUQQBH2ncC518Yxl0VygLW6z94Ctz76xrCNV2mBzbLQTePfqS6rGwpiSt75dbKERlHssuMAPTubqMM8W4g0E96n4LlpNQXXnEmFo8SUMgB2g49perUeaBYk+vR7vYEL5DetQwEfskP6+K0SQjJDptpnwr6njdrnX2eiebJspOxHZtBGjDzTZBYvRfbp4mIZvO7Ov/qTbRb3rCVjjXsxUDc4Y5WqLbSFelh6IZ2BHO0v/x2vFIJOMJEVb2cvfvbAmC452pN07yMAS3gglw=
+    secure: GUl81AzkJqOjvziQTLFyou+FMFDvbMBD4uG7/H+z8Ba0aZdMdxG7/a48m5U6X+ybB0vMzsnIIk4nHZd33bai6DERurYBSyF2SIpd7ozCVvOUfFb3sY0Pcbc+rTCs7b9rsolqwUfzcfetHL2L2zp5/yf9LXsO/lvUjY4z2XdWNS2nKPgGpcUaMFEY4+7BYgMmVSxoIHRUjV+Kur8F1O2xAXpTERkcIXAFwwa0uTrR3yrIBhyjT8EKOd5BbWP6+GG9QueWCIK8dtPUtARowAlL1sqrl+T+HOq4Ul+0mQPbgfBqwfJT8EB0AsUPMOV0jDUOCg7lAaP/6LZBgiowDT7w/ft9xKo4CzOE4bDVqa0ipiAUWrpxBaoiSe3SAS4eVx5KHtI3zdRTZ/hwaNOdHrHUXyex080spBtcYZ9/+ah4D6seGef8Sbv0qjL4LKIBmhdVm5EPaRzNZ1moGP94WnBWEVwx57pJIZ2vxGluH5MQJbW/aE/g/rmYxgtsnnpTbrZr9optPUBssj9AjyWTLFPatdDtQ2AGoPbcIvoLGIshPAjZDvaxd4PnXf4g+TM4FB+yA97YVAvXZNb66W2PDCNop+e3HlqRKeT7rNJotRSarYsupvFe8bttSZ8MEDAi9BlFblRHMo60hPV67glnqh02l6RwcPjjYW90boqD1J9fDr8=
   file: allegiant-lite.zip
   on:
     branch: master
