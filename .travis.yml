@@ -9,7 +9,6 @@ matrix:
   - php: '7.0'
   - php: '7.1'
     env:
-    - SNIFF=1
     - DEPLOY=1
   - php: '7.2'
 before_script:
