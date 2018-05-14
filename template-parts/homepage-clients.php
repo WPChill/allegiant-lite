@@ -3,7 +3,7 @@
 <div id="clients" class="clients">
 	<div class="container">		
 		<?php cpotheme_block('home_clients', 'clients-heading section-heading'); ?>
-		<?php cpotheme_grid($query->posts, 'element', 'client', 3, array('class' => 'column-narrow')); ?>
+		<?php cpotheme_grid($query->posts, 'element', 'client', 5, array('class' => 'column-narrow')); ?>
 	</div>
 </div>
 <?php endif; ?>
