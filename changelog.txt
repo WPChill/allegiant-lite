@@ -1,3 +1,8 @@
+Version 1.1.9
+Fixed slider texts on mobile devices being too big
+Fixed an issue with SSL certs & logo not being pulled properly
+Fixed an issue with the clients list section on mobile devices
+
 Version 1.1.8
 Added ShortPixel as a recommended plugin.
 Fixed Modula recommendation bug.
