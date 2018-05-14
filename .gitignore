@@ -3,10 +3,4 @@ node_modules/*
 allegiant-lite.zip
 allegiant.zip
 .gitignore
-.jscsrc
-.jshintignore
-.jshintrc
-.travis.yml
-Gruntfile.js
-package.json
 phpcs.ruleset.xml
