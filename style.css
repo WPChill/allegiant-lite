@@ -1589,10 +1589,6 @@ RESPONSIVE STYLES
 /* SMARTPHONE */
 @media only screen and (max-width: 600px) {
 
-    .topmenu {
-        display: none;
-    }
-
     .social {
         float: left;
     }
