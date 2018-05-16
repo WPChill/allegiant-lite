@@ -64,3 +64,5 @@ deploy:
     branch: master
     repo: MachoThemes/allegiant-lite
     condition: "$DEPLOY = 1"
+notifications:
+  slack: macho-themes:5bB622LBK5MkZwDevzAZGC5E
