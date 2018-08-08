@@ -13,14 +13,16 @@ class CPO_Theme {
 
 		// Recomended Plugins
 		$this->plugins = array(
-			'kiwi-social-share'        => array( 'recommended' => true ),
-			'uber-nocaptcha-recaptcha' => array( 'recommended' => false ),
+			'wpforms-lite'               => array( 'recommended' => true ),
+			'shortpixel-image-optimiser' => array( 'recommended' => true ),
+			'kiwi-social-share'          => array( 'recommended' => false ),
+			'uber-nocaptcha-recaptcha'   => array( 'recommended' => false ),
 		);
 
 		// Recomendeed Actions
 		$this->actions = array(
 			$actions[] = array(
-				'id'          => 'illdy-req-ac-import-demo-content',
+				'id'          => 'allegiant-req-ac-import-demo-content',
 				'title'       => esc_html__( 'Import Demo Content', 'allegiant' ),
 				'description' => esc_html__( 'Clicking the button below will add content, widgets and set static front page to your WordPress installation. Click advanced to customize the import process. This procces might take up to 1 min. Please don\'t close the window.', 'allegiant' ),
 				'help'        => $this->generate_action_html(),
@@ -39,13 +41,6 @@ class CPO_Theme {
 				'description' => __( 'It is highly recommended that you install the Modula plugin.', 'allegiant' ),
 				'check'       => CPOTheme_Notify_System::has_plugin( 'modula-best-grid-gallery' ),
 				'plugin_slug' => 'modula-best-grid-gallery',
-			),
-			array(
-				'id'          => 'allegiant-req-ac-install-shortpixel',
-				'title'       => CPOTheme_Notify_System::create_plugin_requirement_title( __( 'Install: ShortPixel Image Optimizer', 'allegiant' ), __( 'Activate: ShortPixel Image Optimizer', 'allegiant' ), 'shortpixel-image-optimiser' ),
-				'description' => __( 'It is highly recommended that you install the ShortPixel Image Optimizer plugin.', 'allegiant' ),
-				'check'       => CPOTheme_Notify_System::has_plugin( 'shortpixel-image-optimiser' ),
-				'plugin_slug' => 'shortpixel-image-optimiser',
 			),
 		);
 
@@ -127,7 +122,6 @@ class CPO_Theme {
 		$import_plugins = array(
 			'cpo-companion'              => esc_html__( 'CPO Companion', 'allegiant' ),
 			'modula-best-grid-gallery'   => esc_html__( 'Modula Gallery', 'allegiant' ),
-			'shortpixel-image-optimiser' => esc_html__( 'ShortPixel Image Optimizer', 'allegiant' ),
 		);
 
 		$plugins_html = '';
