@@ -59,7 +59,7 @@ deploy:
   skip_cleanup: true
   api_key:
     secure: DJelz5GmZ9s/rbEDACe67/eg9YmyGtSiYcbi2h44q91eXqw54z4CoNI17NA4wT3uH4t8iUB7G8eR+VxppphbXGk4Kl4rk2YYyqama6mREc0C94spDntt6MCRwPqqAVm38Pimit8zigZ+syN8Ry57Xy/i8AtpgrvdmnqljEcjI2ayU4QFxalqZzOr/6Ak8fHl+X7WZwxoqAEvlx/ZLlsOCB9s9aiW1NBfh9Ad+SUVa+ZKFa7sE22+NkmvI/xGu4s2z42fPmwzPJtgQMYWDfntu9TksxGMwWMm0zalkmJTI0LjR4JJ2RVJqY92/cRrU1vZpRwROQk2qeiAh6kyer3xHucEfK5ROu7VrYIY0CMJenyB1UvQQBGleoiF9rJbY61nuTwK2QFgctEfq0wrf8Ava9WnFSZ34pmEiSdE05wMS/+1W7PbCCPLJvkiQMfZJ54Dqyfq54aIE3Vj6OK45W0JoiloF4gitK/u5hUiY/XNn0mvKUYU/PKtebhHFALSJwGTs780ceHKyC94CKfosy6dJCkAPOl9ILSv2qrAnmuPXp5U0L8FEpGLn13FvgKYLWFBugXdOlOEizHf4LAR9GwxH8HhB4sNioxvIP9cYduPNsVGS38EgZ8ULmfnTClOnguIiaHbAcclS8znPD39AE2n0z3xuX3IL+XNWet8MIj4d1o=
-  file: allegiant-lite.zip
+  file: allegiant.zip
   on:
     branch: master
     repo: MachoThemes/allegiant-lite
