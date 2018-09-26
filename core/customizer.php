@@ -133,6 +133,9 @@ function cpotheme_customizer( $customize ) {
 					$args['type'] = 'epsilon-toggle';
 					$customize->add_control( new Epsilon_Control_Toggle( $customize, 'cpotheme_' . $control_id, $args ) );
 					break;
+				case 'custom_contact_control':
+					$customize->add_control( new Custom_Contact_Control( $customize, 'cpotheme_' . $control_id, $args ) );
+					break; 
 
 			}
 

@@ -13,6 +13,7 @@ define( 'CPOTHEME_USE_SERVICES', true );
 define( 'CPOTHEME_USE_TESTIMONIALS', true );
 define( 'CPOTHEME_USE_TEAM', true );
 define( 'CPOTHEME_USE_CLIENTS', true );
+define( 'CPOTHEME_USE_CONTACT', true );
 define( 'CPOTHEME_PREMIUM_NAME', 'Allegiant Pro' );
 define( 'CPOTHEME_PREMIUM_URL', '//www.cpothemes.com/theme/allegiant' );
 
@@ -20,6 +21,8 @@ define( 'CPOTHEME_PREMIUM_URL', '//www.cpothemes.com/theme/allegiant' );
 if ( ! class_exists( 'CPO_Theme' ) ) {
 	require get_template_directory() . '/includes/class-cpo-theme.php';
 }
+
+require_once dirname( __FILE__ ) . '/core/class-custom-contact-control.php';
 
 //Load Core; check existing core or load development core
 $core_path = get_template_directory() . '/core/';
