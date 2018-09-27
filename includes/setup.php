@@ -15,6 +15,7 @@ function cpotheme_theme_layout( $data ) {
 	add_action( 'cpotheme_before_main', 'cpotheme_home_testimonials' );
 	add_action( 'cpotheme_before_main', 'cpotheme_home_clients' );
 	add_action( 'cpotheme_before_main', 'cpotheme_home_team' );
+	add_action( 'cpotheme_before_main', 'cpotheme_home_contact' );
 	add_action( 'cpotheme_title', 'cpotheme_page_title' );
 	add_action( 'cpotheme_title', 'cpotheme_breadcrumb' );
 	add_action( 'cpotheme_subfooter', 'cpotheme_subfooter' );
@@ -78,6 +79,12 @@ function cpotheme_home_clients() {
 	}
 }
 
+//Add homepage contact
+function cpotheme_home_contact() {
+	if ( is_front_page() && cpotheme_get_option( 'home_contact_show' ) ) {
+		get_template_part( 'template-parts/homepage', 'contact' );
+	}
+}
 
 add_filter( 'cpotheme_font_headings', 'cpotheme_theme_fonts' );
 add_filter( 'cpotheme_font_menu', 'cpotheme_theme_fonts' );
