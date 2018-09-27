@@ -409,22 +409,30 @@ if ( ! function_exists( 'cpotheme_metadata_customizer' ) ) {
 
 		//Contact
 		if ( defined( 'CPOTHEME_USE_CONTACT' ) && CPOTHEME_USE_CONTACT == true ) {
+			$data['home_contact_show'] = array(
+				'label'    => __( 'Show Contact Section', 'allegiant' ),
+				'section'  => 'cpotheme_layout_contact',
+				'type'     => 'checkbox',
+				'sanitize' => 'cpotheme_sanitize_bool',
+				'default'  => false,
+			);
+
 			$data['home_contact']   = array(
 				'label'        => __( 'Contact Description', 'allegiant' ),
 				'section'      => 'cpotheme_layout_contact',
 				'empty'        => true,
 				'multilingual' => true,
-				'default'      => __( 'contact information', 'allegiant' ),
+				'default'      => __( 'Contact us', 'allegiant' ),
 				'sanitize'     => 'wp_kses_post',
 				'type'         => 'textarea',
 				'partials'     => '#contact #contact-heading',
 			);
 
-			$data['home_contact_2']   = array(
-				'label'    => __( 'Contact Forms', 'allegiant' ),
+			$data['home_contact_custom_control']   = array(
 				'section'  => 'cpotheme_layout_contact',
 				'type'     => 'custom_contact_control',
 			);
+
 		}
 
 		//Blog Posts

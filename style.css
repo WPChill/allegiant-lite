@@ -678,6 +678,12 @@ LAYOUT
     margin: 0;
 }
 
+/* HOMEPAGE CONTACT */
+.contact {
+	background: #fff;
+	padding: 50px 0 10px;
+}
+
 /* PAGE CONTENT */
 .main {
     background: #fff;
