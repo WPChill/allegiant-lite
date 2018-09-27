@@ -6,8 +6,8 @@
 			<div class="column col4"><p></p></div>
 			<div class="column col4x2">
 				<?php
-				$contact_form_plugin = get_theme_mod( 'cpotheme_plugin_select' ); 
-				$form_id = get_theme_mod( 'cpotheme_form_id' );
+			 	$contact_form_plugin = cpotheme_get_option('plugin_select'); 
+				$form_id = cpotheme_get_option( 'form_id' );
 
 				if ( $contact_form_plugin === 'wpforms' ) {
 					$shortcode_tag = 'wpforms';
@@ -19,7 +19,7 @@
 
 				if ( $shortcode_tag !== '' && $form_id !== '' ) {
 					echo do_shortcode( '[' . $shortcode_tag . ' id="' . $form_id . '"]' );
-				}
+				} 
 				
 				?>
 			</div>
