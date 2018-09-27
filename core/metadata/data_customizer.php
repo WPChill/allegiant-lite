@@ -432,7 +432,6 @@ if ( ! function_exists( 'cpotheme_metadata_customizer' ) ) {
 				'section'  => 'cpotheme_layout_contact',
 				'type'     => 'custom_contact_control',
 			);
-
 		}
 
 		//Blog Posts

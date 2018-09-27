@@ -135,12 +135,12 @@ function cpotheme_customizer( $customize ) {
 					break;
 				case 'custom_contact_control':
 
-					$customize->add_setting( 'cpotheme_plugin_select' , array(
-						'default' => 'wpforms',
+					$customize->add_setting( 'cpotheme_settings[plugin_select]' , array(
+						'default' => '',
 						'type' => 'option'
 					) );
 
-					$customize->add_setting( 'cpotheme_form_id' , array(
+					$customize->add_setting( 'cpotheme_settings[form_id]' , array(
 						'default' => '',
 						'type' => 'option'
 					) );
@@ -152,8 +152,8 @@ function cpotheme_customizer( $customize ) {
 							array(
 								'section'  => 'cpotheme_layout_contact',
 								'settings' => array(
-									'plugin_select' => 'cpotheme_plugin_select',
-									'form_id' => 'cpotheme_form_id',
+									'plugin_select' => 'cpotheme_settings[plugin_select]',
+									'form_id' => 'cpotheme_settings[form_id]',
 								),
 							)
 						) 
