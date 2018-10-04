@@ -11,7 +11,8 @@
 				'cpotheme_layout_team' : '#team',
 				'cpotheme_layout_testimonials' : '#testimonials',
 				'cpotheme_layout_clients' : '#clients',
-				'cpotheme_layout_posts' : '#main'
+				'cpotheme_layout_posts' : '#main',
+				'cpotheme_layout_contact' : '#contact'
 			};
 
 			// Only on the front page.

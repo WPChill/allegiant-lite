@@ -112,6 +112,15 @@ if ( ! function_exists( 'cpotheme_metadata_sections' ) ) {
 			);
 		}
 
+		if ( defined( 'CPOTHEME_USE_CONTACT' ) && CPOTHEME_USE_CONTACT == true ) {
+			$data['cpotheme_layout_contact'] = array(
+				'title'      => __( 'Contact', 'allegiant' ),
+				'capability' => 'edit_theme_options',
+				'panel'      => 'cpotheme_layout',
+				'priority'   => 50,
+			);
+		}
+
 		$data['cpotheme_typography'] = array(
 			'title'       => __( 'Typography', 'allegiant' ),
 			'description' => __( 'Custom typefaces for the entire site.', 'allegiant' ),
@@ -395,6 +404,33 @@ if ( ! function_exists( 'cpotheme_metadata_customizer' ) ) {
 				'sanitize'     => 'wp_kses_post',
 				'type'         => 'textarea',
 				'partials'     => '#clients #clients-heading',
+			);
+		}
+
+		//Contact
+		if ( defined( 'CPOTHEME_USE_CONTACT' ) && CPOTHEME_USE_CONTACT == true ) {
+			$data['home_contact_show'] = array(
+				'label'    => __( 'Show Contact Section', 'allegiant' ),
+				'section'  => 'cpotheme_layout_contact',
+				'type'     => 'checkbox',
+				'sanitize' => 'cpotheme_sanitize_bool',
+				'default'  => false,
+			);
+
+			$data['home_contact']   = array(
+				'label'        => __( 'Contact Description', 'allegiant' ),
+				'section'      => 'cpotheme_layout_contact',
+				'empty'        => true,
+				'multilingual' => true,
+				'default'      => __( 'Contact us', 'allegiant' ),
+				'sanitize'     => 'wp_kses_post',
+				'type'         => 'textarea',
+				'partials'     => '#contact #contact-heading',
+			);
+
+			$data['home_contact_custom_control']   = array(
+				'section'  => 'cpotheme_layout_contact',
+				'type'     => 'custom_contact_control',
 			);
 		}
 
