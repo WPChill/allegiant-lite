@@ -3,7 +3,7 @@
 }
 define( 'CPOTHEME_ID', 'allegiant' );
 define( 'CPOTHEME_NAME', 'Allegiant' );
-define( 'CPOTHEME_VERSION', '1.2.0' );
+define( 'CPOTHEME_VERSION', '1.2.1' );
 //Other constants
 define( 'CPOTHEME_LOGO_WIDTH', '215' );
 define( 'CPOTHEME_USE_SLIDES', true );
