@@ -133,6 +133,33 @@ function cpotheme_customizer( $customize ) {
 					$args['type'] = 'epsilon-toggle';
 					$customize->add_control( new Epsilon_Control_Toggle( $customize, 'cpotheme_' . $control_id, $args ) );
 					break;
+				case 'custom_contact_control':
+
+					$customize->add_setting( 'cpotheme_settings[plugin_select]' , array(
+						'default' => '',
+						'type' => 'option'
+					) );
+
+					$customize->add_setting( 'cpotheme_settings[form_id]' , array(
+						'default' => '',
+						'type' => 'option'
+					) );
+
+					$customize->add_control( 
+						new CPOTheme_Contact_Control( 
+							$customize, 
+							'cpotheme_' . $control_id,
+							array(
+								'section'  => 'cpotheme_layout_contact',
+								'settings' => array(
+									'plugin_select' => 'cpotheme_settings[plugin_select]',
+									'form_id' => 'cpotheme_settings[form_id]',
+								),
+							)
+						) 
+					);
+
+					break; 
 
 			}
 

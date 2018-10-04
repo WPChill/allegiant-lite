@@ -178,6 +178,7 @@ if ( defined( 'CPOTHEME_CORELITE' ) ) {
 //Classes
 require_once( $core_path . 'classes/class_customizer.php' );
 require_once( $core_path . 'classes/class_menu.php' );
+require_once( $core_path . 'classes/class_cpotheme_contact_control.php' );
 //Main Components
 require_once( $core_path . 'functions.php' );
 require_once( $core_path . 'markup.php' );
