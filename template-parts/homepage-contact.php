@@ -18,12 +18,12 @@
 				}
 
 				if ( $shortcode_tag !== '' && $form_id !== '' ) {
-					echo do_shortcode( '[' . $shortcode_tag . ' id="' . $form_id . '"]' );
+					echo do_shortcode( '[' . esc_html( $shortcode_tag ) . ' id="' . absint( $form_id ) . '"]' );
 				} 
 				
 				?>
 			</div>
-			<div class="clear">
+			<div class="clear"></div>
 		</div>
 	</div>
 </div>
