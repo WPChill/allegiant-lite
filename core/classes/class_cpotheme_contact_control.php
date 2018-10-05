@@ -76,30 +76,31 @@ class CPOTheme_Contact_Control extends WP_Customize_Control {
 		?>
 
 		<?php if ( $this->is_wpforms_active() && $this->is_cf7_active() ) { ?>
-			<span class="customize-control-title"><?php _e( 'Select contact form plugin', 'allegiant' ); ?></span>
+			<span class="customize-control-title"><?php esc_html_e( 'Select contact form plugin', 'allegiant' ); ?></span>
 			<select>
+				<option><?php esc_html_e( 'please select a contact form plugin', 'allegiant' ); ?></option>
 				<option value="wpforms" <?php echo $plugin_select === 'wpforms' ? 'selected' : ''; ?> >wpforms</option>
 				<option value="cf7" <?php echo $plugin_select === 'cf7' ? 'selected' : ''; ?> >contact form 7</option>
 			</select>
 		<?php } ?>
 
 		<?php if ( ! $this->is_wpforms_active() && ! $this->is_cf7_active() ) { ?>
-			<p><?php _e('There are no contact form plugins activated. Please activate WPForms or Contact Form 7', 'allegiant'); ?></p>
+			<p><?php esc_html_e( 'There are no contact form plugins activated. Please activate WPForms or Contact Form 7', 'allegiant' ); ?></p>
 		<?php } ?>
 
 		<?php if ( $this->is_wpforms_active() ) { ?>	
 			<div class="cpotheme_contact_control__wpforms">
 				<?php $forms = $this->get_wpforms(); ?>
 				<?php if ( ! empty( $forms ) ) { ?>
-					<span class="customize-control-title"><?php _e('Select form', 'allegiant'); ?></span>
+					<span class="customize-control-title"><?php esc_html_e( 'Select form', 'allegiant' ); ?></span>
 					<select>
-						<option>...</option>
+						<option><?php esc_html_e( 'please select a contact form', 'allegiant' ); ?></option>
 						<?php foreach ( $forms as $id => $form_title ) { ?>
-							<option value="<?php echo $id; ?>" <?php echo $form_id == $id ? 'selected' : ''; ?>><?php echo $form_title; ?></option>
+							<option value="<?php echo esc_attr( $id ); ?>" <?php echo $form_id === $id ? 'selected' : ''; ?>><?php echo esc_html( $form_title ); ?></option>
 						<?php } ?> 	
 					</select>
 				<?php } else { ?>
-					<?php printf( __( '<p>%s <a href="' . admin_url( 'admin.php?page=wpforms-builder' ) . '">%s</a></p>', 'allegiant' ), 'please add a', 'new form' );  ?>
+					<?php printf( '<p>%s <a href="%s">%s</a></p>', esc_html__( 'please', 'allegiant' ), esc_url( admin_url( 'admin.php?page=wpforms-builder' ) ), esc_html__( 'add a new form', 'allegiant' ) ); ?>				
 				<?php } ?>
 			</div>
 		<?php } ?>	
@@ -108,15 +109,15 @@ class CPOTheme_Contact_Control extends WP_Customize_Control {
 			<div class="cpotheme_contact_control__cf7forms">
 				<?php $forms = $this->get_cf7_forms(); ?>
 				<?php if ( ! empty( $forms ) ) { ?>
-					<span class="customize-control-title"><?php _e('Select form', 'allegiant'); ?></span>
+					<span class="customize-control-title"><?php esc_html_e( 'Select form', 'allegiant' ); ?></span>
 					<select>
-						<option>...</option>
+						<option><?php esc_html_e( 'please select a contact form', 'allegiant' ); ?></option>
 						<?php foreach ( $forms as $id => $form_title ) { ?>
-							<option value="<?php echo $id; ?>" <?php echo $form_id == $id ? 'selected' : ''; ?>><?php echo $form_title; ?></option>
+							<option value="<?php echo esc_attr( $id ); ?>" <?php echo $form_id == $id ? 'selected' : ''; ?>><?php echo esc_html( $form_title ); ?></option>
 						<?php } ?> 	
 					</select>
 				<?php } else { ?>
-					<?php printf( __( '<p>%s <a href="' . admin_url( 'admin.php?page=wpcf7-new' ) . '">%s</a></p>', 'allegiant' ), 'please add a', 'new form' );  ?>
+					<?php printf( '<p>%s <a href="%s">%s</a></p>', esc_html__( 'please', 'allegiant' ), esc_url( admin_url( 'admin.php?page=wpcf7-new' ) ), esc_html__( 'add a new form', 'allegiant' ) ); ?>				
 				<?php } ?>
 			</div>
 		<?php } ?>		

@@ -20,12 +20,12 @@
 				$wpformsContainer = control.container.find('.cpotheme_contact_control__wpforms'),
 				$cf7Container = control.container.find('.cpotheme_contact_control__cf7forms');
 				
-			if ( $pluginSelect.length && control.settings.plugin_select.get() === 'wpforms') {
-				$cf7Container.hide();
+			if ( $pluginSelect.length && $pluginSelect.val() !== 'wpforms' ) {
+				$wpformsContainer.hide();
 			}
 
-			if ( $pluginSelect.length && control.settings.plugin_select.get() === 'cf7') {
-				$wpformsContainer.hide();
+			if ( $pluginSelect.length && $pluginSelect.val() !== 'cf7' ) {
+				$cf7Container.hide();
 			}
 			
 			$pluginSelect.change(function() {
