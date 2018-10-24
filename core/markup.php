@@ -118,7 +118,7 @@ if ( ! function_exists( 'cpotheme_logo' ) ) {
 				if ( is_ssl() ) {
 					$logo_url = preg_replace( '/^http:/i', 'https:', esc_url( cpotheme_get_option( 'general_logo' ) ) );
 				} else {
-					$logo_url = esc_url( cpotheme_get_option( 'general_logo' ) );
+					$logo_url = preg_replace( '/^https:/i', 'http:', esc_url( cpotheme_get_option( 'general_logo' ) ) );
 				}
 
 				if ( '' != $logo_width ) {
