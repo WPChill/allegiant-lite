@@ -9,6 +9,7 @@ function cpotheme_theme_layout( $data ) {
 	add_action( 'cpotheme_header', 'cpotheme_menu' );
 	add_action( 'cpotheme_before_main', 'cpotheme_home_slider' );
 	add_action( 'cpotheme_before_main', 'cpotheme_home_features' );
+	add_action( 'cpotheme_before_main', 'cpotheme_home_about' );
 	add_action( 'cpotheme_before_main', 'cpotheme_home_tagline' );
 	add_action( 'cpotheme_before_main', 'cpotheme_home_portfolio' );
 	add_action( 'cpotheme_before_main', 'cpotheme_home_services' );
@@ -41,6 +42,13 @@ function cpotheme_home_features() {
 function cpotheme_home_tagline() {
 	if ( is_front_page() ) {
 		cpotheme_block( 'home_tagline', 'tagline dark', 'container' );
+	}
+}
+
+//Add homepage about
+function cpotheme_home_about() {
+	if ( is_front_page() ) {
+		get_template_part( 'template-parts/homepage', 'about' );
 	}
 }
 

@@ -85,6 +85,15 @@ if ( ! function_exists( 'cpotheme_metadata_sections' ) ) {
 			);
 		}
 
+		if ( defined( 'CPOTHEME_USE_ABOUT' ) && CPOTHEME_USE_ABOUT == true ) {
+			$data['cpotheme_layout_about'] = array(
+				'title'       => __( 'About', 'cpotheme' ),
+				'capability'  => 'edit_theme_options',
+				'panel'       => 'cpotheme_layout',
+				'priority'    => 50,
+			);
+		}
+
 		if ( defined( 'CPOTHEME_USE_TEAM' ) && CPOTHEME_USE_TEAM == true ) {
 			$data['cpotheme_layout_team'] = array(
 				'title'      => __( 'Team Members', 'allegiant' ),
@@ -312,6 +321,50 @@ if ( ! function_exists( 'cpotheme_metadata_customizer' ) ) {
 				'type'         => 'textarea',
 				'partials'     => '#services #services-heading',
 			);
+		}
+
+		//About section
+		if ( defined( 'CPOTHEME_USE_ABOUT' ) && CPOTHEME_USE_ABOUT == true ) {
+
+			$data['about_upsell'] = array(
+				'section'            => 'cpotheme_layout_about',
+				'type'               => 'epsilon-upsell',
+				'options'            => array(
+					esc_html__( 'Section Description', 'cpotheme' ),
+				),
+				'requirements'       => array(
+					esc_html__( 'For each section, apart from title one you can also add a description for users to better understand your sections content', 'cpotheme' ),
+				),
+				'button_url'         => esc_url_raw( get_admin_url() . 'themes.php?page=allegiant-welcome&tab=features' ),
+				'button_text'        => esc_html__( 'See PRO vs Lite', 'cpotheme' ),
+				'second_button_url'  => cpotheme_upgrade_link(),
+				'second_button_text' => esc_html__( 'Get PRO!', 'cpotheme' ),
+				'separator'          => '- or -',
+			);
+
+			$data['home_about'] = array(
+				'label'        => __( 'Section Title', 'cpotheme' ),
+				'section'      => 'cpotheme_layout_about',
+				'empty'        => true,
+				'multilingual' => true,
+				'sanitize'     => 'esc_html',
+				'type'         => 'text',
+				'partials'     => '#about .section-title',
+			);
+
+			$data['about_pages'] = array(
+				'label'        => __( 'About Pages', 'cpotheme' ),
+				'description'  => __( 'Select the pages that will be displayed as columns', 'cpotheme' ),
+				'section'      => 'cpotheme_layout_about',
+				'type'         => 'selectize',
+				'choices' => 'pages',
+				'input_attrs' => array(
+					'maxItems' => 4
+				),
+				'default'      => array(),
+				'partials'     => '#about .about__content',
+			);
+
 		}
 
 		//Services layout

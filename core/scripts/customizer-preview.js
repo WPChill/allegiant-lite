@@ -6,6 +6,7 @@
 			var selectors = {
 				'cpotheme_layout_home' : '#tagline',
 				'cpotheme_layout_features' : '#features',
+				'cpotheme_layout_about' : '#about',
 				'cpotheme_layout_portfolio' : '#portfolio',
 				'cpotheme_layout_services' : '#services',
 				'cpotheme_layout_team' : '#team',

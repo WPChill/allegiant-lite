@@ -14,6 +14,7 @@ define( 'CPOTHEME_USE_TESTIMONIALS', true );
 define( 'CPOTHEME_USE_TEAM', true );
 define( 'CPOTHEME_USE_CLIENTS', true );
 define( 'CPOTHEME_USE_CONTACT', true );
+define( 'CPOTHEME_USE_ABOUT', true );
 define( 'CPOTHEME_PREMIUM_NAME', 'Allegiant Pro' );
 define( 'CPOTHEME_PREMIUM_URL', '//www.cpothemes.com/theme/allegiant' );
 

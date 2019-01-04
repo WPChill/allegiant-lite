@@ -129,6 +129,10 @@ function cpotheme_customizer( $customize ) {
 				case 'epsilon-upsell':
 					$customize->add_control( new Epsilon_Control_Upsell( $customize, 'cpotheme_' . $control_id, $args ) );
 					break;
+				case 'selectize':
+					$args['type'] = 'cpotheme-selectize-control';
+					$customize->add_control( new CPOTheme_Customize_Selectize_Control( $customize, 'cpotheme_' . $control_id, $args ) );
+					break;
 				case 'checkbox':
 					$args['type'] = 'epsilon-toggle';
 					$customize->add_control( new Epsilon_Control_Toggle( $customize, 'cpotheme_' . $control_id, $args ) );
@@ -145,9 +149,9 @@ function cpotheme_customizer( $customize ) {
 						'type' => 'option'
 					) );
 
-					$customize->add_control( 
-						new CPOTheme_Contact_Control( 
-							$customize, 
+					$customize->add_control(
+						new CPOTheme_Contact_Control(
+							$customize,
 							'cpotheme_' . $control_id,
 							array(
 								'section'  => 'cpotheme_layout_contact',
@@ -156,10 +160,10 @@ function cpotheme_customizer( $customize ) {
 									'form_id' => 'cpotheme_settings[form_id]',
 								),
 							)
-						) 
+						)
 					);
 
-					break; 
+					break;
 
 			}
 
