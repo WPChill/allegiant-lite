@@ -362,9 +362,6 @@ class Epsilon_Welcome_Screen {
 		}
 
 		if ( empty( $this->notice ) ) {
-			if ( ! empty( $this->author_logo ) ) {
-				$this->notice .= '<img src="' . esc_url( $this->author_logo ) . '" class="epsilon-author-logo" />';
-			}
 			/* Translators: Notice Title */
 			$this->notice .= '<h1>' . sprintf( esc_html__( 'Welcome to %1$s', 'epsilon-framework' ), $this->theme_name ) . '</h1>';
 			$this->notice .= '<p>';
@@ -377,7 +374,7 @@ class Epsilon_Welcome_Screen {
 				);
 			$this->notice .= '</p>';
 			/* Translators: Notice URL */
-			$this->notice .= '<p><a href="' . esc_url( admin_url( 'themes.php?page=' . $this->theme_slug . '-welcome&tab=recommended-actions' ) ) . '" class="button button-primary button-hero" style="text-decoration: none;"> ' . sprintf( esc_html__( 'Get started with %1$s', 'epsilon-framework' ), $this->theme_name ) . '</a></p>';
+			$this->notice .= '<p><a href="' . esc_url( admin_url( 'themes.php?page=' . $this->theme_slug . '-welcome&tab=recommended-actions' ) ) . '" class="button button-primary" style="text-decoration: none;"> ' . sprintf( esc_html__( 'Get started with %1$s', 'epsilon-framework' ), $this->theme_name ) . '</a></p>';
 
 		}
 
@@ -385,7 +382,7 @@ class Epsilon_Welcome_Screen {
 		$notifications->add_notice(
 			array(
 				'id'      => 'allegiant_welcome_notification',
-				'type'    => 'notice epsilon-big',
+				'type'    => 'notice notice-success',
 				'message' => $this->notice,
 			)
 		);
