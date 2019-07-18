@@ -13,7 +13,7 @@ class CPO_Theme {
 
 		// Recomended Plugins
 		$this->plugins = array(
-			'wpforms-lite'               => array( 'recommended' => true ),
+			'kali-forms'                 => array( 'recommended' => true ),
 			'shortpixel-image-optimiser' => array( 'recommended' => true ),
 			'simple-author-box'          => array( 'recommended' => true ),
 			'kiwi-social-share'          => array( 'recommended' => false ),
@@ -42,6 +42,13 @@ class CPO_Theme {
 				'description' => __( 'It is highly recommended that you install the Modula plugin.', 'allegiant' ),
 				'check'       => CPOTheme_Notify_System::has_plugin( 'modula-best-grid-gallery' ),
 				'plugin_slug' => 'modula-best-grid-gallery',
+			),
+			array(
+				'id'          => 'allegiant-req-ac-install-kali-forms',
+				'title'       => CPOTheme_Notify_System::create_plugin_requirement_title( __( 'Install: Kaliforms', 'allegiant' ), __( 'Activate: Kaliforms', 'allegiant' ), 'kali-forms' ),
+				'description' => __( 'It is highly recommended that you install the Kaliforms plugin.', 'allegiant' ),
+				'check'       => CPOTheme_Notify_System::has_plugin( 'kali-forms' ),
+				'plugin_slug' => 'kali-forms',
 			),
 		);
 
