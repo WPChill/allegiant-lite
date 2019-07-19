@@ -14,7 +14,6 @@ class CPO_Theme {
 		// Recomended Plugins
 		$this->plugins = array(
 			'kali-forms'                 => array( 'recommended' => true ),
-			'shortpixel-image-optimiser' => array( 'recommended' => true ),
 			'simple-author-box'          => array( 'recommended' => true ),
 			'kiwi-social-share'          => array( 'recommended' => false ),
 			'uber-nocaptcha-recaptcha'   => array( 'recommended' => false ),
