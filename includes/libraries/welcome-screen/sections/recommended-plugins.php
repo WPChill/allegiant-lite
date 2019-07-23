@@ -14,7 +14,7 @@ wp_enqueue_script( 'updates' );
 add_thickbox();
 ?>
 
-<div class="feature-section recommended-plugins three-col demo-import-boxed" id="plugin-filter">
+<div class="feature-section recommended-plugins three-col  demo-import-boxed" id="plugin-filter">
 	<?php
 	foreach ( $this->plugins as $plugin => $prop ) {
 		$info = $this->get_plugin_information( $plugin );

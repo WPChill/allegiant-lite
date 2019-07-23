@@ -576,7 +576,7 @@ class Epsilon_Welcome_Screen {
 			'installed' => CPOTheme_Notify_System::check_plugin_is_installed( $slug ),
 			'active'    => CPOTheme_Notify_System::check_plugin_is_active( $slug ),
 			'needs'     => 'install',
-			'class'     => 'install-now button',
+			'class'     => 'install-now button button-primary',
 			'label'     => __( 'Install and Activate', 'epsilon-framework' ),
 		);
 
@@ -603,7 +603,7 @@ class Epsilon_Welcome_Screen {
 
 		if ( $arr['active'] ) {
 			$arr['needs'] = 'deactivate';
-			$arr['class'] = 'deactivate-now button button-primary';
+			$arr['class'] = 'deactivate-now button';
 			$arr['label'] = __( 'Deactivate now', 'epsilon-framework' );
 		}
 

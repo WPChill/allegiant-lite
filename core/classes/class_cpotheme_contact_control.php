@@ -150,8 +150,8 @@ class CPOTheme_Contact_Control extends WP_Customize_Control {
 		<?php if ( $this->is_kaliforms_active() ) { ?>
 			<div class="cpotheme_contact_control__kaliforms">
 				<?php $forms = $this->get_kaliforms(); ?>
+				<span class="customize-control-title"><?php esc_html_e( 'Select a contact form', 'allegiant' ); ?></span>
 				<?php if ( ! empty( $forms ) ) { ?>
-					<span class="customize-control-title"><?php esc_html_e( 'Select form', 'allegiant' ); ?></span>
 					<select>
 						<option><?php esc_html_e( 'please select a contact form', 'allegiant' ); ?></option>
 						<?php foreach ( $forms as $id => $form_title ) { ?>
@@ -159,7 +159,7 @@ class CPOTheme_Contact_Control extends WP_Customize_Control {
 						<?php } ?>
 					</select>
 				<?php } else { ?>
-					<?php printf( '<p>%s <a target="_blank" href="%s">%s</a></p>', esc_html__( 'please', 'allegiant' ), esc_url( admin_url( 'post-new.php?post_type=kaliforms_forms' ) ), esc_html__( 'add a new form', 'allegiant' ) ); ?>
+					<?php printf( '<p>%s <a target="_blank" href="%s">%s</a></p>', esc_html__( 'In order to use contact section you need to', 'allegiant' ), esc_url( admin_url( 'post-new.php?post_type=kaliforms_forms' ) ), esc_html__( 'add a contact form', 'allegiant' ) ); ?>
 				<?php } ?>
 			</div>
 		<?php } ?>

@@ -54,8 +54,8 @@ class CPO_Theme {
 		$this->init_epsilon();
 		$this->init_welcome_screen();
 
-		add_filter( 'cpo_companion_content', array( $this, 'content_path' ), 99 );
-		add_filter( 'cpo_companion_widgets', array( $this, 'widgets_path' ), 99 );
+		add_filter( 'cpo_theme_have_content', '__return_true' );
+		add_filter( 'cpo_theme_have_widgets', '__return_true' );
 		add_filter( 'cpo_companion_import_option', array( $this, 'import_option' ), 99 );
 
 		add_action( 'customize_register', array( $this, 'customizer' ) );
@@ -129,6 +129,7 @@ class CPO_Theme {
 		$import_plugins = array(
 			'cpo-companion'              => esc_html__( 'CPO Companion', 'allegiant' ),
 			'modula-best-grid-gallery'   => esc_html__( 'Modula Gallery', 'allegiant' ),
+			'kali-forms'                 => esc_html__( 'Kali Forms', 'allegiant' ),
 		);
 
 		$plugins_html = '';
@@ -174,15 +175,6 @@ class CPO_Theme {
 	private function generate_checkbox( $id, $label, $name = 'options', $block = false ) {
 		$string = '<label><input checked type="checkbox" name="%1$s" class="demo-checkboxes"' . ( $block ? ' disabled ' : ' ' ) . 'value="%2$s">%3$s</label>';
 		return sprintf( $string, $name, $id, $label );
-	}
-
-	// Path to demo content
-	public function content_path() {
-		return get_template_directory() . '/demo/content.xml';
-	}
-
-	public function widgets_path() {
-		return get_template_directory() . '/demo/widgets.wie';
 	}
 
 	public function import_option() {

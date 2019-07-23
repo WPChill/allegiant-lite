@@ -1,9 +1,8 @@
-Version 1.2.2
+Version 1.2.1
 Minor Backend Tweaks
 Added compatibility with Kaliforms plugin
-
-Version 1.2.1
 Added Contact Section
+Added About Section
 
 Version 1.2.0
 Minor Fixes
