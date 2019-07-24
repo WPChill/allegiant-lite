@@ -20,72 +20,21 @@ class CPOTheme_Contact_Control extends WP_Customize_Control {
 	}
 
 	public function is_kaliforms_active() {
-		if ( defined( 'KALIFORMS_VERSION' ) ) {
-			return true;
-		}
-		return false;
-	}
-
-	public function is_cf7_active() {
-		if ( class_exists( 'WPCF7' ) ) {
-			return true;
-		}
-		return false;
-	}
-
-	public function is_wpforms_active() {
-		if ( class_exists( 'WPForms' ) ) {
-			return true;
-		}
-		return false;
-	}
-
-	public function get_cf7_forms() {
-		$contact_forms = array();
-
-		$args = array(
-			'post_type'      => 'wpcf7_contact_form',
-			'post_status'    => 'publish',
-			'posts_per_page' => -1,
-		);
-		$cf7forms = new WP_Query( $args );
-		if ( $cf7forms->have_posts() ) {
-			foreach ( $cf7forms->posts as $cf7form ) {
-				$contact_forms[ $cf7form->ID ] = $cf7form->post_title;
-			}
-		}
-		return $contact_forms;
-	}
-
-	public function get_wpforms() {
-		$contact_forms = array();
-
-		$args = array(
-			'post_type'      => 'wpforms',
-			'post_status'    => 'publish',
-			'posts_per_page' => -1,
-		);
-		$cf7forms = new WP_Query( $args );
-		if ( $cf7forms->have_posts() ) {
-			foreach ( $cf7forms->posts as $cf7form ) {
-				$contact_forms[ $cf7form->ID ] = $cf7form->post_title;
-			}
-		}
-		return $contact_forms;
+		return defined( 'KALIFORMS_VERSION' );
 	}
 
 	public function get_kaliforms() {
 		$contact_forms = array();
 
-		$args = array(
+		$args       = array(
 			'post_type'      => 'kaliforms_forms',
 			'post_status'    => 'publish',
 			'posts_per_page' => -1,
 		);
-		$cf7forms = new WP_Query( $args );
-		if ( $cf7forms->have_posts() ) {
-			foreach ( $cf7forms->posts as $cf7form ) {
-				$contact_forms[ $cf7form->ID ] = $cf7form->post_title;
+		$kali_forms = new WP_Query( $args );
+		if ( $kali_forms->have_posts() ) {
+			foreach ( $kali_forms->posts as $kali_form ) {
+				$contact_forms[ $kali_form->ID ] = $kali_form->post_title;
 			}
 		}
 		return $contact_forms;
@@ -95,74 +44,32 @@ class CPOTheme_Contact_Control extends WP_Customize_Control {
 
 	public function content_template() {
 
-		$plugin_select = cpotheme_get_option( 'plugin_select' );
-		$form_id = cpotheme_get_option( 'form_id' );
+		$form_id       = cpotheme_get_option( 'form_id' );
+		$plugin_data  = array(
+			'label'      => 'Kali Forms',
+			'slug'       => 'kali-forms',
+			'backendUrl' => 'post-new.php?post_type=kaliforms_forms',
+		);
 		?>
 
-		<?php if ( $this->is_wpforms_active() && $this->is_cf7_active() ) { ?>
-			<span class="customize-control-title"><?php esc_html_e( 'Select contact form plugin', 'allegiant' ); ?></span>
-			<select>
-				<option><?php esc_html_e( 'please select a contact form plugin', 'allegiant' ); ?></option>
-				<option value="wpforms" <?php echo $plugin_select === 'wpforms' ? 'selected' : ''; ?> >wpforms</option>
-				<option value="cf7" <?php echo $plugin_select === 'cf7' ? 'selected' : ''; ?> >contact form 7</option>
-				<option value="kaliforms" <?php echo $plugin_select === 'kaliforms' ? 'selected' : ''; ?> >kaliforms</option>
-			</select>
-		<?php } ?>
-
-		<?php if ( ! $this->is_wpforms_active() && ! $this->is_cf7_active() && ! $this->is_kaliforms_active()  ) { ?>
-			<p><?php esc_html_e( 'There are no contact form plugins activated. Please activate WPForms / Contact Form 7 / Kaliforms', 'allegiant' ); ?></p>
-		<?php } ?>
-
-		<?php if ( $this->is_wpforms_active() ) { ?>
-			<div class="cpotheme_contact_control__wpforms">
-				<?php $forms = $this->get_wpforms(); ?>
-				<?php if ( ! empty( $forms ) ) { ?>
-					<span class="customize-control-title"><?php esc_html_e( 'Select form', 'allegiant' ); ?></span>
+		<?php if ( ! $this->is_kaliforms_active() ) : ?>
+			<p><?php _e( 'There are no contact form plugins activated. Please activate KaliForms.', 'allegiant' ); ?></p>
+		<?php else: ?>
+			<?php $forms = $this->get_kaliforms(); ?>
+			<div class="cpotheme_contact_control__<?php echo $plugin_data['slug']; ?>">
+				<?php if ( ! empty( $forms ) ) : ?>
+					<span class="customize-control-title"><?php _e( 'Select form', 'allegiant' ); ?></span>
 					<select>
-						<option><?php esc_html_e( 'please select a contact form', 'allegiant' ); ?></option>
-						<?php foreach ( $forms as $id => $form_title ) { ?>
-							<option value="<?php echo esc_attr( $id ); ?>" <?php echo $form_id === $id ? 'selected' : ''; ?>><?php echo esc_html( $form_title ); ?></option>
-						<?php } ?>
+						<option value="default"><?php _e( 'Select form', 'allegiant' ); ?></option>
+						<?php foreach ( $forms as $id => $form_title ) : ?>
+							<option value="<?php echo $id; ?>" <?php echo $form_id == $id ? 'selected' : ''; ?>><?php echo $form_title; ?></option>
+						<?php endforeach; ?>
 					</select>
-				<?php } else { ?>
-					<?php printf( '<p>%s <a target="_blank" href="%s">%s</a></p>', esc_html__( 'please', 'allegiant' ), esc_url( admin_url( 'admin.php?page=wpforms-builder' ) ), esc_html__( 'add a new form', 'allegiant' ) ); ?>
-				<?php } ?>
+				<?php else: ?>
+					<?php printf( __( '<p>%s <a href="' . admin_url( $plugin_data['backendUrl'] ) . '">%s</a></p>', 'allegiant' ), 'please add a', 'new form' );  ?>
+				<?php endif; ?>
 			</div>
-		<?php } ?>
-
-		<?php if ( $this->is_cf7_active() ) { ?>
-			<div class="cpotheme_contact_control__cf7forms">
-				<?php $forms = $this->get_cf7_forms(); ?>
-				<?php if ( ! empty( $forms ) ) { ?>
-					<span class="customize-control-title"><?php esc_html_e( 'Select form', 'allegiant' ); ?></span>
-					<select>
-						<option><?php esc_html_e( 'please select a contact form', 'allegiant' ); ?></option>
-						<?php foreach ( $forms as $id => $form_title ) { ?>
-							<option value="<?php echo esc_attr( $id ); ?>" <?php echo $form_id == $id ? 'selected' : ''; ?>><?php echo esc_html( $form_title ); ?></option>
-						<?php } ?>
-					</select>
-				<?php } else { ?>
-					<?php printf( '<p>%s <a target="_blank" href="%s">%s</a></p>', esc_html__( 'please', 'allegiant' ), esc_url( admin_url( 'admin.php?page=wpcf7-new' ) ), esc_html__( 'add a new form', 'allegiant' ) ); ?>
-				<?php } ?>
-			</div>
-		<?php } ?>
-
-		<?php if ( $this->is_kaliforms_active() ) { ?>
-			<div class="cpotheme_contact_control__kaliforms">
-				<?php $forms = $this->get_kaliforms(); ?>
-				<?php if ( ! empty( $forms ) ) { ?>
-					<span class="customize-control-title"><?php esc_html_e( 'Select form', 'allegiant' ); ?></span>
-					<select>
-						<option><?php esc_html_e( 'please select a contact form', 'allegiant' ); ?></option>
-						<?php foreach ( $forms as $id => $form_title ) { ?>
-							<option value="<?php echo esc_attr( $id ); ?>" <?php echo $form_id == $id ? 'selected' : ''; ?>><?php echo esc_html( $form_title ); ?></option>
-						<?php } ?>
-					</select>
-				<?php } else { ?>
-					<?php printf( '<p>%s <a target="_blank" href="%s">%s</a></p>', esc_html__( 'please', 'allegiant' ), esc_url( admin_url( 'post-new.php?post_type=kaliforms_forms' ) ), esc_html__( 'add a new form', 'allegiant' ) ); ?>
-				<?php } ?>
-			</div>
-		<?php } ?>
+		<?php endif; ?>
 
 		<?php
 	}

@@ -13,13 +13,11 @@
 					$shortcode_tag = 'wpforms';
 				} elseif ( $contact_form_plugin === 'cf7' ) {
 					$shortcode_tag = 'contact-form-7';
-				} elseif ( $contact_form_plugin === 'kaliforms' ) {
+				} elseif ( $contact_form_plugin === 'kali-forms' ) {
 					$shortcode_tag = 'kaliform';
-				} else {
-					$shortcode_tag = '';
 				}
 
-				if ( $shortcode_tag !== '' && $form_id !== '' ) {
+				if ( $shortcode_tag !== '' && $form_id !== '' && $form_id !== 'default' ) {
 					echo do_shortcode( '[' . esc_html( $shortcode_tag ) . ' id="' . absint( $form_id ) . '"]' );
 				}
 
