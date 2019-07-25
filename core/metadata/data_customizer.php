@@ -87,7 +87,7 @@ if ( ! function_exists( 'cpotheme_metadata_sections' ) ) {
 
 		if ( defined( 'CPOTHEME_USE_ABOUT' ) && CPOTHEME_USE_ABOUT == true ) {
 			$data['cpotheme_layout_about'] = array(
-				'title'       => __( 'About', 'cpotheme' ),
+				'title'       => __( 'About', 'allegiant' ),
 				'capability'  => 'edit_theme_options',
 				'panel'       => 'cpotheme_layout',
 				'priority'    => 50,
@@ -330,20 +330,20 @@ if ( ! function_exists( 'cpotheme_metadata_customizer' ) ) {
 				'section'            => 'cpotheme_layout_about',
 				'type'               => 'epsilon-upsell',
 				'options'            => array(
-					esc_html__( 'Section Description', 'cpotheme' ),
+					esc_html__( 'Section Description', 'allegiant' ),
 				),
 				'requirements'       => array(
-					esc_html__( 'For each section, apart from title one you can also add a description for users to better understand your sections content', 'cpotheme' ),
+					esc_html__( 'For each section, apart from title one you can also add a description for users to better understand your sections content', 'allegiant' ),
 				),
 				'button_url'         => esc_url_raw( get_admin_url() . 'themes.php?page=allegiant-welcome&tab=features' ),
-				'button_text'        => esc_html__( 'See PRO vs Lite', 'cpotheme' ),
+				'button_text'        => esc_html__( 'See PRO vs Lite', 'allegiant' ),
 				'second_button_url'  => cpotheme_upgrade_link(),
-				'second_button_text' => esc_html__( 'Get PRO!', 'cpotheme' ),
+				'second_button_text' => esc_html__( 'Get PRO!', 'allegiant' ),
 				'separator'          => '- or -',
 			);
 
 			$data['home_about'] = array(
-				'label'        => __( 'Section Title', 'cpotheme' ),
+				'label'        => __( 'Section Title', 'allegiant' ),
 				'section'      => 'cpotheme_layout_about',
 				'empty'        => true,
 				'multilingual' => true,
@@ -353,8 +353,8 @@ if ( ! function_exists( 'cpotheme_metadata_customizer' ) ) {
 			);
 
 			$data['about_pages'] = array(
-				'label'        => __( 'About Pages', 'cpotheme' ),
-				'description'  => __( 'Select the pages that will be displayed as columns', 'cpotheme' ),
+				'label'        => __( 'About Pages', 'allegiant' ),
+				'description'  => __( 'Select the pages that will be displayed as columns', 'allegiant' ),
 				'section'      => 'cpotheme_layout_about',
 				'type'         => 'selectize',
 				'choices' => 'pages',

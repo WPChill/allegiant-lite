@@ -31,15 +31,15 @@ class CPOTheme_Customize_Selectize_Control extends WP_Customize_Control {
 		if ( $this->choices === 'all' ) {
 
 			$options = array(
-				'all'                 => __( 'All', 'cpotheme' ),
-				'homepage'            => __( 'Homepage', 'cpotheme' ),
-				'all_posts'           => __( 'All posts', 'cpotheme' ),
-				'all_pages'           => __( 'All pages', 'cpotheme' ),
-				'all_portfolio_items' => __( 'All portfolio items', 'cpotheme' ),
-				'all_services'        => __( 'All services', 'cpotheme' ),
-				'404_page'            => __( '404 page', 'cpotheme' ),
-				'archive'             => __( 'Archive page', 'cpotheme' ),
-				'search'              => __( 'Search page', 'cpotheme' ),
+				'all'                 => __( 'All', 'allegiant' ),
+				'homepage'            => __( 'Homepage', 'allegiant' ),
+				'all_posts'           => __( 'All posts', 'allegiant' ),
+				'all_pages'           => __( 'All pages', 'allegiant' ),
+				'all_portfolio_items' => __( 'All portfolio items', 'allegiant' ),
+				'all_services'        => __( 'All services', 'allegiant' ),
+				'404_page'            => __( '404 page', 'allegiant' ),
+				'archive'             => __( 'Archive page', 'allegiant' ),
+				'search'              => __( 'Search page', 'allegiant' ),
 			);
 
 			foreach ( $this->value() as $value ) :
@@ -70,7 +70,7 @@ class CPOTheme_Customize_Selectize_Control extends WP_Customize_Control {
 		}
 		?>
 
-		<select id="<?php echo esc_attr( $this->id ); ?>" multiple class="demo-default" placeholder="<?php esc_html_e( 'select pages...', 'cpotheme' ); ?>">
+		<select id="<?php echo esc_attr( $this->id ); ?>" multiple class="demo-default" placeholder="<?php esc_html_e( 'select pages...', 'allegiant' ); ?>">
 			<?php foreach ( $options as $value => $name ) : ?>
 				<option value="<?php echo esc_attr( $value ); ?>" <?php echo in_array( $value, $this->value() ) ? 'selected' : ''; ?> ><?php echo esc_html( $name ); ?></option>
 			<?php endforeach; ?>
