@@ -57,7 +57,7 @@ class CPOTheme_Contact_Control extends WP_Customize_Control {
 		<?php else: ?>
 			<?php $forms = $this->get_kaliforms(); ?>
 			<div class="cpotheme_contact_control__<?php echo $plugin_data['slug']; ?>">
-				<?php if ( ! empty( $forms ) ) : ?>
+				<?php if ( ! empty( $forms ) ) { ?>
 					<span class="customize-control-title"><?php _e( 'Select form', 'allegiant' ); ?></span>
 					<select>
 						<option value="default"><?php _e( 'Select form', 'allegiant' ); ?></option>
