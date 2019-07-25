@@ -16,68 +16,12 @@
 
 		ready: function() {
 			var control = this,
-				$pluginSelect =  control.container.children('select'),
-				$wpformsContainer = control.container.find('.cpotheme_contact_control__wpforms'),
-				$cf7Container = control.container.find('.cpotheme_contact_control__cf7forms');
-				$kaliformsContainer = control.container.find('.cpotheme_contact_control__kaliforms');
-
-			if ( $pluginSelect.length && $pluginSelect.val() !== 'wpforms' ) {
-				$wpformsContainer.hide();
-			}
-
-			if ( $pluginSelect.length && $pluginSelect.val() !== 'cf7' ) {
-				$cf7Container.hide();
-			}
-
-			if ( $pluginSelect.length && $pluginSelect.val() !== 'kaliforms' ) {
-				$kaliformsContainer.hide();
-			}
-
-			$pluginSelect.change(function() {
-				var val = $( this ).val();
-
-				if ( val == 'wpforms' ) {
-					$wpformsContainer.show().find('option:eq(0)').prop('selected', true);
-					$cf7Container.hide();
-					$wpformsContainer.hide();
-				} else if ( val == 'cf7' ) {
-					$wpformsContainer.hide();
-					$kaliformsContainer.hide();
-					$cf7Container.show().find('option:eq(0)').prop('selected', true);
-				} else if ( val == 'kaliforms' ) {
-					$wpformsContainer.hide();
-					$cf7Container.hide();
-					$kaliformsContainer.show().find('option:eq(0)').prop('selected', true);
-				}
-			} );
-
-			$wpformsContainer.find('select').change(function() {
-				var val = $( this ).val();
-
-				if ( ! isNaN( val ) ) {
-					control.settings.plugin_select( 'wpforms' );
-					control.settings.form_id( val );
-				}
-			});
-
-			$cf7Container.find('select').change(function() {
-				var val = $( this ).val();
-
-				if ( ! isNaN( val ) ) {
-					control.settings.plugin_select( 'cf7' );
-					control.settings.form_id( val );
-				}
-
-			});
+				$kaliformsContainer = control.container.find('.cpotheme_contact_control__kali-forms');
 
 			$kaliformsContainer.find('select').change(function() {
 				var val = $( this ).val();
-
-				if ( ! isNaN( val ) ) {
-					control.settings.plugin_select( 'kaliforms' );
-					control.settings.form_id( val );
-				}
-
+				control.settings.plugin_select( 'kali-forms' );
+				control.settings.form_id( val );
 			});
 
 		}
