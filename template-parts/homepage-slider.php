@@ -29,9 +29,9 @@ if ( $query->posts ) :
 		</div>
 		<?php endforeach; ?>
 	</div>
-	<?php if ( sizeof( $query->posts ) > 1 ) : ?>
-	<div class="slider-prev" data-cycle-cmd="pause"></div>
-	<div class="slider-next" data-cycle-cmd="pause"></div>
+	<?php if ( count( $query->posts ) > 1 ) : ?>
+		<button class="slider-prev" data-cycle-cmd="pause"></button>
+		<button class="slider-next" data-cycle-cmd="pause"></button>
 	<?php endif; ?>
-</div> 			
+</div>
 <?php endif; ?>

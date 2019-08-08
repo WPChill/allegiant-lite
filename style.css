@@ -71,7 +71,7 @@ a:link, a:visited {
     text-decoration: none;
 }
 
-a:hover {
+a:hover, a:focus {
     color: #39c;
     text-decoration: underline;
 }
@@ -137,7 +137,9 @@ input[type=submit] {
 }
 
 html body .button:hover,
-input[type=submit]:hover {
+html body .button:focus,
+input[type=submit]:hover,
+input[type=submit]:focus {
     color: #fff;
     background: #89ce40;
 }
@@ -182,7 +184,8 @@ LAYOUT
     display: none;
 }
 
-.social .social-profile:hover {
+.social .social-profile:hover,
+.social .social-profile:focus {
     text-decoration: none;
 }
 
@@ -295,12 +298,23 @@ LAYOUT
     -moz-transition: 0.2s all;
     -webkit-transition: 0.2s all;
     transition: 0.2s all;
-    opacity: 0.3;
+	opacity: 0.3;
+	background: transparent;
+	border: transparent;
 }
 
 .slider:hover .slider-prev,
-.slider:hover .slider-next {
+.slider:focus-within .slider-prev,
+.slider:hover .slider-next,
+.slider:focus-within .slider-next {
     opacity: 1;
+}
+
+.slider .slider-prev:focus:before,
+.slider .slider-prev:focus:after,
+.slider .slider-next:focus:before,
+.slider .slider-next:focus:after {
+	background: #89ce40;
 }
 
 .slider-prev,
@@ -1061,7 +1075,8 @@ POSTS & PAGES
     color: inherit;
 }
 
-.post .post-comments a:hover {
+.post .post-comments a:hover,
+.post .post-comments a:focus {
     opacity: 0.7;
     text-decoration: none;
 }
@@ -1255,25 +1270,30 @@ POSTS & PAGES
     margin: 20px 10% 0;
 }
 
-.portfolio-item a:hover {
+.portfolio-item a:hover,
+.portfolio-item a:focus {
     text-decoration: none;
 }
 
-.portfolio-item:hover .portfolio-item-overlay {
+.portfolio-item:hover .portfolio-item-overlay,
+.portfolio-item:focus-within .portfolio-item-overlay {
     opacity: 0.9;
 }
 
-.portfolio-item-has-excerpt:hover .portfolio-item-title {
+.portfolio-item-has-excerpt:hover .portfolio-item-title,
+.portfolio-item-has-excerpt:focus-within .portfolio-item-title {
     opacity: 1;
     margin-bottom: 10px;
 }
 
-.portfolio-item:hover .portfolio-item-description {
+.portfolio-item:hover .portfolio-item-description,
+.portfolio-item:focus-within .portfolio-item-description {
     opacity: 1;
     margin-top: 10px;
 }
 
-.portfolio-item:hover img {
+.portfolio-item:hover img,
+.portfolio-item:focus-within img {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
@@ -1293,7 +1313,8 @@ POSTS & PAGES
     margin-bottom: 50px;
 }
 
-.services .service a:hover {
+.services .service a:hover,
+.services .service a:focus {
     text-decoration: none;
 }
 

@@ -757,10 +757,10 @@ if ( ! function_exists( 'cpotheme_menu' ) ) {
 
 //Prints the mobile navigation menu
 if ( ! function_exists( 'cpotheme_mobile_menu' ) ) {
-	add_action( 'wp_footer', 'cpotheme_mobile_menu' );
+	add_action( 'cpotheme_before_main', 'cpotheme_mobile_menu' );
 	function cpotheme_mobile_menu( $options = null ) {
 		if ( has_nav_menu( 'main_menu' ) ) {
-			echo '<div id="menu-mobile-close" class="menu-mobile-close menu-mobile-toggle"></div>';
+			echo '<button id="menu-mobile-close" class="menu-mobile-close menu-mobile-toggle"></button>';
 			wp_nav_menu(
 				array(
 					'menu_id'        => 'menu-mobile',
@@ -781,7 +781,7 @@ if ( ! function_exists( 'cpotheme_mobile_menu' ) ) {
 if ( ! function_exists( 'cpotheme_menu_toggle' ) ) {
 	function cpotheme_menu_toggle() {
 		if ( has_nav_menu( 'main_menu' ) ) {
-			echo '<div id="menu-mobile-open" class=" menu-mobile-open menu-mobile-toggle"></div>';
+			echo '<button id="menu-mobile-open" class=" menu-mobile-open menu-mobile-toggle"></button>';
 		}
 	}
 }
