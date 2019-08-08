@@ -3,6 +3,7 @@ Minor Backend Tweaks
 Added compatibility with Kaliforms plugin
 Added Contact Section
 Added About Section
+Improved accesibility with keyboard navigation
 
 Version 1.2.0
 Minor Fixes
