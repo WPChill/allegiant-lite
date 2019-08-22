@@ -1313,6 +1313,11 @@ POSTS & PAGES
     margin-bottom: 50px;
 }
 
+.services .service > a:hover > .service-icon,
+.services .service > a:focus > .service-icon {
+	opacity: 0.5;
+}
+
 .services .service a:hover,
 .services .service a:focus {
     text-decoration: none;

@@ -2189,6 +2189,12 @@ WIDGETS
     font-size: 0.8em;
 }
 
+/* Social Links Widget */
+.ctwg-social-link:hover,
+.ctwg-social-link:focus {
+	opacity: 0.4;
+}
+
 /* --------------------------------------------------------------
 THIRD PARTY INTEGRATIONS
 -------------------------------------------------------------- */
