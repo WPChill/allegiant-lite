@@ -53,7 +53,7 @@ class CPOTheme_Contact_Control extends WP_Customize_Control {
 		?>
 
 		<?php if ( ! $this->is_kaliforms_active() ) : ?>
-			<p><?php _e( 'There are no contact form plugins activated. Please activate KaliForms.', 'allegiant' ); ?></p>
+			<p><?php _e( 'There are no contact form plugins activated. Please activate Kali Forms.', 'allegiant' ); ?></p>
 		<?php else: ?>
 			<?php $forms = $this->get_kaliforms(); ?>
 			<div class="cpotheme_contact_control__<?php echo $plugin_data['slug']; ?>">

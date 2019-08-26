@@ -44,8 +44,8 @@ class CPO_Theme {
 			),
 			array(
 				'id'          => 'allegiant-req-ac-install-kali-forms',
-				'title'       => CPOTheme_Notify_System::create_plugin_requirement_title( __( 'Install: Kaliforms', 'allegiant' ), __( 'Activate: Kaliforms', 'allegiant' ), 'kali-forms' ),
-				'description' => __( 'It is highly recommended that you install the Kaliforms plugin.', 'allegiant' ),
+				'title'       => CPOTheme_Notify_System::create_plugin_requirement_title( __( 'Install: Kali Forms', 'allegiant' ), __( 'Activate: Kali Forms', 'allegiant' ), 'kali-forms' ),
+				'description' => __( 'It is highly recommended that you install the Kali Forms plugin.', 'allegiant' ),
 				'check'       => CPOTheme_Notify_System::has_plugin( 'kali-forms' ),
 				'plugin_slug' => 'kali-forms',
 			),
