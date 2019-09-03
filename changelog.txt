@@ -1,9 +1,11 @@
+Version 1.2.2
+Improved accesibility with keyboard navigation
+
 Version 1.2.1
 Minor Backend Tweaks
 Added compatibility with Kali Forms plugin
 Added Contact Section
 Added About Section
-Improved accesibility with keyboard navigation
 
 Version 1.2.0
 Minor Fixes
