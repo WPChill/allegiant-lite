@@ -115,7 +115,7 @@ module.exports = function( grunt ) {
           '!composer.json',
           '!composer.lock',
           '!set_tags.sh',
-          '!allegiant-lite.zip',
+          '!allegiant.zip',
           '!nbproject/**' ],
         dest: 'build/'
       }
