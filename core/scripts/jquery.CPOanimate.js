@@ -10,3 +10,8 @@ jQuery( 'a[href*="#"]:not([href="#"])' ).on( 'click', function(e) {
         }
     }
 });
+
+/* Remove behaviour of anchors linking to # */
+jQuery( 'a[href="#"]' ).on( 'click', function( e ) {
+    e.preventDefault();
+});
