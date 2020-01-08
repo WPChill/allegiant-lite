@@ -37,7 +37,7 @@
 
 	});
 
-	$.extend( api.controlConstructor, {
+	jQuery.extend( api.controlConstructor, {
 		'cpotheme-selectize-control': api.CPOThemeSelectizeControl,
     });
 
