@@ -1,3 +1,9 @@
+Version 1.2.3
+Added smoothscroll for anchor links
+Fix 1 vulnerability regarding ajax nopriv action
+Fix Kali form changing
+
+
 Version 1.2.2
 Improved accesibility with keyboard navigation
 
