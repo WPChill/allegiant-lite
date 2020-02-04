@@ -1,3 +1,8 @@
+Version 1.2.4
+Removed submodule epsilon framework and added directly to theme
+Fix double % in base.css
+
+
 Version 1.2.3
 Added smoothscroll for anchor links
 Fix 1 vulnerability regarding ajax nopriv action
