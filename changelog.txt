@@ -5,6 +5,7 @@ Fix Kali form changing
 Removed Simple Author Box and Uber Recaptcha from Recommended plugins
 Cleaned Support section
 
+
 Version 1.2.2
 Improved accesibility with keyboard navigation
 
