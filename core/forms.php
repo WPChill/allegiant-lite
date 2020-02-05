@@ -128,7 +128,7 @@ if ( ! function_exists( 'cpotheme_form_iconlist' ) ) {
 					$checked  = ' checked="checked"';
 					$selected = ' cpotheme-iconlist-selected';
 				}
-				$output .= '<label class="cpotheme-iconlist-item' . $selected . '" style="font-family:\'' . esc_attr( $library_key ) . '\';" for="' . $name . '_' . htmlentities( stripslashes( $list_key ) ) . '">';
+				$output .= '<label class="cpotheme-iconlist-item' . $selected . '" style="font-family:\'' . esc_attr( $library_value['name'] ) . '\'; font-weight: 900;" for="' . $name . '_' . htmlentities( stripslashes( $list_key ) ) . '">';
 				if ( '0' == $list_key ) {
 					$output .= ' ';
 				} else {
