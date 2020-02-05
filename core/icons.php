@@ -15,17 +15,15 @@ if ( ! function_exists( 'cpotheme_icon' ) ) {
 			if( isset( $icon_pack['fontawesomefree']['icons'][html_entity_decode($value)] ) ){
 
 				$font_library = 'fontawesomefree';
-				$font_value   = $value;
-	
 			}else if( isset($icon_pack['fontawesomebrands']['icons'][html_entity_decode($value)]) ){
 	
 				$font_library = 'fontawesomebrands';
-				$font_value   = $value;
 			}else {
 	
 				$font_library = 'fontawesome';
-				$font_value   = $value;
 			}
+
+            $font_value   = $value;
 	
 		} else {
 			$icon_data    = explode( '-', $value);
