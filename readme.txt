@@ -1,6 +1,6 @@
 Thanks for downloading this theme!
 
-This theme is meant to work hand in hand with the CPO Content Types plugin. 
+This theme is meant to work hand in hand with the CPO Companion plugin. 
 The plugin is very light, and you will need to install it in order to 
 manage the main slider, homepage features, as well as the portfolio:
 http://wordpress.org/plugins/cpo-content-types

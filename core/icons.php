@@ -8,45 +8,49 @@ if ( ! function_exists( 'cpotheme_icon' ) ) {
 			return;
 		}
 
-		$icon_pack = cpotheme_metadata_icons();
+		$icon_packs = cpotheme_metadata_icons();
 
 		if ( false === strpos( $value, '-' ) ) {
 
-			if( isset( $icon_pack['fontawesomefree']['icons'][html_entity_decode($value)] ) ){
+			$icon_data = cpotheme_check_fontawesome_compatibility( html_entity_decode($value) );
 
-				$font_library = 'fontawesomefree';
-			}else if( isset($icon_pack['fontawesomebrands']['icons'][html_entity_decode($value)]) ){
-	
-				$font_library = 'fontawesomebrands';
-			}else {
-	
-				$font_library = 'fontawesome';
+			if ( ! is_array( $icon_data ) ) {
+				$font_library = '';
+				if( isset( $icon_pack['fontawesomeregular']['icons'][ html_entity_decode($value) ] ) ){
+					$font_library = 'fontawesomeregular';
+				}else if( isset($icon_pack['fontawesomebrands']['icons'][html_entity_decode($value)]) ){
+					$font_library = 'fontawesomebrands';
+				}else if( isset($icon_pack['fontawesomesolid']['icons'][html_entity_decode($value)]) ){
+					$font_library = 'fontawesomesolid';
+				}
+
+				$icon_data = array( $font_library, $value );
 			}
-
-            $font_value   = $value;
 	
 		} else {
-			$icon_data    = explode( '-', $value);
-			$icon_data[1] = html_entity_decode( $icon_data[1]);
-			$font_library = $icon_data[0];
-			$font_value   = $icon_data[1];
+			$icon_data = explode( '-', $value );
+			if( $icon_data[0] == 'fontawesome' ){
 
-		if( $icon_data[0] == 'fontawesome' ){
+				$icon_data = cpotheme_check_fontawesome_compatibility( html_entity_decode($value) );
+				if ( ! is_array( $icon_data ) ) {
+					$font_library = '';
+					if( isset( $icon_pack['fontawesomeregular']['icons'][ html_entity_decode($value) ] ) ){
+						$font_library = 'fontawesomeregular';
+					}else if( isset($icon_pack['fontawesomebrands']['icons'][html_entity_decode($value)]) ){
+						$font_library = 'fontawesomebrands';
+					}else if( isset($icon_pack['fontawesomesolid']['icons'][html_entity_decode($value)]) ){
+						$font_library = 'fontawesomesolid';
+					}
 
-			if( isset( $icon_pack['fontawesomebrands']['icons'][$icon_data[1]] ) ){
-				$font_library = 'fontawesomebrands';
-
-			}else if ( isset( $icon_pack['fontawesomefree']['icons'][$icon_data[1]] ) ){
-				
-				$font_library = 'fontawesomefree';
-			}else {
-
-				$font_library = 'fontawesome';
+					$icon_data = array( $font_library, $value );
+				}
 			}
+
 		}
 
-
-	}
+		$icon_data[1] = html_entity_decode( $icon_data[1]);
+		$font_library = $icon_data[0];
+		$font_value   = $icon_data[1];
 
 		$output = '';
 		if ( '' != $wrapper ) {
@@ -70,17 +74,17 @@ function cpotheme_get_icon( $library, $value ) {
 	$result = '';
 
 	switch ( $library ) {
-		case 'fontawesome':
-			$result = cpotheme_icon_library_fontawesome_exceptions( $value );
+		case 'fontawesomesolid':
+			$result = cpotheme_icon_library_fontawesome_solid( $value );
 			break;
 		case 'fontawesomebrands' :
 			$result = cpotheme_icon_library_fontawesome_brands( $value );
 			break;
-		case 'fontawesomefree' : 
-			$result = cpotheme_icon_library_fontawesome( $value );
+		case 'fontawesomeregular' : 
+			$result = cpotheme_icon_library_fontawesome_regular( $value );
 			break;
 		default:
-			$result = cpotheme_icon_library_fontawesome( $value );
+			$result = cpotheme_icon_library_fontawesome_solid( $value );
 			break;
 	}
 	return $result;
@@ -89,17 +93,14 @@ function cpotheme_get_icon( $library, $value ) {
 
 
 //Icon library for fontawesome
-function cpotheme_icon_library_fontawesome_exceptions( $value ) {
-	wp_enqueue_style( 'cpotheme-fontawesome' );
-	return '<span style="font-family:\'fontawesome\'">' . $value . '</span>';
+function cpotheme_icon_library_fontawesome_regular( $value ) {
+	return '<span style="font-family:\'Font Awesome 5 Regular\'">' . $value . '</span>';
 }
 
 function cpotheme_icon_library_fontawesome_brands( $value ) {
-	wp_enqueue_style( 'cpotheme-fontawesome-new' );
 	return '<span style="font-family:\'Font Awesome 5 Brands\' ; font-weight: 900">' . $value . '</span>';
 }
 
-function cpotheme_icon_library_fontawesome( $value ) {
-	wp_enqueue_style( 'cpotheme-fontawesome-new' );
-	return '<span style="font-family:\'Font Awesome 5 Free\'; font-weight: 900">' . $value . '</span>';
+function cpotheme_icon_library_fontawesome_solid( $value ) {
+	return '<span style="font-family:\'Font Awesome 5 Solid\'; font-weight: 900">' . $value . '</span>';
 }
