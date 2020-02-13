@@ -16,11 +16,11 @@ if ( ! function_exists( 'cpotheme_icon' ) ) {
 
 			if ( ! is_array( $icon_data ) ) {
 				$font_library = '';
-				if( isset( $icon_pack['fontawesomeregular']['icons'][ html_entity_decode($value) ] ) ){
+				if( isset( $icon_packs['fontawesomeregular']['icons'][ html_entity_decode($value) ] ) ){
 					$font_library = 'fontawesomeregular';
-				}else if( isset($icon_pack['fontawesomebrands']['icons'][html_entity_decode($value)]) ){
+				}else if( isset($icon_packs['fontawesomebrands']['icons'][html_entity_decode($value)]) ){
 					$font_library = 'fontawesomebrands';
-				}else if( isset($icon_pack['fontawesomesolid']['icons'][html_entity_decode($value)]) ){
+				}else if( isset($icon_packs['fontawesomesolid']['icons'][html_entity_decode($value)]) ){
 					$font_library = 'fontawesomesolid';
 				}
 
@@ -39,11 +39,11 @@ if ( ! function_exists( 'cpotheme_icon' ) ) {
 				    // Fix for older versions of FontAwesome and import problem
                     $old_icon = explode( '-', esc_html($icon_data) );
 					$font_library = '';
-					if( isset( $icon_pack['fontawesomeregular']['icons'][ html_entity_decode($old_icon[1]) ] ) ){
+					if( isset( $icon_packs['fontawesomeregular']['icons'][ html_entity_decode($old_icon[1]) ] ) ){
 						$font_library = 'fontawesomeregular';
-					}else if( isset($icon_pack['fontawesomebrands']['icons'][html_entity_decode($old_icon[1])]) ){
+					}else if( isset($icon_packs['fontawesomebrands']['icons'][html_entity_decode($old_icon[1])]) ){
 						$font_library = 'fontawesomebrands';
-					}else if( isset($icon_pack['fontawesomesolid']['icons'][html_entity_decode($old_icon[1])]) ){
+					}else if( isset($icon_packs['fontawesomesolid']['icons'][html_entity_decode($old_icon[1])]) ){
 						$font_library = 'fontawesomesolid';
 					}
 
