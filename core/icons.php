@@ -29,28 +29,33 @@ if ( ! function_exists( 'cpotheme_icon' ) ) {
 	
 		} else {
 			$icon_data = explode( '-', $value );
+
 			if( $icon_data[0] == 'fontawesome' ){
 
+
 				$icon_data = cpotheme_check_fontawesome_compatibility( html_entity_decode($value) );
+
 				if ( ! is_array( $icon_data ) ) {
+				    // Fix for older versions of FontAwesome and import problem
+                    $old_icon = explode( '-', esc_html($icon_data) );
 					$font_library = '';
-					if( isset( $icon_pack['fontawesomeregular']['icons'][ html_entity_decode($value) ] ) ){
+					if( isset( $icon_pack['fontawesomeregular']['icons'][ html_entity_decode($old_icon[1]) ] ) ){
 						$font_library = 'fontawesomeregular';
-					}else if( isset($icon_pack['fontawesomebrands']['icons'][html_entity_decode($value)]) ){
+					}else if( isset($icon_pack['fontawesomebrands']['icons'][html_entity_decode($old_icon[1])]) ){
 						$font_library = 'fontawesomebrands';
-					}else if( isset($icon_pack['fontawesomesolid']['icons'][html_entity_decode($value)]) ){
+					}else if( isset($icon_pack['fontawesomesolid']['icons'][html_entity_decode($old_icon[1])]) ){
 						$font_library = 'fontawesomesolid';
 					}
 
-					$icon_data = array( $font_library, $value );
+					$icon_data = array( $font_library, $old_icon[1] );
 				}
 			}
 
 		}
 
-		$icon_data[1] = html_entity_decode( $icon_data[1]);
-		$font_library = $icon_data[0];
-		$font_value   = $icon_data[1];
+        $icon_data[1] = html_entity_decode( $icon_data[1]);
+        $font_library = $icon_data[0];
+        $font_value   = $icon_data[1];
 
 		$output = '';
 		if ( '' != $wrapper ) {
