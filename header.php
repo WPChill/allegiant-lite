@@ -5,6 +5,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<?php wp_body_open() ?>
 	<div class="outer" id="top">
 		<?php do_action( 'cpotheme_before_wrapper' ); ?>
 		<div class="wrapper">

@@ -917,7 +917,7 @@ if ( ! function_exists( 'cpotheme_comment' ) ) {
 
 		//Normal Comments
 		switch ( $comment->comment_type ) :
-			case '':
+			case 'comment':
 				?>
 				<li <?php comment_class( 'comment' ); ?> id="comment-<?php comment_ID(); ?>">
 				<div class="comment-avatar">

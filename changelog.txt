@@ -1,3 +1,6 @@
+Version 1.2.6
+Fix comment display on blog posts
+
 Version 1.2.4
 Removed submodule epsilon framework and added directly to theme
 Fix double % in base.css
