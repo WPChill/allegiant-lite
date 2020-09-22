@@ -30,8 +30,6 @@
 .cpotheme-iconlist label { display:block; float:left; border:1px solid #eee; border-width:0 1px 1px 0; text-align:center; margin:0; background:#fff; font-family:'fontawesome'; width:34px; height:34px; font-size:18px; line-height:34px; -moz-transition:0.2s all; -webkit-transition:0.2s all; transition:0.2s all; }
 .cpotheme-iconlist .cpotheme-iconlist-selected { background:#1e8cbe; color:#fff; }
 .cpotheme-iconlist input[type=radio] { display:none; }
-.menu-item-iconlist .cpotheme-iconlist { width: 100%; }
-.menu-item-iconlist .cpotheme-iconlist label { width: 8.33%; box-sizing :border-box; }
 
 /* Image Lists */
 .cpotheme-imagelist-item { display:inline-block; text-align:center; margin:0 12px 12px 0; line-height:0; } 

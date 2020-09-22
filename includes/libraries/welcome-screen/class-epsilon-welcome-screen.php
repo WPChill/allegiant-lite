@@ -181,7 +181,7 @@ class Epsilon_Welcome_Screen {
 	 * AJAX Handler
 	 */
 	public function welcome_screen_ajax_callback() {
-		if ( isset( $_POST['args'], $_POST['args']['nonce'] ) && ! wp_verify_nonce( sanitize_key( $_POST['args']['nonce'] ), 'welcome_nonce' ) ) {
+		if ( !isset( $_POST['args'], $_POST['args']['nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['args']['nonce'] ), 'welcome_nonce' ) ) {
 			wp_die(
 				wp_json_encode(
 					array(
