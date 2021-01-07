@@ -2,7 +2,7 @@ jQuery( document ).ready( function() {
 
   /* IMAGE LIST FIELD */
   //Change border color when selecting the image
-  jQuery( '.cpotheme-imagelist-item img' ).click( function() {
+  jQuery( '.cpotheme-imagelist-item img' ).on('click', function() {
 
     //Change other borders
     var parent = jQuery( this ).parent().parent();
@@ -16,7 +16,7 @@ jQuery( document ).ready( function() {
 
   /* ICON LIST FIELD */
   //Change border color when selecting the image
-  jQuery( '.cpotheme-iconlist label' ).click( function() {
+  jQuery( '.cpotheme-iconlist label' ).on('click', function() {
 
     //Change other borders
     var parent = jQuery( this ).parent().parent();
