@@ -53,8 +53,8 @@ class Epsilon_Repeater_Templates {
 						</div>
 					<# } ); #>
 					<div class="repeater-row-footer">
-						<button type="button" class="button-link repeater-row-remove"><?php esc_attr_e( 'Remove', 'epsilon-framework' ); ?></button> |
-						<button type="button" class="button-link repeater-row-minimize"><?php esc_attr_e( 'Close', 'epsilon-framework' ); ?></button>
+						<button type="button" class="button-link repeater-row-remove"><?php esc_html_e( 'Remove', 'epsilon-framework' ); ?></button> |
+						<button type="button" class="button-link repeater-row-minimize"><?php esc_html_e( 'Close', 'epsilon-framework' ); ?></button>
 					</div>
 				</div>
 			</li>
@@ -125,8 +125,8 @@ class Epsilon_Repeater_Templates {
 					<# } ); #>
 
 					<div class="repeater-row-footer">
-						<button type="button" class="button-link repeater-row-remove"><?php esc_attr_e( 'Remove', 'epsilon-framework' ); ?></button> |
-						<button type="button" class="button-link repeater-row-minimize"><?php esc_attr_e( 'Close', 'epsilon-framework' ); ?></button>
+						<button type="button" class="button-link repeater-row-remove"><?php esc_html_e( 'Remove', 'epsilon-framework' ); ?></button> |
+						<button type="button" class="button-link repeater-row-minimize"><?php esc_html_e( 'Close', 'epsilon-framework' ); ?></button>
 					</div>
 				</div>
 			</li>

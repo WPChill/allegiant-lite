@@ -70,7 +70,7 @@ class CPOTheme_Customize_Selectize_Control extends WP_Customize_Control {
 		}
 		?>
 
-		<select id="<?php echo esc_attr( $this->id ); ?>" multiple class="demo-default" placeholder="<?php esc_html_e( 'select pages...', 'allegiant' ); ?>">
+		<select id="<?php echo esc_attr( $this->id ); ?>" multiple class="demo-default" placeholder="<?php esc_attr_e( 'select pages...', 'allegiant' ); ?>">
 			<?php foreach ( $options as $value => $name ) : ?>
 				<option value="<?php echo esc_attr( $value ); ?>" <?php echo in_array( $value, $this->value() ) ? 'selected' : ''; ?> ><?php echo esc_html( $name ); ?></option>
 			<?php endforeach; ?>

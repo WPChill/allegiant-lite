@@ -1,3 +1,7 @@
+Version 1.2.7
+Jquery Update
+Minor Backend Tweaks
+
 Version 1.2.6
 Fix comment display on blog posts
 Security fixes regarding nonce verification
