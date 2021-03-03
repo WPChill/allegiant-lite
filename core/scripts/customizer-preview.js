@@ -1,8 +1,8 @@
 ( function( $ ) {
 
-	wp.customize.on('preview-ready', function () {
+	wp.customize.bind('preview-ready', function () {
 
-		wp.customize.preview.on( 'section-highlight', function( data ) {
+		wp.customize.preview.bind( 'section-highlight', function( data ) {
 			var selectors = {
 				'cpotheme_layout_home' : '#tagline',
 				'cpotheme_layout_features' : '#features',
