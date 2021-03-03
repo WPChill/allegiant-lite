@@ -4,3 +4,4 @@ node_modules/*
 allegiant-lite.zip
 allegiant.zip
 phpcs.ruleset.xml
+package-lock.json
