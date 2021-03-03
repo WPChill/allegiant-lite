@@ -1,7 +1,0 @@
-.DS_Store
-node_modules/*
-.idea/*
-allegiant-lite.zip
-allegiant.zip
-phpcs.ruleset.xml
-package-lock.json
